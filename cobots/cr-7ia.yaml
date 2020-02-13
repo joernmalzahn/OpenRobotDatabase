@@ -1,0 +1,149 @@
+--- # Cobot file template
+# Vendor name (see vendor list)
+vendor: Fanuc
+# Full name of the cobot
+name: CR-7iA
+# Website describing the cobot
+website: [https://www.fanuc.co.jp/en/product/robot/f_r_collabo.html]
+# Videos
+videos: [https://youtu.be/flrDEJStej8]
+# How long does it take to set up the robot [min]?
+installation time:
+# Is the robot still being sold?
+in market: True
+# additional information
+info: []
+
+mechanical properties:
+    # How can the robot be mounted (floor, ceiling, wall, any angle)
+    mounting: [floor, ceiling, wall, any angle]
+    # Ingress protection class
+    IP: 67
+    # Has quick connect base (True, False)
+    has quick connect base: False
+    # Axes Properties
+    axes:
+        # minimum joint angle in deg [A1, A2, A3, A4, A5, A6,...]
+        min pos: [0, 0, 0, 0, 0, 0]
+        # maximum joint angle in deg [A1, A2, A3, A4, A5, A6,...]
+        max pos: [340, 166, 373, 380, 240, 720]
+        # maximum joint velocity in deg/s [A1, A2, A3, A4, A5, A6,...]
+        max vel: []
+        # maximum joint torque in Nm [A1, A2, A3, A4, A5, A6,...]
+        max torque: []
+    # pose repeatability in [mm]
+    repeatability: 0.01
+    # path deviation in [mm]
+    path deviation:
+    # maximum cartesian velocity in [m/s]
+    max cartesian velocity: 1
+    # maximum cartesian acceleration in [m/s^2]
+    max cartesian acceleration:
+    # maximum reach [mm]
+    max reach: 717
+    # payload mass capacity in [kg]
+    payload mass: 4
+    # payload inertia in [kgm^2]
+    payload inertia: 0.15
+    # robot mass in [kg]
+    robot mass: 53
+    # nominal lifetime in [kh]
+    nominal lifetime:
+    # additional comments
+    comments: [actual angular limits not given, only range]
+
+electrical properties:
+    # Maximum power consumption in [W]
+    max power:
+    # Average power consumption in [W]
+    avg power:
+
+sensors:
+    # Integrated Joint Torque Sensors
+    joint torque:
+        # resolution in [Nm]
+        resolution:
+        # relative accuracy in [%]
+        relative accuracy:
+    # Integrated Camera Sensors (not optional accessories)
+    vision:
+
+    # Integrated skin sensor
+    skin:
+
+flange interface:
+    flange type:
+    number of digital inputs:
+    number of digital outputs:
+    number of analog inputs:
+    number of analog outputs:
+    power:
+    pneumatic:
+    ethernet:
+
+
+control properties:
+    # Communication bus frequency in [kHz]
+    communication frequency:
+    # Cartesian Force and Moment Control
+    cartesian force control:
+        # Cartesian Endeffector Torque
+        torque:
+            # Repeatability in [Nm]
+            repeatability:
+            # Noise RMS in [Nm]
+            noise rms:
+            # Resolution in [Nm]
+            resolution:
+            # Accuracy in [Nm]
+            accuracy:
+            # Torque range [min, max] for each axis in [Nm]
+            range:
+                x: []
+                y: []
+                z: []
+        # Cartesian Endeffector Torque
+        force:
+            # Repeatability in [N]
+            repeatability:
+            # Noise RMS in [N]
+            noise rms:
+            # Resolution in [N]
+            resolution:
+            # Accuracy in [N]
+            accuracy:
+            # Force range [min, max] for each axis in [N]
+            range:
+                x: []
+                y: []
+                z: []
+    # Impedance controller properties:
+    impedance control:
+        # Translational Stiffness [min, max] in [N/m]
+        translational stiffness:
+        # Rotational Stiffness [min, max] in [Nm/rad]
+        translational stiffness:
+        # gravity compensation guiding force in [N]
+        guiding force:
+    # Collision Detection
+    collision:
+        # detection time in [ms]
+        detection time:
+        # reaction time in [ms]
+        reaction time:
+
+ambient conditions:
+    # Temperature range [min, max] in [°C]
+    temperature: [0, 45]
+    # Humidity range [min, max] in [%]
+    humidity: [0, 75]
+    # Cleanroom class
+    cleanroom class:
+
+standards:
+    # ISO 10218-1 class
+    class: []
+    # System Integrity level
+    sil:
+
+
