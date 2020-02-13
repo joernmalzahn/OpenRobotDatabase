@@ -87,6 +87,7 @@ control properties:
     communication frequency: 
     # Cartesian Force and Moment Control
     cartesian force control:
+        comment: w.r.t. base frame
         # Cartesian Endeffector Torque
         torque:
             # Repeatability in [Nm]
@@ -137,6 +138,8 @@ ambient conditions:
     temperature: [5, 40]
     # Humidity range [min, max] in [%]
     humidity: [0 85]
+    # Cleanroom class
+    cleanroom class: 5
 
 standards:
     # ISO 10218-1 class

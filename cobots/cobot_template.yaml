@@ -57,9 +57,7 @@ electrical properties:
     max power: 
     # Average power consumption in [W]
     avg power: 
-    # Voltage range [min, max] in [V]
-    voltage: []
-    
+
 sensors: 
     # Integrated Joint Torque Sensors
     joint torque:
@@ -139,6 +137,8 @@ ambient conditions:
     temperature: []
     # Humidity range [min, max] in [%]
     humidity: []
+    # Cleanroom class
+    cleanroom class:
 
 standards:
     # ISO 10218-1 class

@@ -1,14 +1,14 @@
 --- # Cobot file template
 # Vendor name (see vendor list)
-vendor: Franka Emika
+vendor: Universal Robots
 # Full name of the cobot
-name: Panda
+name: UR5e
 # Website describing the cobot
-website: [https://www.franka.de/technology]
+website: [https://www.universal-robots.com/products/ur5-robot/]
 # Videos
-videos: [https://youtu.be/_FbhNsRjqdQ]
+videos: [https://youtu.be/y62T-Q57JbY]
 # How long does it take to set up the robot [min]?
-installation time: 15
+installation time:
 # Is the robot still being sold?
 in market: True
 # additional information
@@ -16,47 +16,47 @@ info: []
 
 mechanical properties:
     # How can the robot be mounted (floor, ceiling, wall, any angle)
-    mounting: [floor, table]
+    mounting: [any orientation]
     # Ingress protection class
-    IP: 30
+    IP: 54
     # Has quick connect base (True, False)
     has quick connect base: False
     # Axes Properties
     axes:
         # minimum joint angle in deg [A1, A2, A3, A4, A5, A6,...]
-        min pos: [-166, -101, -166, -176, -166, -1, -166]
+        min pos: [-360, -360, -360, -360, -360, -360]
         # maximum joint angle in deg [A1, A2, A3, A4, A5, A6,...]
-        max pos: [166, 101, 166, -4, 166, 215, 166]
+        max pos: [360, 360, 360, 360, 360, 360]
         # maximum joint velocity in deg/s [A1, A2, A3, A4, A5, A6,...]
-        max vel: [150, 150, 150, 150, 180, 180, 180]
+        max vel: [180, 180, 180, 360, 360, 360]
         # maximum joint torque in Nm [A1, A2, A3, A4, A5, A6,...]
         max torque: []
     # pose repeatability in [mm]
-    repeatability: 0.1
+    repeatability: 0.03
     # path deviation in [mm]
-    path deviation: 1,25
+    path deviation:
     # maximum cartesian velocity in [m/s]
-    max cartesian velocity:
+    max cartesian velocity: 1
     # maximum cartesian acceleration in [m/s^2]
     max cartesian acceleration:
     # maximum reach [mm]
-    max reach: 855
+    max reach: 850
     # payload mass capacity in [kg]
-    payload mass: 3
+    payload mass: 5
     # payload inertia in [kgm^2]
     payload inertia:
     # robot mass in [kg]
-    robot mass: 17.8
+    robot mass: 20.6
     # nominal lifetime in [kh]
-    nominal lifetime: 20
+    nominal lifetime:
     # additional comments
     comments: []
 
 electrical properties:
     # Maximum power consumption in [W]
-    max power: 350
+    max power: 570
     # Average power consumption in [W]
-    avg power: 60
+    avg power: 200
 
 sensors:
     # Integrated Joint Torque Sensors
@@ -72,32 +72,32 @@ sensors:
     skin:
 
 flange interface:
-    flange type:
-    number of digital inputs:
-    number of digital outputs:
-    number of analog inputs:
+    flange type: M8 | M8 8-pin
+    number of digital inputs: 2
+    number of digital outputs: 2
+    number of analog inputs: 2
     number of analog outputs:
-    power:
+    power: 12/24 V 1 A
     pneumatic:
     ethernet:
 
 
 control properties:
     # Communication bus frequency in [kHz]
-    communication frequency: 1
+    communication frequency:
     # Cartesian Force and Moment Control
     cartesian force control:
-        comment: w.r.t. base frame
+        comment: w.r.t tool flange, FT sensor integrated in flange
         # Cartesian Endeffector Torque
         torque:
             # Repeatability in [Nm]
-            repeatability: 0.05
+            repeatability:
             # Noise RMS in [Nm]
-            noise rms: 0.005
+            noise rms:
             # Resolution in [Nm]
-            resolution: 0.02
+            resolution: 0.2
             # Accuracy in [Nm]
-            accuracy: 0.15
+            accuracy: 0.3
             # Torque range [min, max] for each axis in [Nm]
             range:
                 x: [-10, 10]
@@ -106,44 +106,44 @@ control properties:
         # Cartesian Endeffector Torque
         force:
             # Repeatability in [N]
-            repeatability: 0.15
+            repeatability:
             # Noise RMS in [N]
-            noise rms: 0.035
+            noise rms:
             # Resolution in [N]
-            resolution: 0.05
+            resolution: 3.5
             # Accuracy in [N]
-            accuracy: 0.8
+            accuracy: 4.0
             # Force range [min, max] for each axis in [N]
             range:
-                x: [-125, 95]
-                y: [-100, 100]
-                z: [-50, 150]
+                x: [-50, 50]
+                y: [-50, 50]
+                z: [-50, 50]
     # Impedance controller properties:
     impedance control:
         # Translational Stiffness [min, max] in [N/m]
-        translational stiffness: [0, 3000]
+        translational stiffness:
         # Rotational Stiffness [min, max] in [Nm/rad]
-        translational stiffness: [0, 300]
+        translational stiffness:
         # gravity compensation guiding force in [N]
-        guiding force: 2
+        guiding force:
     # Collision Detection
     collision:
         # detection time in [ms]
-        detection time: 2
+        detection time:
         # reaction time in [ms]
-        reaction time: 100
+        reaction time:
 
 ambient conditions:
     # Temperature range [min, max] in [°C]
-    temperature: [15, 25]
+    temperature: [0, 50]
     # Humidity range [min, max] in [%]
-    humidity: [20, 80]
+    humidity: [0, 90]
     # Cleanroom class
-    cleanroom class:
+    cleanroom class: 5
 
 standards:
     # ISO 10218-1 class
-    class: [PL d Cat 3 Safe torque off and Safe OSSD inputs]
+    class: [PL d CAT 3]
     # System Integrity level
     sil:
 
