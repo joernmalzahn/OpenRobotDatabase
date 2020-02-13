@@ -71,7 +71,7 @@ sensors:
     # Integrated skin sensor
     skin:
 
-  flange interface:
+flange interface:
     flange type:  ISO 9409-1-A50
     number of digital inputs:
     number of digital outputs:
