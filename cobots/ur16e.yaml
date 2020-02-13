@@ -11,7 +11,9 @@ videos: [https://youtu.be/y62T-Q57JbY]
 installation time:
 # Is the robot still being sold?
 in market: True
-# additional information
+# Estimated price of the robot in [k€]
+price: 30
+# Additional information
 info: []
 
 mechanical properties:
@@ -31,19 +33,19 @@ mechanical properties:
         max vel: [120, 120, 180, 360, 360, 360]
         # maximum joint torque in Nm [A1, A2, A3, A4, A5, A6,...]
         max torque: []
-    # pose repeatability in [mm]
+    # Pose repeatability in [mm]
     repeatability: 0.05
-    # path deviation in [mm]
+    # Path deviation in [mm]
     path deviation:
-    # maximum cartesian velocity in [m/s]
+    # Maximum cartesian velocity in [m/s]
     max cartesian velocity: 1
-    # maximum cartesian acceleration in [m/s^2]
+    # Maximum cartesian acceleration in [m/s^2]
     max cartesian acceleration:
-    # maximum reach [mm]
+    # Maximum reach [mm]
     max reach: 900
-    # payload mass capacity in [kg]
+    # Payload mass capacity in [kg]
     payload mass: 16
-    # payload inertia in [kgm^2]
+    # Payload inertia in [kgm^2]
     payload inertia:
     # robot mass in [kg]
     robot mass: 33.1

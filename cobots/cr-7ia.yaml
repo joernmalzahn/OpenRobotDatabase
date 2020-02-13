@@ -49,6 +49,8 @@ mechanical properties:
     robot mass: 53
     # nominal lifetime in [kh]
     nominal lifetime:
+    # Estimated price of the robot in [k€]
+    price: 45
     # additional comments
     comments: [actual angular limits not given, only range]
 

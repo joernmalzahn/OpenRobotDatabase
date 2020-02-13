@@ -11,6 +11,8 @@ videos: [https://youtu.be/y_Y9DCGU4yk]
 installation time: 15
 # Is the robot still being sold?
 in market: True
+# Estimated price of the robot in [k€]
+price: 15
 # additional information
 info: []
 

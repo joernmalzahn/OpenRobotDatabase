@@ -12,6 +12,8 @@ videos: [https://youtu.be/xE8BZPLnZGI,
 installation time:
 # Is the robot still being sold?
 in market: True
+# Estimated price of the robot in [k€]
+price:
 # additional information
 info: [Released on December 18, 2019, only scarce information available]
 
