@@ -84,7 +84,7 @@ flange interface:
 
 control properties:
     # Communication bus frequency in [kHz]
-    communication frequency:
+    communication frequency: 0.5
     # Cartesian Force and Moment Control
     cartesian force control:
         comment: w.r.t tool flange, FT sensor integrated in flange
