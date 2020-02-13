@@ -1,0 +1,147 @@
+--- # Cobot file template
+# Vendor name (see vendor list)
+vendor: Franka Emika
+# Full name of the cobot
+name: Panda
+# Website describing the cobot
+website: [https://www.franka.de/technology]
+# Videos
+videos: [https://youtu.be/_FbhNsRjqdQ]
+# How long does it take to set up the robot [min]?
+installation time: 15
+# Is the robot still being sold?
+in market: True
+# additional information
+info: []
+
+mechanical properties:
+    # How can the robot be mounted (floor, ceiling, wall, any angle)
+    mounting: [floor, table]
+    # Ingress protection class
+    IP: 30
+    # Has quick connect base (True, False)
+    has quick connect base: False
+    # Axes Properties
+    axes:
+        # minimum joint angle in deg [A1, A2, A3, A4, A5, A6,...]
+        min pos: [-166, -101, -166, -176, -166, -1, -166]
+        # maximum joint angle in deg [A1, A2, A3, A4, A5, A6,...]
+        max pos: [166, 101, 166, -4, 166, 215, 166]
+        # maximum joint velocity in deg/s [A1, A2, A3, A4, A5, A6,...]
+        max vel: [150, 150, 150, 150, 180, 180, 180]
+        # maximum joint torque in Nm [A1, A2, A3, A4, A5, A6,...]
+        max torque: []
+    # pose repeatability in [mm]
+    repeatability: 0.1
+    # path deviation in [mm]
+    path deviation: 1,25
+    # maximum cartesian velocity in [m/s]
+    max cartesian velocity:
+    # maximum cartesian acceleration in [m/s^2]
+    max cartesian acceleration:
+    # maximum reach [mm]
+    max reach: 855
+    # payload mass capacity in [kg]
+    payload mass: 3
+    # payload inertia in [kgm^2]
+    payload inertia:
+    # robot mass in [kg]
+    robot mass: 17.8
+    # nominal lifetime in [kh]
+    nominal lifetime: 20
+    # additional comments
+    comments: []
+
+electrical properties:
+    # Maximum power consumption in [W]
+    max power: 350
+    # Average power consumption in [W]
+    avg power: 60
+
+sensors:
+    # Integrated Joint Torque Sensors
+    joint torque:
+        # resolution in [Nm]
+        resolution:
+        # relative accuracy in [%]
+        relative accuracy:
+    # Integrated Camera Sensors (not optional accessories)
+    vision:
+
+    # Integrated skin sensor
+    skin:
+
+flange interface:
+    flange type:
+    number of digital inputs:
+    number of digital outputs:
+    number of analog inputs:
+    number of analog outputs:
+    power:
+    pneumatic:
+    ethernet:
+
+
+control properties:
+    # Communication bus frequency in [kHz]
+    communication frequency: 1
+    # Cartesian Force and Moment Control
+    cartesian force control:
+        # Cartesian Endeffector Torque
+        torque:
+            # Repeatability in [Nm]
+            repeatability: 0.05
+            # Noise RMS in [Nm]
+            noise rms: 0.005
+            # Resolution in [Nm]
+            resolution: 0.02
+            # Accuracy in [Nm]
+            accuracy: 0.15
+            # Torque range [min, max] for each axis in [Nm]
+            range:
+                x: [-10, 10]
+                y: [-10, 10]
+                z: [-10, 10]
+        # Cartesian Endeffector Torque
+        force:
+            # Repeatability in [N]
+            repeatability: 0.15
+            # Noise RMS in [N]
+            noise rms: 0.035
+            # Resolution in [N]
+            resolution: 0.05
+            # Accuracy in [N]
+            accuracy: 0.8
+            # Force range [min, max] for each axis in [N]
+            range:
+                x: [-125, 95]
+                y: [-100, 100]
+                z: [-50, 150]
+    # Impedance controller properties:
+    impedance control:
+        # Translational Stiffness [min, max] in [N/m]
+        translational stiffness: [0, 3000]
+        # Rotational Stiffness [min, max] in [Nm/rad]
+        translational stiffness: [0, 300]
+        # gravity compensation guiding force in [N]
+        guiding force: 2
+    # Collision Detection
+    collision:
+        # detection time in [ms]
+        detection time: 2
+        # reaction time in [ms]
+        reaction time: 100
+
+ambient conditions:
+    # Temperature range [min, max] in [°C]
+    temperature: [15, 25]
+    # Humidity range [min, max] in [%]
+    humidity: [20, 80]
+
+standards:
+    # ISO 10218-1 class
+    class: [PL d Cat 3 Safe torque off and Safe OSSD inputs]
+    # System Integrity level
+    sil:
+
+

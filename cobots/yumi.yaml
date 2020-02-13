@@ -1,0 +1,147 @@
+--- # Cobot file template
+# Vendor name (see vendor list)
+vendor: ABB
+# Full name of the cobot
+name: IRB 14050 Single-arm YuMi
+# Website describing the cobot
+website: [https://new.abb.com/products/robotics/industrial-robots/irb-14050-single-arm-yumi]
+# Videos
+videos: [https://youtu.be/wsa6_uqB4y8]
+# How long does it take to set up the robot [min]?
+installation time: 
+# Is the robot still being sold?
+in market: True
+# additional information
+info: []
+
+mechanical properties:
+    # How can the robot be mounted (floor, ceiling, wall, any angle)
+    mounting: [all angles, table, wall, ceiling]
+    # Ingress protection class
+    IP: 30
+    # Has quick connect base (True, False)
+    has quick connect base: False
+    # Axes Properties
+    axes: 
+        # minimum joint angle in deg [A1, A2, A3, A4, A5, A6,...]
+        min pos: [-168.5, -143.5, -123.5, -290, -88, -229, -168.5]
+        # maximum joint angle in deg [A1, A2, A3, A4, A5, A6,...]
+        max pos: [168.5, 43.5, 80, 290, 138, 229, 168.5] 
+        # maximum joint velocity in deg/s [A1, A2, A3, A4, A5, A6,...]
+        max vel: [180, 180, 180, 400, 400, 400, 180]
+        # maximum joint torque in Nm [A1, A2, A3, A4, A5, A6,...]
+        max torque: [0.64, 0.64, 0.23]
+    # pose repeatability in [mm]
+    repeatability: 0.02
+    # path deviation in [mm]
+    path deviation: 0.1
+    # maximum cartesian velocity in [m/s]
+    max cartesian velocity:  1.5
+    # maximum cartesian acceleration in [m/s^2]
+    max cartesian acceleration:  11
+    # maximum reach [mm]
+    max reach: 559
+    # payload mass capacity in [kg]
+    payload mass: 0.5
+    # payload inertia in [kgm^2]
+    payload inertia: 0.009
+    # robot mass in [kg]
+    robot mass: 9.48
+    # nominal lifetime in [kh]
+    nominal lifetime: 
+    # additional comments
+    comments: [payload mass without gripper, payload inertia w.r.t. axis 6]
+    
+electrical properties:
+    # Maximum power consumption in [W]
+    max power: 
+    # Average power consumption in [W]
+    avg power: 170
+
+sensors: 
+    # Integrated Joint Torque Sensors
+    joint torque:
+        # resolution in [Nm]
+        resolution: 
+        # relative accuracy in [%]
+        relative accuracy: 
+    # Integrated Camera Sensors (not optional accessories)
+    vision: integrated
+    
+    # Integrated skin sensor
+    skin: False
+    
+flange interface:
+    flange type: custom
+    number of digital inputs: 0
+    number of digital outputs: 0 
+    number of analog inputs: 0
+    number of analog outputs: 0
+    power: 24
+    pneumatic: 4 bar
+    ethernet: integrated
+    
+    
+control properties: 
+    # Communication bus frequency in [kHz]
+    communication frequency: 
+    # Cartesian Force and Moment Control
+    cartesian force control:
+        # Cartesian Endeffector Torque
+        torque:
+            # Repeatability in [Nm]
+            repeatability: 
+            # Noise RMS in [Nm]
+            noise rms: 
+            # Resolution in [Nm]
+            resolution: 
+            # Accuracy in [Nm]
+            accuracy: 
+            # Torque range [min, max] for each axis in [Nm]
+            range:
+                x: [-30.52, 30.52]
+                y: [-30.00, 30.00]
+                z: [-12.32, 12.32]
+        # Cartesian Endeffector Torque
+        force:
+            # Repeatability in [N]
+            repeatability: 
+            # Noise RMS in [N]
+            noise rms: 
+            # Resolution in [N]
+            resolution: 
+            # Accuracy in [N]
+            accuracy: 
+            # Force range [min, max] for each axis in [N]
+            range:
+                x: [-42.7, 42.7]
+                y: [-42.03, 42.03]
+                z: [39.65, 111,65]
+    # Impedance controller properties:
+    impedance control:
+        # Translational Stiffness [min, max] in [N/m]
+        translational stiffness: 
+        # Rotational Stiffness [min, max] in [Nm/rad]
+        translational stiffness: 
+        # gravity compensation guiding force in [N]
+        guiding force: 
+    # Collision Detection
+    collision:
+        # detection time in [ms]
+        detection time: 
+        # reaction time in [ms]
+        reaction time: 
+        
+ambient conditions:
+    # Temperature range [min, max] in [°C]
+    temperature: [5, 40]
+    # Humidity range [min, max] in [%]
+    humidity: [0 85]
+
+standards:
+    # ISO 10218-1 class
+    class: [PL d Cat 3 protective stop and emergency stop, PL b Cat b Speed supervision]
+    # System Integrity level
+    sil: 
+    
+
