@@ -1,104 +1,104 @@
 --- # Cobot file template
 # Vendor name (see vendor list)
-vendor: 
+vendor: Stäubli
 # Full name of the cobot
-name: 
+name: TX2 Touch 90
 # Website describing the cobot
-website: []
+website: [https://www.staubli.com/de-de/robotics/produktprogramm/cobots/power-cobot/]
 # Videos
-videos: []
+videos: [https://youtu.be/MD96ZnbwSh0]
 # How long does it take to set up the robot [min]?
-installation time: 
+installation time:
 # Is the robot still being sold?
-in market:
+in market: True
 # Estimated price of the robot in [k€]
-price:
+price: 40
 # additional information
-info: []
+info: [This is a TX2 series robot equipped with skin for cobot applications; TX2 series can be adapted for hygenic humid aseptic cleanroom electrostatic sensitive applications, energy saving modes; Long reach versions with less payload are indicated by an L in the name.]
 
 mechanical properties:
     # How can the robot be mounted (floor, ceiling, wall, any angle)
-    mounting: []
+    mounting: [any angle]
     # Ingress protection class
-    IP:
+    IP: 65/67
     # Has quick connect base (True, False)
     has quick connect base: False
     # Axes Properties
-    axes: 
+    axes:
         # minimum joint angle in deg [A1, A2, A3, A4, A5, A6,...]
         min pos: []
         # maximum joint angle in deg [A1, A2, A3, A4, A5, A6,...]
-        max pos: [] 
+        max pos: []
         # maximum joint velocity in deg/s [A1, A2, A3, A4, A5, A6,...]
         max vel: []
         # maximum joint torque in Nm [A1, A2, A3, A4, A5, A6,...]
         max torque: []
     # pose repeatability in [mm]
-    repeatability: 
+    repeatability: 0.03
     # path deviation in [mm]
-    path deviation: 
+    path deviation:
     # maximum cartesian velocity in [m/s]
-    max cartesian velocity: 
+    max cartesian velocity:
     # maximum cartesian acceleration in [m/s^2]
-    max cartesian acceleration: 
+    max cartesian acceleration:
     # maximum reach [mm]
-    max reach: 
+    max reach: 1000
     # payload mass capacity in [kg]
-    payload mass: 
+    payload mass: 14.0
     # payload inertia in [kgm^2]
-    payload inertia: 
+    payload inertia:
     # robot mass in [kg]
-    robot mass: 
+    robot mass: 111
     # nominal lifetime in [kh]
-    nominal lifetime: 
+    nominal lifetime:
     # additional comments
     comments: []
-    
+
 electrical properties:
     # Maximum power consumption in [W]
-    max power: 
+    max power:
     # Average power consumption in [W]
-    avg power: 
+    avg power:
 
-sensors: 
+sensors:
     # Integrated Joint Torque Sensors
     joint torque:
         # resolution in [Nm]
-        resolution: 
+        resolution:
         # relative accuracy in [%]
-        relative accuracy: 
+        relative accuracy:
     # Integrated Camera Sensors (not optional accessories)
-    vision: 
-    
+    vision:
+
     # Integrated skin sensor
-    skin: 
-    
+    skin: Air-Skin
+
 flange interface:
-    flange type: 
-    number of digital inputs: 
-    number of digital outputs:  
-    number of analog inputs: 
-    number of analog outputs: 
-    power: 
-    pneumatic: 
-    ethernet: 
-    
-    
-control properties: 
+    flange type:
+    number of digital inputs:
+    number of digital outputs:
+    number of analog inputs:
+    number of analog outputs:
+    power: True
+    pneumatic: True
+    ethernet: Cat5e
+
+
+control properties:
     # Communication bus frequency in [kHz]
-    communication frequency: 
+    communication frequency:
     # Cartesian Force and Moment Control
     cartesian force control:
         # Cartesian Endeffector Torque
         torque:
             # Repeatability in [Nm]
-            repeatability: 
+            repeatability:
             # Noise RMS in [Nm]
-            noise rms: 
+            noise rms:
             # Resolution in [Nm]
-            resolution: 
+            resolution:
             # Accuracy in [Nm]
-            accuracy: 
+            accuracy:
             # Torque range [min, max] for each axis in [Nm]
             range:
                 x: []
@@ -107,13 +107,13 @@ control properties:
         # Cartesian Endeffector Torque
         force:
             # Repeatability in [N]
-            repeatability: 
+            repeatability:
             # Noise RMS in [N]
-            noise rms: 
+            noise rms:
             # Resolution in [N]
-            resolution: 
+            resolution:
             # Accuracy in [N]
-            accuracy: 
+            accuracy:
             # Force range [min, max] for each axis in [N]
             range:
                 x: []
@@ -122,18 +122,18 @@ control properties:
     # Impedance controller properties:
     impedance control:
         # Translational Stiffness [min, max] in [N/m]
-        translational stiffness: 
+        translational stiffness:
         # Rotational Stiffness [min, max] in [Nm/rad]
-        translational stiffness: 
+        translational stiffness:
         # gravity compensation guiding force in [N]
-        guiding force: 
+        guiding force:
     # Collision Detection
     collision:
         # detection time in [ms]
-        detection time: 
+        detection time:
         # reaction time in [ms]
-        reaction time: 
-        
+        reaction time:
+
 ambient conditions:
     # Temperature range [min, max] in [°C]
     temperature: []
@@ -144,8 +144,8 @@ ambient conditions:
 
 standards:
     # ISO 10218-1 class
-    class: []
+    class: [PL e]
     # System Integrity level
-    sil: 
-    
+    sil: 3
+
 
