@@ -1,0 +1,151 @@
+--- # Cobot file template
+# Vendor name (see vendor list)
+vendor: Rethink Robotics
+# Full name of the cobot
+name: Sawyer Black Edition
+# Website describing the cobot
+website: [https://www.rethinkrobotics.com/sawyer]
+# Videos
+videos: [https://www.youtube.com/watch?v=D4eirAQBBN0, https://youtu.be/672hRpmOsPo]
+# How long does it take to set up the robot [min]?
+installation time:
+# Is the robot still being sold?
+in market: True
+# Estimated price of the robot in [k€]
+price:
+# additional information
+info: [The Black Edition is the first version of Sawyer produced by the Hahn Group in Germany and not by the bankrupt Rethink Robotics USA]
+
+mechanical properties:
+    # How can the robot be mounted (floor, ceiling, wall, any angle)
+    mounting: []
+    # Ingress protection class
+    IP: 54
+    # Has quick connect base (True, False)
+    has quick connect base: False
+    # Axes Properties
+    axes:
+        # minimum joint angle in deg [A1, A2, A3, A4, A5, A6,...]
+        min pos: [0, 0, 0, 0, 0, 0]
+        # maximum joint angle in deg [A1, A2, A3, A4, A5, A6,...]
+        max pos: [350, 350, 350, 340, 340, 540]
+        # maximum joint velocity in deg/s [A1, A2, A3, A4, A5, A6,...]
+        max vel: []
+        # maximum joint torque in Nm [A1, A2, A3, A4, A5, A6,...]
+        max torque: []
+    # pose repeatability in [mm]
+    repeatability:
+    # path deviation in [mm]
+    path deviation:
+    # maximum cartesian velocity in [m/s]
+    max cartesian velocity:
+    # maximum cartesian acceleration in [m/s^2]
+    max cartesian acceleration:
+    # maximum reach [mm]
+    max reach: 1260
+    # payload mass capacity in [kg]
+    payload mass: 4
+    # payload inertia in [kgm^2]
+    payload inertia:
+    # robot mass in [kg]
+    robot mass:
+    # nominal lifetime in [kh]
+    nominal lifetime:
+    # additional comments
+    comments: []
+
+electrical properties:
+    # Maximum power consumption in [W]
+    max power:
+    # Average power consumption in [W]
+    avg power:
+
+sensors:
+    # Integrated Joint Torque Sensors
+    joint torque:
+        # resolution in [Nm]
+        resolution:
+        # relative accuracy in [%]
+        relative accuracy:
+    # Integrated Camera Sensors (not optional accessories)
+    vision: True
+
+    # Integrated skin sensor
+    skin: False
+
+flange interface:
+    flange type: click smart plate
+    number of digital inputs: 4
+    number of digital outputs: 2
+    number of analog inputs: 2
+    number of analog outputs:
+    power: 24 V DC 2 A
+    pneumatic:
+    ethernet:
+
+
+control properties:
+    # Communication bus frequency in [kHz]
+    communication frequency:
+    # Cartesian Force and Moment Control
+    cartesian force control:
+        # Cartesian Endeffector Torque
+        torque:
+            # Repeatability in [Nm]
+            repeatability:
+            # Noise RMS in [Nm]
+            noise rms:
+            # Resolution in [Nm]
+            resolution:
+            # Accuracy in [Nm]
+            accuracy:
+            # Torque range [min, max] for each axis in [Nm]
+            range:
+                x: []
+                y: []
+                z: []
+        # Cartesian Endeffector Torque
+        force:
+            # Repeatability in [N]
+            repeatability:
+            # Noise RMS in [N]
+            noise rms:
+            # Resolution in [N]
+            resolution:
+            # Accuracy in [N]
+            accuracy:
+            # Force range [min, max] for each axis in [N]
+            range:
+                x: []
+                y: []
+                z: []
+    # Impedance controller properties:
+    impedance control:
+        # Translational Stiffness [min, max] in [N/m]
+        translational stiffness:
+        # Rotational Stiffness [min, max] in [Nm/rad]
+        translational stiffness:
+        # gravity compensation guiding force in [N]
+        guiding force:
+    # Collision Detection
+    collision:
+        # detection time in [ms]
+        detection time:
+        # reaction time in [ms]
+        reaction time:
+
+ambient conditions:
+    # Temperature range [min, max] in [°C]
+    temperature: [5, 40]
+    # Humidity range [min, max] in [%]
+    humidity: [0, 80]
+    # Cleanroom class
+    cleanroom class:
+
+standards:
+    # ISO 10218-1 class
+    class: []
+    # System Integrity level
+    sil:
+
+

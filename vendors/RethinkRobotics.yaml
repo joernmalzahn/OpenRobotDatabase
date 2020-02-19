@@ -1,0 +1,52 @@
+--- # Vendor file template
+# Full name of the Company
+name: Rethink Robotics (part of the Hahn Group)
+# Website of the company
+website: https://www.rethinkrobotics.com/
+# Is the vendor still in business (True, False)?
+active: True
+# Can the robot be programmed without writing code (block oriented programming)? (True, False)
+codeless programming: True
+# Does the Vendor have an App Store for Robot capabilities? (True, False)
+has app store:
+# Does the Vendor have a Research API for academic and R&D developers? (True, False)
+has research api:
+# When was the company founded?
+foundation year:
+# Offers Robotics as a Service models (enter name of the program)
+has raas:
+# Offers Predictive Maintenance Services (enter name of the program)
+has predictive maintenance:
+# Direct sales or through integrators?
+sales: local partners
+
+# The control box
+controller:
+    # Data about the latest control box
+    latest:
+        name:
+        IP:
+        multi-robot-ready:
+        communication interfaces:
+            RS232:
+            RS485:
+            Modbus/TCP: True
+            OPC UA:
+            ProfiNet:
+            EtherCAT:
+            ASI:
+            CCLink:
+            Sercos III:
+            FSOE:
+            PowerLink:
+            Ethernet: True
+            Wifi:
+            Bluetooth:
+            USB:
+            GPIOs: 8 DIN / 8 DOUT
+            I2C:
+
+
+
+
+
