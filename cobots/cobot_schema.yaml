@@ -1,0 +1,287 @@
+--- # Cobot file schema
+    type: //rec
+    required:
+        # Vendor name (see vendor list)
+        vendor: //str
+        # Full name of the cobot
+        name: //str
+        # Website describing the cobot
+        website:
+            type: //any
+            of: [
+                //str,
+                {type: //arr, contents: //str}
+            ]
+        # Is the robot still being sold?
+        in market: //bool
+    optional:
+        # URLs of Videos
+        videos:
+            type: //any
+            of: [
+                //str,
+                {type: //arr, contents: //str}
+            ]
+        # How long does it take to set up the robot [min]?
+        installation time: //int
+        # Estimated price of the robot in [k€]
+        price: //int
+        # additional information
+        info:
+            type: //any
+            of: [
+                //str,
+                {type: //arr, contents: //str}
+            ]
+
+        mechanical properties:
+            type: //rec
+            optional:
+                # pose repeatability in [mm]
+                repeatability: //num
+                # maximum reach [mm]
+                max reach: //num
+                # payload mass capacity in [kg]
+                payload mass: //num
+
+                # How can the robot be mounted (floor, ceiling, wall, any angle)
+                mounting:
+                    type: //arr
+                    contents:
+                        type: //any
+                        of: [
+                            {type: //str, value: "wall"},
+                            {type: //str, value: "floor"},
+                            {type: //str, value: "ceiling"},
+                            {type: //str, value: "any"}
+                        ]
+                    length:
+                        min: 1
+                        max: 4
+                # Ingress protection class
+                IP: //int
+                # Has quick connect base (True, False)
+                has quick connect base: //bool
+                # Axes Properties
+                axes:
+                    type: //rec
+                    optional:
+                        # minimum joint angle in deg [A1, A2, A3, A4, A5, A6,...]
+                        min pos:
+                            type: //arr
+                            contents:
+                                type: //num
+
+                        # maximum joint angle in deg [A1, A2, A3, A4, A5, A6,...]
+                        max pos:
+                            type: //arr
+                            contents:
+                                type: //num
+                        # maximum joint velocity in deg/s [A1, A2, A3, A4, A5, A6,...]
+                        max vel:
+                            type: //arr
+                            contents:
+                                type: //num
+                        # maximum joint torque in Nm [A1, A2, A3, A4, A5, A6,...]
+                        max torque:
+                            type: //arr
+                            contents:
+                                type: //num
+
+                # path deviation in [mm]
+                path deviation: //num
+                # maximum cartesian velocity in [m/s]
+                max cartesian velocity: //num
+                # maximum cartesian acceleration in [m/s^2]
+                max cartesian acceleration: //num
+                # payload inertia in [kgm^2]
+                payload inertia: //num
+                # robot mass in [kg]
+                robot mass: //num
+                # nominal lifetime in [kh]
+                nominal lifetime: //num
+                # additional comments
+                comment:
+                    type: //any
+                    of: [
+                        //str,
+                        {type: //arr, contents: //str}
+                    ]
+
+        electrical properties:
+            type: //rec
+            optional:
+                # Maximum power consumption in [W]
+                max power: //num
+                # Average power consumption in [W]
+                avg power: //num
+
+        sensors:
+            type: //rec
+            optional:
+                # Integrated Joint Torque Sensors
+                joint torque:
+                    type: //rec
+                    optional:
+                        # resolution in [Nm]
+                        resolution: //num
+                        # relative accuracy in [%]
+                        relative accuracy: //num
+                # Integrated Camera Sensors (not optional accessories)
+                vision: //str
+                # Integrated skin sensor (name, type etc.)
+                skin: //str
+
+        flange interface:
+            type: //rec
+            optional:
+                flange type: //str
+                number of digital inputs: //int
+                number of digital outputs: //int
+                number of analog inputs: //int
+                number of analog outputs: //int
+                power: //any
+                pneumatic: //any
+                ethernet: //any
+
+        control properties:
+            type: //rec
+            optional:
+                # Communication bus frequency in [kHz]
+                communication frequency: //num
+                # Cartesian Force and Moment Control
+                cartesian force control:
+                    type: //rec
+                    optional:
+                        comment:
+                            type: //any
+                            of: [
+                                //str,
+                                {type: //arr, contents: //str}
+                            ]
+                        # Cartesian Endeffector Torque
+                        torque:
+                            type: //rec
+                            optional:
+                                # Repeatability in [Nm]
+                                repeatability: //num
+                                # Noise RMS in [Nm]
+                                noise rms: //num
+                                # Resolution in [Nm]
+                                resolution: //num
+                                # Accuracy in [Nm]
+                                accuracy: //num
+                                # Torque range [min, max] for each axis in [Nm]
+                                range:
+                                    type: //rec
+                                    optional:
+                                        x:
+                                            type: //arr
+                                            contents: //num
+                                            length:
+                                                min: 1
+                                                max: 2
+                                        y:
+                                            type: //arr
+                                            contents: //num
+                                            length:
+                                                min: 1
+                                                max: 2
+                                        z:
+                                            type: //arr
+                                            contents: //num
+                                            length:
+                                                min: 1
+                                                max: 2
+                        # Cartesian Endeffector Torque
+                        force:
+                            type: //rec
+                            optional:
+                                # Repeatability in [N]
+                                repeatability: //num
+                                # Noise RMS in [N]
+                                noise rms: //num
+                                # Resolution in [N]
+                                resolution: //num
+                                # Accuracy in [N]
+                                accuracy: //num
+                                # Force range [min, max] for each axis in [N]
+                                range:
+                                    type: //rec
+                                    optional:
+                                        x:
+                                            type: //arr
+                                            contents: //num
+                                            length:
+                                                min: 1
+                                                max: 2
+                                        y:
+                                            type: //arr
+                                            contents: //num
+                                            length:
+                                                min: 1
+                                                max: 2
+                                        z:
+                                            type: //arr
+                                            contents: //num
+                                            length:
+                                                min: 1
+                                                max: 2
+                # Impedance controller properties:
+                impedance control:
+                    type: //rec
+                    optional:
+                        # Translational Stiffness [min, max] in [N/m]
+                        translational stiffness:
+                            type: //arr
+                            contents: //num
+                            length:
+                                min: 1
+                                max: 2
+                        # Rotational Stiffness [min, max] in [Nm/rad]
+                        rotational stiffness:
+                            type: //arr
+                            contents: //num
+                            length:
+                                min: 1
+                                max: 2
+                        # gravity compensation guiding force in [N]
+                        guiding force: //num
+                # Collision Detection
+                collision:
+                    type: //rec
+                    optional:
+                        # detection time in [ms]
+                        detection time: //int
+                        # reaction time in [ms]
+                        reaction time: //int
+
+        ambient conditions:
+            type: //rec
+            optional:
+                # Temperature range [min, max] in [°C]
+                temperature:
+                    type: //arr
+                    contents: //num
+                    length:
+                        min: 1
+                        max: 2
+                # Humidity range [min, max] in [%]
+                humidity:
+                    type: //arr
+                    contents: //num
+                    length:
+                        min: 1
+                        max: 2
+                # Cleanroom class
+                cleanroom class: //int
+
+        standards:
+            type: //rec
+            optional:
+                # ISO 10218-1 class
+                class: //any
+                # System Integrity level
+                sil: //int
+
+
