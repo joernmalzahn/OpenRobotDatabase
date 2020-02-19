@@ -1,1 +1,1 @@
-# cobot-zoo
+# Open Cobot Database
