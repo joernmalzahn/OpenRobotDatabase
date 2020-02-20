@@ -1,0 +1,92 @@
+--- # Vendor file schema
+type: //rec
+required:
+  # Full name of the Company
+  name: //str
+  # Website of the company
+  website:
+    type: //any
+    of: [
+      //str,
+      {type: //arr, contents: //str}
+    ]
+  # Is the vendor still in business (True, False)?
+  active: //bool
+optional:
+  # Can the robot be programmed without writing code (block oriented programming)? (True, False)
+  codeless programming: //bool
+  # Does the Vendor have an App Store for Robot capabilities? (True, False, or enter name of the program)
+  has app store:
+    type: //any
+    of: [
+      //str,
+      //bool
+      ]
+  # Does the Vendor have a Research API for academic and R&D developers? (True, False)
+  has research api: //bool
+  # When was the company founded?
+  foundation year: //int
+  # Offers Robotics as a Service models (True, False, or enter name of the program)
+  has raas:
+    type: //any
+    of: [
+      //str,
+      //bool
+    ]
+  # Offers Predictive Maintenance Services (enter name of the program)
+  has predictive maintenance: //str
+  # Direct sales or through integrators?
+  sales: //str
+
+  # The control box
+  controller:
+    type: //rec
+    required:
+      # Data about the latest control box
+      latest:
+        type: //rec
+        optional:
+          name: //str
+          IP: //int
+          # Weblink with more information
+          weblink:
+              type: //any
+              of: [
+                  //str,
+                  {type: //arr, contents: //str}
+              ]
+          # Video with more information
+          video:
+              type: //any
+              of: [
+                  //str,
+                  {type: //arr, contents: //str}
+              ]
+          multi-robot-ready: //str
+          communication interfaces:
+            type: //rec
+            optional:
+              Mobile: //any
+              RS232: //any
+              RS485: //any
+              Modbus/TCP: //any
+              OPC UA: //any
+              ProfiNet: //any
+              EtherCAT: //any
+              ASI: //any
+              CCLink: //any
+              Sercos III: //any
+              FSOE: //any
+              PowerLink: //any
+              Ethernet: //any
+              Wifi: //any
+              Bluetooth: //any
+              USB: //any
+              GPIOs: //any
+              I2C: //any
+              DVI-I: //any
+
+
+
+
+

@@ -7,16 +7,10 @@ website: www.kuka.com
 active: True
 # Can the robot be programmed without writing code (block oriented programming)? (True, False)
 codeless programming: True
-# Does the Vendor have an App Store for Robot capabilities? (True, False)
-has app store:
 # Does the Vendor have a Research API for academic and R&D developers? (True, False)
 has research api: True
 # When was the company founded?
 foundation year: 1898
-# Offers Robotics as a Service models (enter name of the program)
-has raas:
-# Offers Predictive Maintenance Services (enter name of the program)
-has predictive maintenance:
 # Direct sales or through integrators?
 sales: integrators
 
@@ -26,25 +20,9 @@ controller:
     latest:
         name: KUKA Sunrise Cabinet
         IP: 20
-        multi-robot-ready:
         communication interfaces:
-            RS232:
-            RS485:
-            Modbus/TCP:
-            OPC UA:
-            ProfiNet:
-            EtherCAT:
-            ASI:
-            CCLink:
-            Sercos III:
-            FSOE:
-            PowerLink:
             Ethernet: True
-            Wifi:
-            Bluetooth:
             USB: True
-            GPIOs:
-            I2C:
             DVI-I: True
 
 

@@ -13,10 +13,6 @@ has app store: Franka World
 has research api: True
 # When was the company founded?
 foundation year: 2016
-# Offers Robotics as a Service models (enter name of the program)
-has raas:
-# Offers Predictive Maintenance Services (enter name of the program)
-has predictive maintenance:
 # Direct sales or through integrators?
 sales: direct
 
@@ -26,27 +22,8 @@ controller:
     latest:
         name: Franka Control Interface
         IP: 20
-        multi-robot-ready:
         communication interfaces:
-            RS232:
-            RS485:
             Modbus/TCP: True
             OPC UA: True
             ProfiNet: True
-            EtherCAT:
-            ASI:
-            CCLink:
-            Sercos III:
-            FSOE:
-            PowerLink:
             Ethernet: True
-            Wifi:
-            Bluetooth:
-            USB:
-            GPIOs:
-            I2C:
-
-
-
-
-
