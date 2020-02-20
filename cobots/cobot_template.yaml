@@ -14,7 +14,7 @@ in market:
 # Estimated price of the robot in [k€]
 price:
 # additional information
-info: []
+comments: []
 
 mechanical properties:
     # How can the robot be mounted (floor, ceiling, wall, any angle)
@@ -124,7 +124,7 @@ control properties:
         # Translational Stiffness [min, max] in [N/m]
         translational stiffness: 
         # Rotational Stiffness [min, max] in [Nm/rad]
-        translational stiffness: 
+        rotational stiffness:
         # gravity compensation guiding force in [N]
         guiding force: 
     # Collision Detection

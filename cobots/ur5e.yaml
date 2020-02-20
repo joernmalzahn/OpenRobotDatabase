@@ -7,18 +7,14 @@ name: UR5e
 website: [https://www.universal-robots.com/products/ur5-robot/]
 # Videos
 videos: [https://youtu.be/y62T-Q57JbY]
-# How long does it take to set up the robot [min]?
-installation time:
 # Is the robot still being sold?
 in market: True
 # Estimated price of the robot in [k€]
 price: 22
-# additional information
-info: []
 
 mechanical properties:
     # How can the robot be mounted (floor, ceiling, wall, any angle)
-    mounting: [any orientation]
+    mounting: [any]
     # Ingress protection class
     IP: 54
     # Has quick connect base (True, False)
@@ -31,26 +27,16 @@ mechanical properties:
         max pos: [360, 360, 360, 360, 360, 360]
         # maximum joint velocity in deg/s [A1, A2, A3, A4, A5, A6,...]
         max vel: [180, 180, 180, 360, 360, 360]
-        # maximum joint torque in Nm [A1, A2, A3, A4, A5, A6,...]
-        max torque: []
     # pose repeatability in [mm]
     repeatability: 0.03
-    # path deviation in [mm]
-    path deviation:
     # maximum cartesian velocity in [m/s]
     max cartesian velocity: 1
-    # maximum cartesian acceleration in [m/s^2]
-    max cartesian acceleration:
     # maximum reach [mm]
     max reach: 850
     # payload mass capacity in [kg]
     payload mass: 5
-    # payload inertia in [kgm^2]
-    payload inertia:
     # robot mass in [kg]
     robot mass: 20.6
-    # nominal lifetime in [kh]
-    nominal lifetime:
     # additional comments
     comments: []
 
@@ -60,29 +46,12 @@ electrical properties:
     # Average power consumption in [W]
     avg power: 200
 
-sensors:
-    # Integrated Joint Torque Sensors
-    joint torque:
-        # resolution in [Nm]
-        resolution:
-        # relative accuracy in [%]
-        relative accuracy:
-    # Integrated Camera Sensors (not optional accessories)
-    vision:
-
-    # Integrated skin sensor
-    skin:
-
 flange interface:
     flange type: M8 | M8 8-pin
     number of digital inputs: 2
     number of digital outputs: 2
     number of analog inputs: 2
-    number of analog outputs:
     power: 12/24 V 1 A
-    pneumatic:
-    ethernet:
-
 
 control properties:
     # Communication bus frequency in [kHz]
@@ -92,10 +61,6 @@ control properties:
         comment: w.r.t tool flange, FT sensor integrated in flange
         # Cartesian Endeffector Torque
         torque:
-            # Repeatability in [Nm]
-            repeatability:
-            # Noise RMS in [Nm]
-            noise rms:
             # Resolution in [Nm]
             resolution: 0.2
             # Accuracy in [Nm]
@@ -107,10 +72,6 @@ control properties:
                 z: [-10, 10]
         # Cartesian Endeffector Torque
         force:
-            # Repeatability in [N]
-            repeatability:
-            # Noise RMS in [N]
-            noise rms:
             # Resolution in [N]
             resolution: 3.5
             # Accuracy in [N]
@@ -120,20 +81,6 @@ control properties:
                 x: [-50, 50]
                 y: [-50, 50]
                 z: [-50, 50]
-    # Impedance controller properties:
-    impedance control:
-        # Translational Stiffness [min, max] in [N/m]
-        translational stiffness:
-        # Rotational Stiffness [min, max] in [Nm/rad]
-        translational stiffness:
-        # gravity compensation guiding force in [N]
-        guiding force:
-    # Collision Detection
-    collision:
-        # detection time in [ms]
-        detection time:
-        # reaction time in [ms]
-        reaction time:
 
 ambient conditions:
     # Temperature range [min, max] in [°C]
@@ -146,7 +93,5 @@ ambient conditions:
 standards:
     # ISO 10218-1 class
     class: [PL d CAT 3]
-    # System Integrity level
-    sil:
 
 

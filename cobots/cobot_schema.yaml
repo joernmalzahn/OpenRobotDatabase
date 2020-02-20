@@ -26,8 +26,8 @@
         installation time: //int
         # Estimated price of the robot in [k€]
         price: //int
-        # additional information
-        info:
+        # additional comments
+        comments:
             type: //any
             of: [
                 //str,
@@ -70,23 +70,29 @@
                         min pos:
                             type: //arr
                             contents:
-                                type: //num
+                                type: //any
+                                of: [
+                                    //num,
+                                    {type: //str, value: "-inf"}
+                                ]
 
                         # maximum joint angle in deg [A1, A2, A3, A4, A5, A6,...]
                         max pos:
                             type: //arr
                             contents:
-                                type: //num
+                                type: //any
+                                of: [
+                                    //num,
+                                    {type: //str, value: "inf"}
+                                ]
                         # maximum joint velocity in deg/s [A1, A2, A3, A4, A5, A6,...]
                         max vel:
                             type: //arr
-                            contents:
-                                type: //num
+                            contents: //num
                         # maximum joint torque in Nm [A1, A2, A3, A4, A5, A6,...]
                         max torque:
                             type: //arr
-                            contents:
-                                type: //num
+                            contents: //num
 
                 # path deviation in [mm]
                 path deviation: //num
@@ -101,7 +107,7 @@
                 # nominal lifetime in [kh]
                 nominal lifetime: //num
                 # additional comments
-                comment:
+                comments:
                     type: //any
                     of: [
                         //str,
@@ -143,6 +149,12 @@
                 power: //any
                 pneumatic: //any
                 ethernet: //any
+                comments:
+                    type: //any
+                    of: [
+                        //str,
+                        {type: //arr, contents: //str}
+                    ]
 
         control properties:
             type: //rec

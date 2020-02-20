@@ -13,12 +13,11 @@ installation time: 15
 in market: True
 # Estimated price of the robot in [k€]
 price: 10
-# additional information
-info: []
+
 
 mechanical properties:
     # How can the robot be mounted (floor, ceiling, wall, any angle)
-    mounting: [floor, table]
+    mounting: [floor]
     # Ingress protection class
     IP: 30
     # Has quick connect base (True, False)
@@ -31,22 +30,14 @@ mechanical properties:
         max pos: [166, 101, 166, -4, 166, 215, 166]
         # maximum joint velocity in deg/s [A1, A2, A3, A4, A5, A6,...]
         max vel: [150, 150, 150, 150, 180, 180, 180]
-        # maximum joint torque in Nm [A1, A2, A3, A4, A5, A6,...]
-        max torque: []
     # pose repeatability in [mm]
     repeatability: 0.1
     # path deviation in [mm]
-    path deviation: 1,25
-    # maximum cartesian velocity in [m/s]
-    max cartesian velocity:
-    # maximum cartesian acceleration in [m/s^2]
-    max cartesian acceleration:
+    path deviation: 1.25
     # maximum reach [mm]
     max reach: 855
     # payload mass capacity in [kg]
     payload mass: 3
-    # payload inertia in [kgm^2]
-    payload inertia:
     # robot mass in [kg]
     robot mass: 17.8
     # nominal lifetime in [kh]
@@ -59,30 +50,6 @@ electrical properties:
     max power: 350
     # Average power consumption in [W]
     avg power: 60
-
-sensors:
-    # Integrated Joint Torque Sensors
-    joint torque:
-        # resolution in [Nm]
-        resolution:
-        # relative accuracy in [%]
-        relative accuracy:
-    # Integrated Camera Sensors (not optional accessories)
-    vision:
-
-    # Integrated skin sensor
-    skin:
-
-flange interface:
-    flange type:
-    number of digital inputs:
-    number of digital outputs:
-    number of analog inputs:
-    number of analog outputs:
-    power:
-    pneumatic:
-    ethernet:
-
 
 control properties:
     # Communication bus frequency in [kHz]
@@ -125,7 +92,7 @@ control properties:
         # Translational Stiffness [min, max] in [N/m]
         translational stiffness: [0, 3000]
         # Rotational Stiffness [min, max] in [Nm/rad]
-        translational stiffness: [0, 300]
+        rotational stiffness: [0, 300]
         # gravity compensation guiding force in [N]
         guiding force: 2
     # Collision Detection
@@ -140,13 +107,10 @@ ambient conditions:
     temperature: [15, 25]
     # Humidity range [min, max] in [%]
     humidity: [20, 80]
-    # Cleanroom class
-    cleanroom class:
 
 standards:
     # ISO 10218-1 class
     class: [PL d Cat 3 Safe torque off and Safe OSSD inputs]
-    # System Integrity level
-    sil:
+
 
 
