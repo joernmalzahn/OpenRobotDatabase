@@ -7,8 +7,8 @@ website: https://www.rethinkrobotics.com/
 active: True
 # Can the robot be programmed without writing code (block oriented programming)? (True, False)
 codeless programming: True
-# Direct sales or through integrators?
-sales: local partners
+# Direct sales?
+sales: False
 
 # The control box
 controller:

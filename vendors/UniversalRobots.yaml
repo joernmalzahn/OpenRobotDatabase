@@ -13,6 +13,8 @@ has app store: False
 foundation year: 2005
 # Offers Robotics as a Service models (enter name of the program)
 has raas: True
+# Direct sales?
+sales: False
 
 # The control box
 controller:

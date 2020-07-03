@@ -7,8 +7,8 @@ website: [https://new.abb.com/products/robotics]
 active: True
 # When was the company founded?
 foundation year: 1988
-# Direct sales or through integrators?
-sales: channel partners
+# Direct sales?
+sales: False
 
 # The control box
 controller:

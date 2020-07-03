@@ -1,0 +1,44 @@
+--- # Cobot file template
+# Vendor name (see vendor list)
+vendor: Comau
+# Full name of the cobot
+name: Racer-5-0.80
+# Website describing the cobot
+website: [https://www.comau.com/EN/our-competences/robotics/robot-team/racer-5-0-80]
+# Videos
+videos: [https://www.youtube.com/watch?v=YfEzbP9STto]
+
+# Is the robot still being sold?
+in market: True
+# additional information
+comments: []
+
+mechanical properties:
+    # How can the robot be mounted (floor, ceiling, wall, any angle)
+    mounting: [floor, ceiling, wall]
+    # Ingress protection class
+    IP:54
+    # Has quick connect base (True, False)
+    has quick connect base: False
+    # Axes Properties
+    axes: 
+        # minimum joint angle in deg [A1, A2, A3, A4, A5, A6,...]
+        min pos: [-170, -95, -155, -210, -125, -2700]
+        # maximum joint angle in deg [A1, A2, A3, A4, A5, A6,...]
+        max pos: [170, 135, 90, 210, 125, 2700] 
+        # maximum joint velocity in deg/s [A1, A2, A3, A4, A5, A6,...]
+        max vel: [360, 300, 330, 500, 500, 800]
+        # maximum joint torque in Nm [A1, A2, A3, A4, A5, A6,...]
+        max torque: [0 0 0 8.83, 8.83, 4.91]
+    # pose repeatability in [mm]
+    repeatability: 0.03
+    # maximum reach [mm]
+    max reach: 809
+    # payload mass capacity in [kg]
+    payload mass: 5
+    # robot mass in [kg]
+    robot mass: 32
+    
+flange interface:
+    flange type: ISO 9409-1- A40
+

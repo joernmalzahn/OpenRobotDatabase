@@ -13,8 +13,8 @@ has app store: Franka World
 has research api: True
 # When was the company founded?
 foundation year: 2016
-# Direct sales or through integrators?
-sales: direct
+# Direct sales?
+sales: True
 
 # The control box
 controller:

@@ -1,0 +1,43 @@
+--- # Cobot file template
+# Vendor name (see vendor list)
+vendor: Comau
+# Full name of the cobot
+name: AURA
+# Website describing the cobot
+website: [https://www.comau.com/EN/our-competences/robotics/automation-products/CollaborativeRobotsAura,
+https://www.comau.com/Download/our-competences/robotics/Automation_Products/Folder_Aura%20Doppie.pdf
+]
+# Videos
+videos: [https://www.youtube.com/watch?v=Cr5PayuzkEA]
+# Is the robot still being sold?
+in market: True
+# additional information
+
+comments: [AURA is a standard Comau Hollow Wrist Robot dressed into a contact sensitive skin and an additinal proximity sensor. The axes data, repeatability, flange type and robot mass are taken from an NJ4 170-2.9 robot. This information may differ from the actual AURA robot.]
+mechanical properties:
+    # How can the robot be mounted (floor, ceiling, wall, any angle)
+    mounting: [floor, ceiling]
+    # Has quick connect base (True, False)
+    has quick connect base: False
+    # Axes Properties
+    axes: 
+        # minimum joint angle in deg [A1, A2, A3, A4, A5, A6,...]
+        min pos: [-180, -75, -230, -200, -200, -200]
+        # maximum joint angle in deg [A1, A2, A3, A4, A5, A6,...]
+        max pos: [180, 95, -10, 200, 200, 200] 
+        # maximum joint velocity in deg/s [A1, A2, A3, A4, A5, A6,...]
+        max vel: [100, 90, 110, 130, 125, 170]
+        # maximum joint torque in Nm [A1, A2, A3, A4, A5, A6,...]
+        max torque: [0 0 0 1010, 804, 412]
+    # pose repeatability in [mm]
+    repeatability: 0.10
+    # maximum reach [mm]
+    max reach: 2800
+    # payload mass capacity in [kg]
+    payload mass: 170
+    # robot mass in [kg]
+    robot mass: 32
+    
+flange interface:
+    flange type: ISO 9409 - 1 - A 125 ISO 9409 - 1 - A 160
+

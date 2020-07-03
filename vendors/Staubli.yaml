@@ -13,6 +13,8 @@ has app store: No
 has research api: False
 # When was the company founded?
 foundation year: 1892
+# Direct sales?
+sales: False
 
 # The control box
 controller:

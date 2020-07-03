@@ -7,7 +7,8 @@ website: https://www.fanuc.co.jp/eindex.html
 active: True
 # When was the company founded?
 foundation year: 1972
-
+# Direct sales?
+sales: False
 # The control box
 controller:
     # Data about the latest control box

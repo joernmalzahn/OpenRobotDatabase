@@ -12,7 +12,7 @@ has research api: True
 # When was the company founded?
 foundation year: 1898
 # Direct sales or through integrators?
-sales: integrators
+sales: False
 
 # The control box
 controller:
