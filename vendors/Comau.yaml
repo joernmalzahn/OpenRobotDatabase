@@ -1,0 +1,26 @@
+--- # Vendor file template
+# Full name of the Company
+name: Comau SpA
+# Website of the company
+website: https://www.comau.com/
+# Is the vendor still in business (True, False)?
+active: True
+# Can the robot be programmed without writing code (block oriented programming)? (True, False)
+codeless programming: False
+# Does the Vendor have an App Store for Robot capabilities? (True, False)
+has app store: True
+# When was the company founded?
+foundation year: 1970
+# Direct sales?
+sales: False
+
+# The control box
+controller:
+    # Data about the latest control box
+    latest: 
+        name: R1C
+        IP: 2x
+        multi-robot-ready: False
+
+            
+            
