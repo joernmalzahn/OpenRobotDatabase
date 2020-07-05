@@ -1,0 +1,27 @@
+--- # Vendor file template
+# Full name of the Company
+name: Techman
+# Website of the company
+website: https://techmanrobotusa.com/
+# Is the vendor still in business (True, False)?
+active: True
+# When was the company founded?
+foundation year: 2012
+# Can the robot be programmed without writing code (block oriented programming)? (True, False)
+codeless programming: True 
+# Direct sales?
+sales: False
+
+# The control box
+controller:
+    # Data about the latest control box
+    latest: 
+        name:
+        IP: IP32
+        multi-robot-ready:
+        communication interfaces:
+            RS232: 3
+            Modbus/TCP: True
+            Ethernet: 3
+            USB: 6
+            GPIOs: 35
