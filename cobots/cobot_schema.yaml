@@ -287,6 +287,8 @@
                         max: 2
                 # Cleanroom class
                 cleanroom class: //int
+                # SEMI class
+                semi class: //int
 
         standards:
             type: //rec

@@ -1,0 +1,79 @@
+
+--- # Cobot file template
+# Vendor name (see vendor list)
+vendor: Techman Robot
+# Full name of the cobot
+name: TM14
+# Website describing the cobot
+website: [https://techmanrobotusa.com/regular-payload-series/]
+# Videos
+videos: [https://youtu.be/CQpvEz8Ag-c,
+https://youtu.be/SG9iDEmY1hc,
+https://youtu.be/fdZV7pgmvBg,
+https://youtu.be/NhamtYlFMiY]
+
+# Is the robot still being sold?
+in market: True
+# Estimated price of the robot in [k€]
+price:
+# additional information
+comments: []
+
+mechanical properties:
+    # How can the robot be mounted (floor, ceiling, wall, any angle)
+    mounting: []
+    # Ingress protection class
+    IP: 54
+    # Has quick connect base (True, False)
+    has quick connect base: False
+    # Axes Properties
+    axes: 
+        # minimum joint angle in deg [A1, A2, A3, A4, A5, A6,...]
+        min pos: [-270, -180,-163, -180,-180,-270]
+        # maximum joint angle in deg [A1, A2, A3, A4, A5, A6,...]
+        max pos: [270, 180, 163, 180, 180, 270] 
+        # maximum joint velocity in deg/s [A1, A2, A3, A4, A5, A6,...]
+        max vel: [120, 120, 180, 150, 150, 180]
+        # maximum joint torque in Nm [A1, A2, A3, A4, A5, A6,...]
+        max torque: []
+    # pose repeatability in [mm]
+    repeatability: 0.1
+    # maximum reach [mm]
+    max reach: 1100
+    # payload mass capacity in [kg]
+    payload mass: 14
+    # payload inertia in [kgm^2]
+    payload inertia: 
+    # robot mass in [kg]
+    robot mass: 32.6
+    # additional comments
+    comments: []
+    
+electrical properties:
+    # Average power consumption in [W]
+    avg power: 300
+
+flange interface:
+    flange type: 
+    number of digital inputs: 4
+    number of digital outputs: 4
+    number of analog inputs: 1
+    number of analog outputs:  0
+    
+
+sensors: 
+    # Integrated Camera Sensors (not optional accessories)
+    vision: 1.2/5M pixels color camera, max 2GigE cameras
+    
+        
+ambient conditions:
+    # Temperature range [min, max] in [°C]
+    temperature: [0,50]
+
+standards:
+    # ISO 10218-1 class
+    class: [10218-1:2011 and ISO/TS 15066:2016]
+    # SEMI class
+    semi class: 2
+    
+
