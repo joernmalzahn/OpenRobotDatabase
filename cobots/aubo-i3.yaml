@@ -1,0 +1,70 @@
+--- # Cobot file template
+# Vendor name (see vendor list)
+vendor: AUBO Robotics
+# Full name of the cobot
+name: AUBO i3 | Cobot
+# Website describing the cobot
+website: [https://aubo-robotics.com/products/aubo-i3/]
+# Videos
+videos: [https://youtu.be/U63HmWtgrBg, https://youtu.be/xbjJjGJA0ho, https://youtu.be/9gRX09rCogU]
+# Is the robot still being sold?
+in market: True
+# Estimated price of the robot in [k€]
+price:
+# additional information
+comments: []
+
+mechanical properties:
+    # How can the robot be mounted (floor, ceiling, wall, any angle)
+    mounting: [any angle]
+    # Ingress protection class
+    IP: 54
+    # Has quick connect base (True, False)
+    has quick connect base: False
+    # Axes Properties
+    axes: 
+        # minimum joint angle in deg [A1, A2, A3, A4, A5, A6,...]
+        min pos: [-175, -175, -175, -175, -175, -175]
+        # maximum joint angle in deg [A1, A2, A3, A4, A5, A6,...]
+        max pos: [175, 175, 175, 175, 175, 175] 
+        # maximum joint velocity in deg/s [A1, A2, A3, A4, A5, A6,...]
+        max vel: [180, 180, 180, 180, 180, 180]
+        # maximum joint torque in Nm [A1, A2, A3, A4, A5, A6,...]
+        max torque: [207, 207, 207, 34, 34, 34]
+    # pose repeatability in [mm]
+    repeatability: 0.03
+    # maximum reach [mm]
+    max reach: 625
+    # payload mass capacity in [kg]
+    payload mass: 3
+    # maximum cartesian velocity in [m/s]
+    max cartesian velocity: 1.9
+    # robot mass in [kg]
+    robot mass: 15.5
+    # nominal lifetime in [kh]
+    nominal lifetime: 30
+    
+electrical properties:
+    # Average power consumption in [W]
+    avg power: 150
+
+flange interface:
+    flange type: DIN-ISO-9409-1-50-4
+    number of digital inputs: 4
+    number of digital outputs:  4
+    number of analog inputs: 2
+    number of analog outputs: 0
+    power: 0/12/24 V 0.8 A
+    
+
+ambient conditions:
+    # Temperature range [min, max] in [°C]
+    temperature: [0, 45]
+    # Humidity range [min, max] in [%]
+    humidity: [25, 85]
+
+standards:
+    # ISO 10218-1 class
+    class: [ISO 10218-1: 2011, EN 60204-1: 2006 + a1: 2009, ISO 12100: 2010,  ISO 13849-1: 2008]
+   
+

@@ -1,0 +1,52 @@
+--- # Vendor file template
+# Full name of the Company
+name: AUBO Robotics 
+# Website of the company
+website: https://aubo-robotics.com/
+# Is the vendor still in business (True, False)?
+active: True
+# Can the robot be programmed without writing code (block oriented programming)? (True, False)
+codeless programming: True
+# Does the Vendor have an App Store for Robot capabilities? (True, False)
+has app store: False
+# Does the Vendor have a Research API for academic and R&D developers? (True, False)
+has research api: True
+# When was the company founded?
+foundation year: 2014
+# Offers Robotics as a Service models (enter name of the program)
+has raas: False
+# Offers Predictive Maintenance Services (enter name of the program)
+has predictive maintenance: 
+# Direct sales?
+sales: False
+
+# The control box
+controller:
+    # Data about the latest control box
+    latest: 
+        name:
+        IP: 54
+        multi-robot-ready: False
+        communication interfaces:
+            RS232: 
+            RS485: 
+            Modbus/TCP: True
+            OPC UA: 
+            ProfiNet: 
+            EtherCAT: 
+            ASI: 
+            CCLink: 
+            Sercos III: 
+            FSOE: 
+            PowerLink: 
+            Ethernet: True
+            Wifi: 
+            Bluetooth: 
+            USB: 
+            GPIOs: 16 DIN, 16 DIO, 4 AIN, 4 AOUT, 16 Safety DIN, 16 Safety DIO, Power 24 V 3 A
+            I2C: 
+            
+            
+            
+        
+
