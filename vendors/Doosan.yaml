@@ -1,0 +1,50 @@
+--- # Vendor file template
+# Full name of the Company
+name: Doosan
+# Website of the company
+website: https://www.doosanrobotics.com/en/Index
+# Is the vendor still in business (True, False)?
+active: True
+# Can the robot be programmed without writing code (block oriented programming)? (True, False)
+codeless programming: 
+# Does the Vendor have an App Store for Robot capabilities? (True, False)
+has app store: 
+# Does the Vendor have a Research API for academic and R&D developers? (True, False)
+has research api: 
+# When was the company founded?
+foundation year: 
+# Direct sales?
+sales: False
+
+# The control box
+controller:
+    # Data about the latest control box
+    latest: 
+        name:
+        IP:
+        multi-robot-ready:
+        communication interfaces:
+            RS232: True
+            RS485: True
+            Modbus/TCP: True 
+            Modbus/RTU: True 
+            OPC UA: 
+            ProfiNet: True
+            EtherCAT: 
+            ASI: 
+            CCLink: 
+            Sercos III: 
+            FSOE: 
+            PowerLink: 
+            Ethernet: True
+            TCP/IP: True
+            Wifi: 
+            Bluetooth: 
+            USB: True
+            GPIOs: DIN 16 DIO 16 AIN 2 AO 2 24V
+            I2C: 
+            
+            
+            
+        
+

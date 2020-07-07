@@ -1,0 +1,60 @@
+--- # Cobot file template
+# Vendor name (see vendor list)
+vendor: Doosan
+# Full name of the cobot
+name: M0609
+# Website describing the cobot
+website: [https://www.doosanrobotics.com/en/products/series/a0912]
+# Videos
+videos: [https://youtu.be/Kn3tbxjDGDc]
+# Is the robot still being sold?
+in market: True
+# Estimated price of the robot in [k€]
+price:
+# additional information
+comments: []
+
+mechanical properties:
+    # How can the robot be mounted (floor, ceiling, wall, any angle)
+    mounting: [floor, ceiling, wall]
+    # Ingress protection class
+    IP: 54
+    # Has quick connect base (True, False)
+    has quick connect base: False
+    # Axes Properties
+    axes: 
+        # minimum joint angle in deg [A1, A2, A3, A4, A5, A6,...]
+        min pos: [-360, -360, -150, -360, -360, -360]
+        # maximum joint angle in deg [A1, A2, A3, A4, A5, A6,...]
+        max pos: [360, 360, 150, 360, 360, 360] 
+        # maximum joint velocity in deg/s [A1, A2, A3, A4, A5, A6,...]
+        max vel: [150, 150, 180, 225, 225, 225]
+        # maximum joint torque in Nm [A1, A2, A3, A4, A5, A6,...]
+    # pose repeatability in [mm]
+    repeatability: 0.05
+    # maximum cartesian velocity in [m/s]
+    max cartesian velocity: 1
+    # maximum reach [mm]
+    max reach: 900
+    # payload mass capacity in [kg]
+    payload mass: 6
+    # robot mass in [kg]
+    robot mass: 27
+    # nominal lifetime in [kh]
+    nominal lifetime: 35
+
+flange interface:
+    flange type: 
+    number of digital inputs: 6
+    number of digital outputs: 6  
+    power: 24 V 2 (peak 3) A
+
+    
+        
+ambient conditions:
+    # Temperature range [min, max] in [°C]
+    temperature: [0, 45]
+    # Humidity range [min, max] in [%]
+    humidity: []
+
+
