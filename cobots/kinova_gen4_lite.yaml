@@ -1,0 +1,72 @@
+--- # Cobot file template
+# Vendor name (see vendor list)
+vendor: Kinova
+# Full name of the cobot
+name: Kinova Gen3 lite
+# Website describing the cobot
+website: [https://www.kinovarobotics.com/sites/default/files/OP-Gen3lite_GENERIC_2020-.pdf]
+# Videos
+videos: []
+# How long does it take to set up the robot [min]?
+installation time: 
+# Is the robot still being sold?
+in market: True
+# Estimated price of the robot in [k€]
+price:
+# additional information
+comments: [The joint range is not fully clear (+/- 155 to 160°).]
+
+mechanical properties:
+    # How can the robot be mounted (floor, ceiling, wall, any angle)
+    mounting: []
+    # Ingress protection class
+    IP: IP22
+    # Has quick connect base (True, False)
+    has quick connect base: False
+    # Axes Properties
+    axes: 
+        # minimum joint angle in deg [A1, A2, A3, A4, A5, A6,...]
+        min pos: [-155, -155, -155, -155, -155, -155]
+        # maximum joint angle in deg [A1, A2, A3, A4, A5, A6,...]
+        max pos: [160, 160, 160, 160, 160, 160] 
+
+    # maximum cartesian velocity in [m/s]
+    max cartesian velocity: 0.25
+    # maximum reach [mm]
+    max reach: 760
+    # payload mass capacity in [kg]
+    payload mass: 0.5
+    # robot mass in [kg]
+    robot mass: 5.4
+    # nominal lifetime in [kh]
+
+electrical properties:
+    # Maximum power consumption in [W]
+    max power: 200
+    # Average power consumption in [W]
+    avg power: 20
+    # Power supply voltage [min, max, nominal]
+    supply voltage: [13, 30, 24]
+
+    
+flange interface:
+    flange type: gripper
+    
+    
+control properties: 
+    # Communication bus frequency in [kHz]
+    communication frequency: 1
+
+
+        
+ambient conditions:
+    # Temperature range [min, max] in [°C]
+    temperature: [0,40]
+
+standards:
+    # ISO 10218-1 class
+    class: []
+    # System Integrity level
+    sil: 
+    
+

@@ -1,0 +1,58 @@
+--- # Cobot file template
+# Vendor name (see vendor list)
+vendor: Kinova
+# Full name of the cobot
+name: Jaco Gen 2 - 7 DOF spherical
+# Website describing the cobot
+website: [https://www.kinovarobotics.com/sites/default/files/ULWS-RA-JAC-7DS-SP-INT-EN%20201804-1.2%20%28KINOVA%E2%84%A2%20Ultra%20lightweight%20robotic%20arm%207%20DOF%20Spherical%20Specifications%29_0.pdf]
+# Videos
+videos: []
+# Is the robot still being sold?
+in market: True
+# Estimated price of the robot in [k€]
+price:
+# additional information
+comments: [Have very unconventional payload capacity specs: mid-range continuous, full-reach peak/temporary, we use mid-range continuous here.]
+
+mechanical properties:
+    # How can the robot be mounted (floor, ceiling, wall, any angle)
+    mounting: []
+    # Ingress protection class
+    IP: IPX2
+    # Axes Properties
+    axes: 
+        # minimum joint angle in deg [A1, A2, A3, A4, A5, A6,...]
+        min pos: []
+        # maximum joint angle in deg [A1, A2, A3, A4, A5, A6,...]
+        max pos: [] 
+        # maximum joint velocity in deg/s [A1, A2, A3, A4, A5, A6,...]
+        max vel: []
+        # maximum joint torque in Nm [A1, A2, A3, A4, A5, A6,...]
+        max torque: []
+    # maximum cartesian velocity in [m/s]
+    max cartesian velocity: 0.2
+    # maximum cartesian acceleration in [m/s^2]
+    max cartesian acceleration: 
+    # maximum reach [mm]
+    max reach: 985
+    # payload mass capacity in [kg]
+    payload mass: 2.4
+    # payload inertia in [kgm^2]
+    payload inertia: 
+    # robot mass in [kg]
+    robot mass: 5.5
+    # additional comments
+    comments: [Also the joint range is not fully clear (27.7 turns).]
+    
+electrical properties:
+    # Maximum power consumption in [W]
+    max power: 100
+    # Average power consumption in [W]
+    avg power: 25
+   
+
+ambient conditions:
+    # Temperature range [min, max] in [°C]
+    temperature: [-10,40]
+
+

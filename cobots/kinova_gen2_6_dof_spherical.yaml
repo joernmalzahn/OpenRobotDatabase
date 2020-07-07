@@ -1,0 +1,51 @@
+--- # Cobot file template
+# Vendor name (see vendor list)
+vendor: Kinova
+# Full name of the cobot
+name: Jaco Gen 2 - 6 DOF Spherical
+# Website describing the cobot
+website: [https://www.kinovarobotics.com/sites/default/files/KINO-2018-TechSpecs-07-Jaco6DS-EN-Web%20%281%29.pdf]
+# Is the robot still being sold?
+in market: True
+# Estimated price of the robot in [k€]
+price:
+# additional information
+comments: [Have very unconventional payload capacity specs: mid-range continuous, full-reach peak/temporary, we use half mid-range continuous here. ]
+
+mechanical properties:
+    # How can the robot be mounted (floor, ceiling, wall, any angle)
+    mounting: [floor]
+    # Ingress protection class
+    IP: IPX2
+    # Has quick connect base (True, False)
+    has quick connect base: False
+    # Axes Properties
+    axes: 
+        # minimum joint angle in deg [A1, A2, A3, A4, A5, A6,...]
+        min pos: [-9972, -9972, -9972, -9972, -9972, -9972]
+        # maximum joint angle in deg [A1, A2, A3, A4, A5, A6,...]
+        max pos: [9972, 9972, 9972, 9972, 9972, 9972] 
+    # maximum cartesian velocity in [m/s]
+    max cartesian velocity: 
+    # maximum cartesian acceleration in [m/s^2]
+    max cartesian acceleration: 
+    # maximum reach [mm]
+    max reach: 985
+    # payload mass capacity in [kg]
+    payload mass: 1.3
+    # robot mass in [kg]
+    robot mass: 4.4
+    # additional comments
+    comments: [Also the joint range is not fully clear (27.7 turns). It looks like the links will collide before a full turn is reached.]
+    
+electrical properties:
+    # Maximum power consumption in [W]
+    max power: 100
+    # Average power consumption in [W]
+    avg power: 25
+
+
+ambient conditions:
+    # Temperature range [min, max] in [°C]
+    temperature: [-10,40]
+
