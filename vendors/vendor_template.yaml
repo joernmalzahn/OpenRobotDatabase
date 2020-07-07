@@ -17,7 +17,7 @@ foundation year:
 has raas: 
 # Offers Predictive Maintenance Services (enter name of the program)
 has predictive maintenance: 
-# Direct sales or through integrators?
+# Direct sales?
 sales: 
 
 # The control box
@@ -31,6 +31,7 @@ controller:
             RS232: 
             RS485: 
             Modbus/TCP: 
+            Modbus/RTU: 
             OPC UA: 
             ProfiNet: 
             EtherCAT: 
@@ -40,6 +41,7 @@ controller:
             FSOE: 
             PowerLink: 
             Ethernet:
+            TCP/IP:
             Wifi: 
             Bluetooth: 
             USB: 

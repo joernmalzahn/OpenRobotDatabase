@@ -31,6 +31,7 @@ controller:
             RS232: 
             RS485: 
             Modbus/TCP: True
+            Modbus/RTU: True
             OPC UA: 
             ProfiNet: 
             EtherCAT: 
@@ -39,7 +40,8 @@ controller:
             Sercos III: 
             FSOE: 
             PowerLink: 
-            Ethernet: True
+            Ethernet:
+            TCP/IP: True
             Wifi: 
             Bluetooth: 
             USB: 

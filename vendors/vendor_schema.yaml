@@ -70,6 +70,7 @@ optional:
               RS232: //any
               RS485: //any
               Modbus/TCP: //any
+              Modbus/RTU: //any
               OPC UA: //any
               ProfiNet: //any
               EtherCAT: //any
@@ -79,6 +80,7 @@ optional:
               FSOE: //any
               PowerLink: //any
               Ethernet: //any
+              TCP/IP: //any
               Wifi: //any
               Bluetooth: //any
               USB: //any
