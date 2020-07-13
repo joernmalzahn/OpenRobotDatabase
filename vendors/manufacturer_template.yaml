@@ -1,0 +1,58 @@
+--- # Manufacturer file template
+# Full name of the Company
+name: 
+# Website of the company
+website: 
+# Is the manufacturer still in business (True, False)?
+active: 
+# Can the robot be programmed without writing code (block oriented programming)? (True, False)
+codeless programming: 
+# Does the manufacturer have an App Store for Robot capabilities? (True, False)
+has app store: 
+# Does the manufacturer have a Research API for academic and R&D developers? (True, False)
+has research api: 
+# When was the company founded?
+foundation year: 
+# Offers Robotics as a Service models (enter name of the program)
+has raas: 
+# Offers Predictive Maintenance Services (enter name of the program)
+has predictive maintenance: 
+# Direct sales?
+sales: 
+
+# The control box
+controller:
+    # Data about the latest control box
+    latest: 
+        name:
+        IP:
+        multi-robot-ready:
+        communication interfaces:
+            RS232: 
+            RS485: 
+            Modbus/TCP: 
+            Modbus/RTU: 
+            OPC UA: 
+            ProfiNet: 
+            EtherCAT: 
+            ASI: 
+            CCLink: 
+            Sercos III: 
+            FSOE: 
+            PowerLink: 
+            Ethernet:
+            TCP/IP:
+            Wifi: 
+            Bluetooth: 
+            USB: 
+            GPIOs: 
+            I2C: 
+            
+ # Standards           
+ # This is a list of standards the manufacturer refers to.
+ # Note, this does not automatically imply a certification being in place. Many manufactuere follow 
+ # a "design according to certain standards" without going through the certification procedure for each of them.
+ standards:
+
+        
+
