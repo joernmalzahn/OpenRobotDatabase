@@ -14,14 +14,12 @@ https://youtu.be/NhamtYlFMiY]
 
 # Is the robot still being sold?
 in market: True
-# Estimated price of the robot in [k€]
-price:
 # additional information
 comments: []
 
 mechanical properties:
     # How can the robot be mounted (floor, ceiling, wall, any angle)
-    mounting: []
+    mounting: [floor]
     # Ingress protection class
     IP: 54
     # Has quick connect base (True, False)
@@ -42,8 +40,6 @@ mechanical properties:
     max reach: 1100
     # payload mass capacity in [kg]
     payload mass: 14
-    # payload inertia in [kgm^2]
-    payload inertia: 
     # robot mass in [kg]
     robot mass: 32.6
     # additional comments
@@ -54,7 +50,6 @@ electrical properties:
     avg power: 300
 
 flange interface:
-    flange type: 
     number of digital inputs: 4
     number of digital outputs: 4
     number of analog inputs: 1
@@ -70,10 +65,5 @@ ambient conditions:
     # Temperature range [min, max] in [°C]
     temperature: [0,50]
 
-standards:
-    # ISO 10218-1 class
-    class: [10218-1:2011 and ISO/TS 15066:2016]
-    # SEMI class
-    semi class: 2
-    
-
+# Certified w.r.t. the following standards:
+standards: ["ISO 10218-1:2011", "ISO/TS 15066:2016", "SEMI 2"]

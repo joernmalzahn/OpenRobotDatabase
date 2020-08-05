@@ -43,10 +43,6 @@ flange interface:
     ethernet: Cat5e
 
 
-standards:
-    # ISO 10218-1 class
-    class: [PL e]
-    # System Integrity level
-    sil: 3
-
+# Certified w.r.t. the following standards:
+standards: ["ISO 10218-1:2011"]
 

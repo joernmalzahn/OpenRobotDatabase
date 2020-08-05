@@ -108,9 +108,7 @@ ambient conditions:
     # Humidity range [min, max] in [%]
     humidity: [20, 80]
 
-standards:
-    # ISO 10218-1 class
-    class: [PL d Cat 3 Safe torque off and Safe OSSD inputs]
-
+# Certified w.r.t. the following standards:
+standards: ["ISO 10218-1"]
 
 

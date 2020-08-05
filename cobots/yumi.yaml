@@ -4,9 +4,9 @@ vendor: ABB
 # Full name of the cobot
 name: IRB 14050 Single-arm YuMi
 # Website describing the cobot
-website: [https://new.abb.com/products/robotics/industrial-robots/irb-14050-single-arm-yumi]
+website: ["https://new.abb.com/products/robotics/industrial-robots/irb-14050-single-arm-yumi"]
 # Videos
-videos: [https://youtu.be/wsa6_uqB4y8]
+videos: ["https://youtu.be/wsa6_uqB4y8"]
 # Is the robot still being sold?
 in market: True
 # Estimated price of the robot in [k€]
@@ -96,9 +96,8 @@ ambient conditions:
     # Cleanroom class
     cleanroom class: 5
 
-standards:
-    # ISO 10218-1 class
-    class: [PL d Cat 3 protective stop and emergency stop, PL b Cat b Speed supervision]
+# Certified w.r.t. the following standards:
+standards: ["ISO 10218-1:2011"]
 
     
 

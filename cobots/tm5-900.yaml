@@ -13,14 +13,12 @@ https://youtu.be/NhamtYlFMiY]
 
 # Is the robot still being sold?
 in market: True
-# Estimated price of the robot in [k€]
-price:
 # additional information
 comments: [TM Mobile Series TM5m, TM12M, TM14M, use an integrated VDC supply for compatibility with AGV/MR systems.]
 
 mechanical properties:
     # How can the robot be mounted (floor, ceiling, wall, any angle)
-    mounting: []
+    mounting: [floor]
     # Ingress protection class
     IP: 54
     # Has quick connect base (True, False)
@@ -33,16 +31,12 @@ mechanical properties:
         max pos: [270, 180,155, 180,180,270] 
         # maximum joint velocity in deg/s [A1, A2, A3, A4, A5, A6,...]
         max vel: [180, 180, 180, 225, 225, 225]
-        # maximum joint torque in Nm [A1, A2, A3, A4, A5, A6,...]
-        max torque: []
     # pose repeatability in [mm]
     repeatability: 0.05
     # maximum reach [mm]
     max reach: 900
     # payload mass capacity in [kg]
     payload mass: 4
-    # payload inertia in [kgm^2]
-    payload inertia: 
     # robot mass in [kg]
     robot mass: 22.6
     # additional comments
@@ -53,9 +47,8 @@ electrical properties:
     avg power: 220
 
 flange interface:
-    flange type: 
-    number of digital inputs: 3/4 (by regional model)
-    number of digital outputs: 3/4 (by regional model)
+    number of digital inputs: 4
+    number of digital outputs: 4 
     number of analog inputs: 1
     number of analog outputs:  0
     
@@ -69,8 +62,5 @@ ambient conditions:
     # Temperature range [min, max] in [°C]
     temperature: [0,50]
 
-standards:
-    # ISO 10218-1 class
-    class: [10218-1:2011 and ISO/TS 15066:2016]
-    # SEMI class
-    semi class: 2
+# Certified w.r.t. the following standards:
+standards: ["ISO 10218-1:2011", "ISO/TS 15066:2016", "SEMI 2"]
