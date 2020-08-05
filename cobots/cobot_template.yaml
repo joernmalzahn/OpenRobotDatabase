@@ -17,7 +17,7 @@ price:
 comments: []
 
 mechanical properties:
-    # How can the robot be mounted (floor, ceiling, wall, any angle)
+    # How can the robot be mounted (floor, ceiling, wall, any)
     mounting: []
     # Ingress protection class
     IP:
