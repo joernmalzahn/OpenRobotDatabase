@@ -1,0 +1,46 @@
+--- # Cobot file template
+# Vendor name (see vendor list)
+vendor: Productive Robotics
+# Full name of the cobot
+name: OB7
+# Website describing the cobot
+website: [https://www.productiverobotics.com/]
+# Videos
+videos: [https://youtu.be/cr60VF_ubd8]
+# Is the robot still being sold?
+in market: True
+# additional information
+comments: []
+
+mechanical properties:
+    # How can the robot be mounted (floor, ceiling, wall, any angle)
+    mounting: [floor, ceiling, wall]
+    # Ingress protection class
+    IP: 61
+    # Axes Properties
+    axes: 
+        # minimum joint angle in deg [A1, A2, A3, A4, A5, A6,...]
+        min pos: [-360, -360, -360, -360, -360, -360, -360]
+        # maximum joint angle in deg [A1, A2, A3, A4, A5, A6,...]
+        max pos: [360, 360, 360, 360, 360, 360, 360] 
+    # pose repeatability in [mm]
+    repeatability: 0.1
+    # maximum cartesian velocity in [m/s]
+    max cartesian velocity: 2
+    # maximum reach [mm]
+    max reach: 1000
+    # payload mass capacity in [kg]
+    payload mass: 5
+    # robot mass in [kg]
+    robot mass: 22
+
+flange interface:
+    flange type: ISO 9409-1-50-4-M6
+   
+        
+ambient conditions:
+    # Temperature range [min, max] in [°C]
+    temperature: [0, 37]
+
+# Certified w.r.t. the following standards:
+standards: ["ISO 10218-1"]
