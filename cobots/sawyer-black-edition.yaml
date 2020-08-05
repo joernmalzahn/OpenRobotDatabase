@@ -4,9 +4,9 @@ vendor: Rethink Robotics
 # Full name of the cobot
 name: Sawyer Black Edition
 # Website describing the cobot
-website: [https://www.rethinkrobotics.com/sawyer]
+website: ["https://www.rethinkrobotics.com/sawyer"]
 # Videos
-videos: [https://youtu.be/D4eirAQBBN0, https://youtu.be/672hRpmOsPo]
+videos: ["https://youtu.be/D4eirAQBBN0", "https://youtu.be/672hRpmOsPo"]
 # Is the robot still being sold?
 in market: True
 # additional information
