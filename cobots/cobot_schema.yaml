@@ -24,7 +24,7 @@
             ]
         # How long does it take to set up the robot [min]?
         installation time: //int
-        # Estimated price of the robot in [k€]
+        # Approximated price of the robot in [k€]
         price: //int
         # additional comments
         comments:
@@ -44,7 +44,7 @@
                 # payload mass capacity in [kg]
                 payload mass: //num
 
-                # How can the robot be mounted (floor, ceiling, wall, any angle)
+                # How can the robot be mounted (floor, ceiling, wall, any)
                 mounting:
                     type: //arr
                     contents:
@@ -149,6 +149,7 @@
                 power: //any
                 pneumatic: //any
                 ethernet: //any
+                RS485: //any
                 comments:
                     type: //any
                     of: [
@@ -290,12 +291,9 @@
                 # SEMI class
                 semi class: //int
 
+        # Certified w.r.t. the following standards:
         standards:
-            type: //rec
-            optional:
-                # ISO 10218-1 class
-                class: //any
-                # System Integrity level
-                sil: //int
+            type: //arr
+            contents: //str
 
 
