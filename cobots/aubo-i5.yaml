@@ -4,19 +4,17 @@ vendor: AUBO Robotics
 # Full name of the cobot
 name: AUBO i5 | Cobot
 # Website describing the cobot
-website: [https://aubo-robotics.com/products/aubo-i5/]
+website: ["https://aubo-robotics.com/products/aubo-i5/"]
 # Videos
-videos: [https://youtu.be/U63HmWtgrBg, https://youtu.be/xbjJjGJA0ho, https://youtu.be/9gRX09rCogU]
+videos: ["https://youtu.be/U63HmWtgrBg", "https://youtu.be/xbjJjGJA0ho", "https://youtu.be/9gRX09rCogU"]
 # Is the robot still being sold?
 in market: True
-# Estimated price of the robot in [k€]
-price:
 # additional information
 comments: []
 
 mechanical properties:
-    # How can the robot be mounted (floor, ceiling, wall, any angle)
-    mounting: [any angle]
+    # How can the robot be mounted (floor, ceiling, wall, any)
+    mounting: [any]
     # Ingress protection class
     IP: 54
     # Has quick connect base (True, False)
@@ -61,8 +59,7 @@ ambient conditions:
     # Humidity range [min, max] in [%]
     humidity: [0, 75]
 
-standards:
-    # ISO 10218-1 class
-    class: [ISO 10218-1: 2011, EN 60204-1: 2006 + a1: 2009, ISO 12100: 2010,  ISO 13849-1: 2008]
+# Certified w.r.t. the following standards:
+standards: ["ISO 10218-1:2011", "EN 60204-1: 2006 + a1: 2009", "ISO 12100: 2010",  "ISO 13849-1: 2008"]
    
 
