@@ -1,0 +1,53 @@
+--- # Cobot file template
+# Vendor name (see vendor list)
+vendor: Yaskawa
+# Full name of the cobot
+name: GP25
+# Website describing the cobot
+website: ["https://www.yaskawa.com/products/robotics/robots-with-iec/articulated-robots/gp25"]
+# Videos
+videos: ["https://youtu.be/hSJducw172o"]
+# Is the robot still being sold?
+in market: True
+# additional information
+comments: [Points towards the speed surpassing all other robots in class.]
+
+mechanical properties:
+    # How can the robot be mounted (floor, ceiling, wall, tilt, any)
+    mounting: [floor, wall, ceiling, any]
+    # Ingress protection class
+    IP: 65
+    # Has quick connect base (True, False)
+    has quick connect base: False
+    # Axes Properties
+    axes: 
+        # minimum joint angle in deg [A1, A2, A3, A4, A5, A6,...]
+        min pos: [-180, -105, -86, -200, -150, -455]
+        # maximum joint angle in deg [A1, A2, A3, A4, A5, A6,...]
+        max pos: [180, 155, 160, 200, 150, 455] 
+        # maximum joint velocity in deg/s [A1, A2, A3, A4, A5, A6,...]
+        max vel: [210, 210, 265, 420, 420, 885]
+        # maximum joint torque in Nm [A1, A2, A3, A4, A5, A6,...]
+        max torque: [0, 0, 0, 52, 52, 32]
+    # pose repeatability in [mm]
+    repeatability: 0.06
+    # maximum reach [mm]
+    max reach: 1730
+    # payload mass capacity in [kg]
+    payload mass: 25
+    # payload inertia in [kgm^2]
+    payload inertia: 2.3
+    # robot mass in [kg]
+    robot mass: 250
+    # additional comments
+    comments: []
+    
+electrical properties:
+    # Maximum power consumption in [W]
+    max power: 2000
+
+
+flange interface:
+    pneumatic: 1
+
+standards: [ "IEC61131-3", "Food-grade"]
