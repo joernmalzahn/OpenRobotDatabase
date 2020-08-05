@@ -4,21 +4,19 @@ vendor: Kinova
 # Full name of the cobot
 name: Jaco Gen 3 - 7 DOF
 # Website describing the cobot
-website: [https://www.kinovarobotics.com/sites/default/files/OP-Gen3-Generic_V1_0.pdf]
+website: ["https://www.kinovarobotics.com/sites/default/files/OP-Gen3-Generic_V1_0.pdf"]
 # Videos
 videos: []
 # Is the robot still being sold?
 in market: True
-# Estimated price of the robot in [k€]
-price:
 # additional information
-comments: [Have very unconventional payload capacity specs: mid-range continuous, full-range continuous, we use full-range continuous of course. ]
+comments: ["Have very unconventional payload capacity specs: mid-range continuous, full-range continuous, we use full-range continuous of course. "]
 
 mechanical properties:
     # How can the robot be mounted (floor, ceiling, wall, any angle)
-    mounting: []
+    mounting: [floor]
     # Ingress protection class
-    IP: IP33
+    IP: 33
     # Axes Properties
     axes: 
         # minimum joint angle in deg [A1, A2, A3, A4, A5, A6,...]

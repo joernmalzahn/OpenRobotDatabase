@@ -7,16 +7,14 @@ name: Jaco Gen 2 - 6 DOF Spherical
 website: [https://www.kinovarobotics.com/sites/default/files/KINO-2018-TechSpecs-07-Jaco6DS-EN-Web%20%281%29.pdf]
 # Is the robot still being sold?
 in market: True
-# Estimated price of the robot in [k€]
-price:
 # additional information
-comments: [Have very unconventional payload capacity specs: mid-range continuous, full-reach peak/temporary, we use half mid-range continuous here. ]
+comments: ["Have very unconventional payload capacity specs: mid-range continuous, full-reach peak/temporary, we use half mid-range continuous here. "]
 
 mechanical properties:
     # How can the robot be mounted (floor, ceiling, wall, any angle)
     mounting: [floor]
     # Ingress protection class
-    IP: IPX2
+    IP: 22
     # Has quick connect base (True, False)
     has quick connect base: False
     # Axes Properties
@@ -25,11 +23,7 @@ mechanical properties:
         min pos: [-9972, -9972, -9972, -9972, -9972, -9972]
         # maximum joint angle in deg [A1, A2, A3, A4, A5, A6,...]
         max pos: [9972, 9972, 9972, 9972, 9972, 9972] 
-    # maximum cartesian velocity in [m/s]
-    max cartesian velocity: 
-    # maximum cartesian acceleration in [m/s^2]
-    max cartesian acceleration: 
-    # maximum reach [mm]
+    # maximum reach [mm]0
     max reach: 985
     # payload mass capacity in [kg]
     payload mass: 1.3

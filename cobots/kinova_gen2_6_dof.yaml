@@ -9,16 +9,14 @@ website: [https://www.kinovarobotics.com/sites/default/files/KINO-2018-TechSpecs
 videos: []
 # Is the robot still being sold?
 in market: True
-# Estimated price of the robot in [k€]
-price:
 # additional information
-comments: [Have very unconventional payload capacity specs: mid-range continuous, full-reach peak/temporary, we use half mid-range continuous here. ]
+comments: ["Have very unconventional payload capacity specs: mid-range continuous, full-reach peak/temporary, we use half mid-range continuous here."]
 
 mechanical properties:
     # How can the robot be mounted (floor, ceiling, wall, any angle)
     mounting: [floor]
     # Ingress protection class
-    IP: IPX2
+    IP: 22
     # Has quick connect base (True, False)
     has quick connect base: False
     # Axes Properties

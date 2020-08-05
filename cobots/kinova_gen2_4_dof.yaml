@@ -9,16 +9,14 @@ website: [https://www.kinovarobotics.com/sites/default/files/ULWS-RA-JAC-7DS-SP-
 videos: []
 # Is the robot still being sold?
 in market: True
-# Estimated price of the robot in [k€]
-price:
 # additional information
-comments: [Have very unconventional payload capacity specs: mid-range continuous, full-reach peak/temporary, we use mid-range continuous here.]
+comments: ["Have very unconventional payload capacity specs: mid-range continuous, full-reach peak/temporary, we use mid-range continuous here."]
 
 mechanical properties:
     # How can the robot be mounted (floor, ceiling, wall, any angle)
-    mounting: []
+    mounting: [floor]
     # Ingress protection class
-    IP: IPX2
+    IP: 22
     # Axes Properties
     axes: 
         # minimum joint angle in deg [A1, A2, A3, A4, A5, A6,...]
@@ -31,14 +29,10 @@ mechanical properties:
         max torque: []
     # maximum cartesian velocity in [m/s]
     max cartesian velocity: 0.2
-    # maximum cartesian acceleration in [m/s^2]
-    max cartesian acceleration: 
     # maximum reach [mm]
     max reach: 985
     # payload mass capacity in [kg]
     payload mass: 2.4
-    # payload inertia in [kgm^2]
-    payload inertia: 
     # robot mass in [kg]
     robot mass: 5.5
     # additional comments
