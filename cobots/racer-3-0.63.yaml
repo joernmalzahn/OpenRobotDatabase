@@ -4,9 +4,9 @@ vendor: Comau
 # Full name of the cobot
 name: Racer-3-0.63
 # Website describing the cobot
-website: [https://www.comau.com/EN/our-competences/robotics/robot-team/racer-3-0-63]
+website: ["https://www.comau.com/EN/our-competences/robotics/robot-team/racer-3-0-63"]
 # Videos
-videos: [https://www.youtube.com/watch?v=YfEzbP9STto]
+videos: ["https://www.youtube.com/watch?v=YfEzbP9STto"]
 
 # Is the robot still being sold?
 in market: True
@@ -17,7 +17,7 @@ mechanical properties:
     # How can the robot be mounted (floor, ceiling, wall, any angle)
     mounting: [floor, ceiling, wall]
     # Ingress protection class
-    IP:54
+    IP: 54
     # Has quick connect base (True, False)
     has quick connect base: False
     # Axes Properties
@@ -27,9 +27,9 @@ mechanical properties:
         # maximum joint angle in deg [A1, A2, A3, A4, A5, A6,...]
         max pos: [170, 135, 90, 200, 125, 2700] 
         # maximum joint velocity in deg/s [A1, A2, A3, A4, A5, A6,...]
-        max vel: [400, 360 400, 500, 500, 800]
+        max vel: [400, 360, 400, 500, 500, 800]
         # maximum joint torque in Nm [A1, A2, A3, A4, A5, A6,...]
-        max torque: [0 0 0 7.36, 7.36, 4.41]
+        max torque: [0, 0, 0, 7.36, 7.36, 4.41]
     # pose repeatability in [mm]
     repeatability: 0.03
     # maximum reach [mm]
