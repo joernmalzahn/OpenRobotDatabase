@@ -11,7 +11,7 @@ videos: []
 installation time: 
 # Is the robot still being sold?
 in market:
-# Estimated price of the robot in [k€]
+# Approximate price of the robot in [k€]
 price:
 # additional information
 comments: []
@@ -142,10 +142,6 @@ ambient conditions:
     # Cleanroom class
     cleanroom class:
 
-standards:
-    # ISO 10218-1 class
-    class: []
-    # System Integrity level
-    sil: 
-    
+# Certified w.r.t. the following standards [array of standard codes]:
+standards: []
 
