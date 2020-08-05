@@ -4,13 +4,13 @@ vendor: Doosan
 # Full name of the cobot
 name: M0617
 # Website describing the cobot
-website: [https://www.doosanrobotics.com/en/products/series/a0912]
+website: ["https://www.doosanrobotics.com/en/products/series/a0912"]
 # Videos
-videos: [https://youtu.be/Kn3tbxjDGDc]
+videos: ["https://youtu.be/Kn3tbxjDGDc"]
 # Is the robot still being sold?
 in market: True
-# Estimated price of the robot in [k€]
-price:
+# Approx. price of the robot in [k€]
+price: 43
 # additional information
 comments: []
 
@@ -44,7 +44,7 @@ mechanical properties:
     nominal lifetime: 35
 
 flange interface:
-    flange type: 
+    flange type: to be filled
     number of digital inputs: 6
     number of digital outputs: 6  
     power: 24 V 2 (peak 3) A
@@ -54,7 +54,4 @@ flange interface:
 ambient conditions:
     # Temperature range [min, max] in [°C]
     temperature: [0, 45]
-    # Humidity range [min, max] in [%]
-    humidity: []
-
 

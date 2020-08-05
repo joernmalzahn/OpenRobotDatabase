@@ -4,19 +4,17 @@ vendor: Doosan
 # Full name of the cobot
 name: A0912
 # Website describing the cobot
-website: [https://www.doosanrobotics.com/en/products/series/a0912]
+website: ["https://www.doosanrobotics.com/en/products/series/a0912"]
 # Videos
-videos: [https://youtu.be/Kn3tbxjDGDc]
+videos: ["https://youtu.be/Kn3tbxjDGDc"]
 # Is the robot still being sold?
 in market: True
-# Estimated price of the robot in [k€]
-price:
 # additional information
 comments: []
 
 mechanical properties:
-    # How can the robot be mounted (floor, ceiling, wall, any angle)
-    mounting: [any angle]
+    # How can the robot be mounted (floor, ceiling, wall, any)
+    mounting: [any]
     # Ingress protection class
     IP: 54
     # Has quick connect base (True, False)
@@ -44,7 +42,7 @@ mechanical properties:
     nominal lifetime: 35
 
 flange interface:
-    flange type: 
+    flange type: "to be filled"
     number of digital inputs: 2
     number of digital outputs: 2  
     power: 24 V 2 (peak 3) A
@@ -55,13 +53,3 @@ flange interface:
 ambient conditions:
     # Temperature range [min, max] in [°C]
     temperature: [-5, 45]
-    # Humidity range [min, max] in [%]
-    humidity: []
-
-standards:
-    # ISO 10218-1 class
-    class: []
-    # System Integrity level
-    sil: 
-    
-
