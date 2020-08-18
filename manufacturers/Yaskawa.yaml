@@ -1,0 +1,9 @@
+--- # Vendor file template
+# Full name of the Company
+name: Yaskawa Motoman
+# Website of the company
+website: "https://www.motoman.com/en-us"
+# Is the vendor still in business (True, False)?
+active: True
+# Direct sales?
+sales: False

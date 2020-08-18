@@ -15,8 +15,6 @@ has research api: True
 foundation year: 2014
 # Offers Robotics as a Service models (enter name of the program)
 has raas: False
-# Offers Predictive Maintenance Services (enter name of the program)
-has predictive maintenance: 
 # Direct sales?
 sales: False
 
@@ -24,9 +22,8 @@ sales: False
 controller:
     # Data about the latest control box
     latest: 
-        name:
+        name: none
         IP: 54
-        multi-robot-ready: False
         communication interfaces:
             RS232: 
             RS485: 

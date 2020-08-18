@@ -16,7 +16,7 @@ controller:
     latest: 
         name: OmniCore
         IP: 54
-        multi-robot-ready: shared
+        multi-robot-ready: true
         weblink: [https://new.abb.com/products/robotics/controllers/omnicore]
         video: [https://youtu.be/40Z-aeD-bpQ]
         communication interfaces:

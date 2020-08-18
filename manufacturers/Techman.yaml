@@ -16,9 +16,8 @@ sales: False
 controller:
     # Data about the latest control box
     latest: 
-        name:
-        IP: IP32
-        multi-robot-ready:
+        name: unknown
+        IP: 32
         communication interfaces:
             RS232: 3
             Modbus/TCP: True

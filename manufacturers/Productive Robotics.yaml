@@ -1,0 +1,7 @@
+--- # Vendor file template
+# Full name of the Company
+name: Productive Robotics
+# Website of the company
+website: https://www.productiverobotics.com/
+# Is the vendor still in business (True, False)?
+active: True

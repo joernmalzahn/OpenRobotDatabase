@@ -6,13 +6,7 @@ website: https://www.doosanrobotics.com/en/Index
 # Is the vendor still in business (True, False)?
 active: True
 # Can the robot be programmed without writing code (block oriented programming)? (True, False)
-codeless programming: 
-# Does the Vendor have an App Store for Robot capabilities? (True, False)
-has app store: 
-# Does the Vendor have a Research API for academic and R&D developers? (True, False)
-has research api: 
-# When was the company founded?
-foundation year: 
+codeless programming: True
 # Direct sales?
 sales: False
 
@@ -20,9 +14,8 @@ sales: False
 controller:
     # Data about the latest control box
     latest: 
-        name:
-        IP:
-        multi-robot-ready:
+        name: none
+        multi-robot-ready: False
         communication interfaces:
             RS232: True
             RS485: True

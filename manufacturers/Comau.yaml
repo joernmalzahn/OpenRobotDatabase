@@ -19,7 +19,7 @@ controller:
     # Data about the latest control box
     latest: 
         name: R1C
-        IP: 2x
+        IP: 20
         multi-robot-ready: False
 
             
