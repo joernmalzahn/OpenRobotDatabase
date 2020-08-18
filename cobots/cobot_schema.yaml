@@ -156,7 +156,13 @@
                         //str,
                         {type: //arr, contents: //str}
                     ]
-
+                # additional comments
+                comments:
+                    type: //any
+                    of: [
+                        //str,
+                        {type: //arr, contents: //str}
+                    ]
         control properties:
             type: //rec
             optional:
