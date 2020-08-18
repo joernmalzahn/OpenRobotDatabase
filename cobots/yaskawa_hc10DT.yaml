@@ -2,52 +2,57 @@
 # Vendor name (see vendor list)
 vendor: Yaskawa Motoman
 # Full name of the cobot
-name: GP7
+name: HC10DT
 # Website describing the cobot
-website: ["https://www.yaskawa.com/products/robotics/robots-with-iec/articulated-robots/gp7"]
+website: ["https://www.motoman.com/en-us/products/robots/industrial/assembly-handling/hc-series/hc10dt"]
 # Videos
-videos: ["https://youtu.be/G6v_eS8fs9k"]
+videos: ["https://youtu.be/UWtoqZrawIk"]
 # Is the robot still being sold?
 in market: True
 # additional information
-comments: [Points towards the speed surpassing all other robots in class.]
+comments: []
 
 mechanical properties:
-    # How can the robot be mounted (floor, ceiling, wall, tilt, any)
-    mounting: [floor, wall, ceiling, any]
+    # How can the robot be mounted (floor, ceiling, wall, any angle)
+    mounting: [floor, ceiling, wall, any]
     # Ingress protection class
-    IP: 67
+    IP: 20
     # Has quick connect base (True, False)
     has quick connect base: False
     # Axes Properties
     axes: 
         # minimum joint angle in deg [A1, A2, A3, A4, A5, A6,...]
-        min pos: [-70, -65, -70, -190, -135, -360]
+        min pos: [-180, -180, -5, -180, -180, -180]
         # maximum joint angle in deg [A1, A2, A3, A4, A5, A6,...]
-        max pos: [70, 145, 190, 190, 135, 360] 
+        max pos: [180, 180, 355, 180, 180, 180] 
         # maximum joint velocity in deg/s [A1, A2, A3, A4, A5, A6,...]
-        max vel: [375, 315, 410, 550, 550, 1000]
+        max vel: [130, 130, 180, 180, 250, 250]
         # maximum joint torque in Nm [A1, A2, A3, A4, A5, A6,...]
-        max torque: [0, 0, 0, 17, 17, 10]
+        max torque: [0, 0, 0, 27.4, 27.4, 9.8]
     # pose repeatability in [mm]
-    repeatability: 0.03
-    # maximum reach [mm]
-    max reach: 927
+    repeatability: 0.1
+    # maximum cartesian velocity in [m/s]
+    max cartesian velocity: 1
+    # maximum cartesian acceleration in [m/s^2]
+    max reach: 1200
     # payload mass capacity in [kg]
-    payload mass: 7
+    payload mass: 10
     # payload inertia in [kgm^2]
-    payload inertia: 0.5
+    payload inertia: 0.78
     # robot mass in [kg]
-    robot mass: 34
+    robot mass: 48
     # additional comments
     comments: []
     
 electrical properties:
     # Maximum power consumption in [W]
     max power: 1000
-
-
+    
 flange interface:
     pneumatic: 2
+    comments: internal user I/O cable 8x 0.2 mm^2, 8x 0.3 mm^2
 
-standards: [ "IEC61131-3", "Food-grade"]
+# Certified w.r.t. the following standards:
+standards: ["ISO 10218-1:2011", "EN ISO 13849:2008"]
+    
+

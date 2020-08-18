@@ -1,6 +1,6 @@
 --- # Cobot file template
 # Vendor name (see vendor list)
-vendor: Yaskawa
+vendor: Yaskawa Motoman
 # Full name of the cobot
 name: GP12
 # Website describing the cobot
