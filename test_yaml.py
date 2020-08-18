@@ -20,16 +20,16 @@ for file in allCobotYamls:
             validator.validate(data)
             print(data)
 
-vendorPath = 'vendors' + os.sep
-allVendorYamls = os.listdir(vendorPath)
+manufacturerPath = 'manufacturers' + os.sep
+allManufacturerYamls = os.listdir(manufacturerPath)
 
-schemaPath = vendorPath + "vendor_schema.yaml"
+schemaPath = manufacturerPath + "manufacturer_schema.yaml"
 schema = yaml.load(open(schemaPath), Loader=yaml.FullLoader)
 validator = rx.make_schema(schema)
 
-for file in allVendorYamls:
-    if file != "vendor_schema.yaml" and file != "vendor_template.yaml":
-        with open(vendorPath + file) as f:
+for file in allManufacturerYamls:
+    if file != "manufacturer_schema.yaml" and file != "manufacturer_template.yaml":
+        with open(manufacturerPath + file) as f:
             print(file)
             data = yaml.load(f, Loader=yaml.FullLoader)
             validator.validate(data)
