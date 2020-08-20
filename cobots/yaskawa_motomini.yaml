@@ -6,7 +6,7 @@ name: MotoMini
 # Website describing the cobot
 website: ["https://www.motoman.com/en-us/products/robots/industrial-robots/assembly-handling/motomini-series/motomini"]
 # Videos
-videos: []
+videos: ["https://youtu.be/QTiPEoHzk6c"]
 # Is the robot still being sold?
 in market: True
 # additional information
