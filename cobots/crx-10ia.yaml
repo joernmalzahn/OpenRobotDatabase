@@ -22,6 +22,7 @@ mechanical properties:
     max reach: 2480
     # payload mass capacity in [kg]
     payload mass: 10
-    # payload inertia in [kgm^2]
+    # robot mass in [kg]
+    robot mass: 39
 
 
