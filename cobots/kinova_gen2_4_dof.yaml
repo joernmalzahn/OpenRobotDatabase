@@ -1,6 +1,6 @@
 --- # Cobot file template
-# Vendor name (see vendor list)
-vendor: Kinova
+# Vendor name (see manufacturer list)
+manufacturer: Kinova
 # Full name of the cobot
 name: Jaco Gen 2 - 7 DOF spherical
 # Website describing the cobot

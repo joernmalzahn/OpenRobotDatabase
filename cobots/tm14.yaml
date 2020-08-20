@@ -1,7 +1,7 @@
 
 --- # Cobot file template
-# Vendor name (see vendor list)
-vendor: Techman Robot
+# Vendor name (see manufacturer list)
+manufacturer: Techman Robot
 # Full name of the cobot
 name: TM14
 # Website describing the cobot

@@ -1,6 +1,6 @@
 --- # Cobot file template
-# Vendor name (see vendor list)
-vendor: Universal Robots
+# Vendor name (see manufacturer list)
+manufacturer: Universal Robots
 # Full name of the cobot
 name: UR5e
 # Website describing the cobot

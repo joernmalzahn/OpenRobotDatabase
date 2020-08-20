@@ -1,6 +1,6 @@
 --- # Cobot file template
-# Vendor name (see vendor list)
-vendor: AUBO Robotics
+# Vendor name (see manufacturer list)
+manufacturer: AUBO Robotics
 # Full name of the cobot
 name: AUBO i5 | Cobot
 # Website describing the cobot

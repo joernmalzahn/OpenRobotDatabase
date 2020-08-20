@@ -1,6 +1,6 @@
 --- # Cobot file template
-# Vendor name (see vendor list)
-vendor: Stäubli
+# Vendor name (see manufacturer list)
+manufacturer: Stäubli
 # Full name of the cobot
 name: TX2 Touch 90XL
 # Website describing the cobot

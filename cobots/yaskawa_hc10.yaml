@@ -1,6 +1,6 @@
 --- # Cobot file template
-# Vendor name (see vendor list)
-vendor: Yaskawa Motoman
+# Vendor name (see manufacturer list)
+manufacturer: Yaskawa Motoman
 # Full name of the cobot
 name: HC10
 # Website describing the cobot

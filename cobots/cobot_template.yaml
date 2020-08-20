@@ -1,6 +1,6 @@
 --- # Cobot file template
-# Vendor name (see vendor list)
-vendor: 
+# Manufacturer name (see manufacturer list)
+manufacturer: 
 # Full name of the cobot
 name: 
 # Website describing the cobot

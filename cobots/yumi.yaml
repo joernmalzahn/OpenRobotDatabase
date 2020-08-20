@@ -1,6 +1,6 @@
 --- # Cobot file template
-# Vendor name (see vendor list)
-vendor: ABB
+# Vendor name (see manufacturer list)
+manufacturer: ABB
 # Full name of the cobot
 name: IRB 14050 Single-arm YuMi
 # Website describing the cobot

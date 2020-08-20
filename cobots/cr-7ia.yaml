@@ -1,6 +1,6 @@
 --- # Cobot file template
-# Vendor name (see vendor list)
-vendor: Fanuc
+# Vendor name (see manufacturer list)
+manufacturer: Fanuc
 # Full name of the cobot
 name: CR-7iA
 # Website describing the cobot

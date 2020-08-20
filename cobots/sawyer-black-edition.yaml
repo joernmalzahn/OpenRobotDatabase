@@ -1,6 +1,6 @@
 --- # Cobot file template
-# Vendor name (see vendor list)
-vendor: Rethink Robotics
+# Vendor name (see manufacturer list)
+manufacturer: Rethink Robotics
 # Full name of the cobot
 name: Sawyer Black Edition
 # Website describing the cobot

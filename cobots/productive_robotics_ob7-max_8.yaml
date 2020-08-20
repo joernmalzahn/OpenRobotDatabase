@@ -1,6 +1,6 @@
 --- # Cobot file template
-# Vendor name (see vendor list)
-vendor: Productive Robotics
+# Vendor name (see manufacturer list)
+manufacturer: Productive Robotics
 # Full name of the cobot
 name: OB7-Max 12
 # Website describing the cobot

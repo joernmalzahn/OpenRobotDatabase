@@ -1,8 +1,8 @@
 --- # Cobot file schema
     type: //rec
     required:
-        # Vendor name (see vendor list)
-        vendor: //str
+        # Manufacturer name (see manufacturer list)
+        manufacturer: //str
         # Full name of the cobot
         name: //str
         # Website describing the cobot

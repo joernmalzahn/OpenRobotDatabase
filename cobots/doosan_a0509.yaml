@@ -1,6 +1,6 @@
 --- # Cobot file template
-# Vendor name (see vendor list)
-vendor: Doosan
+# Vendor name (see manufacturer list)
+manufacturer: Doosan
 # Full name of the cobot
 name: A0509
 # Website describing the cobot

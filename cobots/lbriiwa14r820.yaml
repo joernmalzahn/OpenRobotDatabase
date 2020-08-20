@@ -1,6 +1,6 @@
 --- # Cobot file template
-# Vendor name (see vendor list)
-vendor: KUKA
+# Vendor name (see manufacturer list)
+manufacturer: KUKA
 # Full name of the cobot
 name: LBR iiwa 14 R820
 # Website describing the cobot
