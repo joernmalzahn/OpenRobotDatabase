@@ -6,7 +6,7 @@ name: Kinova Gen3 lite
 # Website describing the cobot
 website: ["https://www.kinovarobotics.com/sites/default/files/OP-Gen3lite_GENERIC_2020-.pdf"]
 # Videos
-videos: []
+videos: ["https://www.youtube.com/watch?v=6-QVcKXXYy4"]
 # Is the robot still being sold?
 in market: True
 # additional information
