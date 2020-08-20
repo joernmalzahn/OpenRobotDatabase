@@ -6,7 +6,7 @@ name: Jaco Gen 2 - 7 DOF spherical
 # Website describing the cobot
 website: [https://www.kinovarobotics.com/sites/default/files/ULWS-RA-JAC-7DS-SP-INT-EN%20201804-1.2%20%28KINOVA%E2%84%A2%20Ultra%20lightweight%20robotic%20arm%207%20DOF%20Spherical%20Specifications%29_0.pdf]
 # Videos
-videos: []
+videos: ['https://www.youtube.com/watch?v=cGlOrASG8nc']
 # Is the robot still being sold?
 in market: True
 # additional information

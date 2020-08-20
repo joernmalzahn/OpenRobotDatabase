@@ -6,7 +6,7 @@ name: Jaco Gen 2 - 6 DOF
 # Website describing the cobot
 website: [https://www.kinovarobotics.com/sites/default/files/KINO-2018-TechSpecs-07-Jaco6DS-EN-Web%20%281%29.pdf]
 # Videos
-videos: []
+videos: ['https://www.youtube.com/watch?v=cGlOrASG8nc']
 # Is the robot still being sold?
 in market: True
 # additional information

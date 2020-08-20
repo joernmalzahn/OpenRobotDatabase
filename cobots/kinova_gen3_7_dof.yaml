@@ -6,7 +6,7 @@ name: Jaco Gen 3 - 7 DOF
 # Website describing the cobot
 website: ["https://www.kinovarobotics.com/sites/default/files/OP-Gen3-Generic_V1_0.pdf"]
 # Videos
-videos: []
+videos: [https://www.youtube.com/watch?v=6-QVcKXXYy4]
 # Is the robot still being sold?
 in market: True
 # additional information
