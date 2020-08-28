@@ -2,6 +2,7 @@ from ocd_sql_interface import OcdSqlInterface
 import yaml
 import os
 from functools import reduce
+import matplotlib.pyplot as plt
 
 
 def dict_recursive_get(input_dict, address,default=None):
@@ -167,10 +168,32 @@ class OcdCore:
 
 
 def main():
-    database = "test.db"
     
-    core = OcdCore()
+    # The name of our database will be:
+    database = "ocd_database.db"
+    
+    # Initialize the OCD core:
+    core = OcdCore(database)
+
+    # Convert .yamls into a SQLite database
     core.create_db()        
+
+    # Next we are going to plot the payload mass capacity for each robot 
+    # versus the robot's maximum reach.
+
+    # Extract and organize desired columns from the database
+    data = core.get_data('cobots', ['payload mass', 'max reach'])
+    payloads, reaches = zip(*data)
+        
+    # Plotting
+    plt.plot(reaches, payloads,'o')
+    ax = plt.gca()
+    ax.set_xlim([0,1800])
+    ax.set_ylim([0,26])
+    ax.set_xlabel("Max. Reach [mm]")
+    ax.set_ylabel("Payload Mass [kg]")
+    plt.title("Number of Cobots: %d" % len(reaches))
+    plt.show()
 
 
 if __name__ == '__main__':
