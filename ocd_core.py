@@ -37,9 +37,7 @@ class OcdCore:
     """
     _cobot_table_name = 'cobots'
     _manufacturer_table_name = 'manufacturers'
-#    _cobot_dir = _cobot_table_name  + os.sep
-#    _manufacturer_dir = _manufacturer_table_name  + os.sep
-    
+   
     _cobot_fields = {
         'name' : {
             'address': [], 
