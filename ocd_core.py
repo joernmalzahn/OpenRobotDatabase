@@ -4,7 +4,7 @@ import os
 from functools import reduce
 
 
-def dict_recursive_get(input_dict, address):
+def dict_recursive_get(input_dict, address,default=None):
     """Recursive version of dict.get(key)
     Args:
         input_dict ([type]): [description]
@@ -13,24 +13,13 @@ def dict_recursive_get(input_dict, address):
     Returns:
         [type]: [description]
     """
-    return reduce(lambda c,k: c.get(k,{}), address, input_dict)
-
-
-def fields_2_keys(input_dict):
-    """Splits a field definition table into lists of keys, field addesses and attributes.
+    result = reduce(lambda c,k: c.get(k,{}), address, input_dict)
     
-    Args:
-        input_dict ([type]): [description]
+    # Deal with empty fields
+    if result == {}:
+        result = None
 
-    Returns:
-        [type]: [description]
-    """
-    key_list = list(input_dict.keys())
-    value_list = list(input_dict.values())
-    attribute_list = [value['attribute'] for value in value_list]
-    address_list = [value['address'] for value in value_list]
-
-    return key_list, address_list, attribute_list
+    return result
 
 
 class OcdCore:
@@ -52,31 +41,31 @@ class OcdCore:
     
     _cobot_fields = {
         'name' : {
-            'address': [''], 
+            'address': [], 
             'attribute': 'text NOT NULL'
             },
         'manufacturer' : {
-            'address': [''], 
+            'address': [], 
             'attribute': 'text NOT NULL'
             },
-        'payload_mass' : {
+        'payload mass' : {
             'address': ['mechanical properties'],
             'attribute': 'integer NOT NULL'
             },
-        'max_reach' : {
+        'max reach' : {
             'address': ['mechanical properties'],
             'attribute': 'integer NOT NULL'
             },
-        'robot_mass' : {
+        'robot mass' : {
             'address': ['mechanical properties'],
             'attribute':  'integer'
             },
         'videos' : {
-            'address': [''],
+            'address': [],
             'attribute': 'text'
             },
         'website' : {
-            'address': [''], 
+            'address': [], 
             'attribute': 'text NOT NULL'}
     }
 
@@ -96,17 +85,14 @@ class OcdCore:
         print('Manufacturer collection located in: %s' % self._manufacturer_path)
         print('Cobot collection located in %s' % self._cobot_path)
 
+
+
     def _create_tables(self):
         """
         Creates tables for cobots and manufacturers.
         """        
         # Cobot table        
-        sql_create_cobot_table = "CREATE TABLE IF NOT EXISTS " + self._cobot_table_name + """ (\n\tid integer PRIMARY KEY"""
-        for tmp in self._cobot_fields:
-            sql_create_cobot_table += ',\n\t' + tmp + ' ' + self._cobot_fields[tmp]['attribute']
-        sql_create_cobot_table += "\n);"
-
-        self._sql_interface.create_table(sql_create_cobot_table)
+        self._sql_interface.create_table(self._cobot_table_name, self._cobot_fields)
         
         # Manufacturer table - to be implemented
 
@@ -115,6 +101,10 @@ class OcdCore:
         allCobotYamls = os.listdir( self._cobot_dir )
         print(allCobotYamls)
         
+        key_list = list(self._cobot_fields.keys())
+        value_list = list(self._cobot_fields.values())
+        address_list = [value['address'] for value in value_list]
+
         for file in allCobotYamls:
             if file != "cobot_schema.yaml" and file != "cobot_template.yaml":
                 with open( self._cobot_dir + file) as f:
@@ -122,22 +112,14 @@ class OcdCore:
                     data = yaml.load(f, Loader=yaml.FullLoader)
                     print(data)
 
-                    # gather data, this is the part that will need care to ensure data consistency... more work needed here...
-                    cobot_entry = (
-                        data['name'],
-                        data['manufacturer'],
-                        data['mechanical properties']['payload mass'],
-                        data['mechanical properties']['max reach'],
-                        data.get('mechanical properties').get('robot masss', None),
-                        data['videos'][0],
-                        data['website'][0]
-                        )
+                    # gather data
+                    cobot_entry = list()
+
+                    for key, address in zip(key_list, address_list) :
+                        cobot_entry.append(dict_recursive_get(data, address + [key]) )
 
 
-#                    cobot_entry_alternative = 
-
-                    
-                    self._insert_cobot(cobot_entry)
+                    self._insert_cobot(tuple(cobot_entry))
 
 
     def create_db(self):
@@ -161,15 +143,10 @@ class OcdCore:
         """
         return self.get_data(self._cobot_table_name)
 
-    def get_data(self, table, field_names = '*' ):
-        sql_string = 'SELECT '
-        if len(field_names) > 1:
-            for tmp in field_names[0:-1]:
-                sql_string += tmp + ', '       
-        
-        sql_string += field_names[-1] + " FROM " + table
 
-        return self._sql_interface.retrieve_data(sql_string)
+    def get_data(self, table, field_names = '*' ):
+
+        return self._sql_interface.get_data(table, field_names)
 
 
     def _insert_cobot(self, cobot):
@@ -178,7 +155,7 @@ class OcdCore:
         :param cobot data:
         :return: cobot id
         """
-        return self._sql_interface.insert_data_set(self._cobot_table_name, cobot)
+        return self._sql_interface.insert_data_set(self._cobot_table_name, cobot, self._cobot_fields)
 
     def _insert_manufacturer(self, manufacturer):
         """

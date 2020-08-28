@@ -27,13 +27,17 @@ class OcdSqlInterface:
         """
         if self._conn:
             self._conn.close()
+            self._conn = []
+    
 
-    def create_table(self, create_table_sql):
+    def create_table(self, table_name, fields):
         """ Create a table from the create_table_sql statement
         :param conn: Connection object
         :param create_table_sql: a CREATE TABLE statement
         :return:
         """
+        create_table_sql = self._get_sql_create_table_string(table_name, fields)
+
         self._create_connection()
         try:
             c = self._conn.cursor()
@@ -42,35 +46,68 @@ class OcdSqlInterface:
         except Error as e:
             print(e)
 
-    def insert_data_set(self, table, dataset):
+        self._conn.commit()
+        self._close_connection()
+
+    def make_data_compatible(self, dataset):
+
+        # SQLite3 does not support array type entries. So convert any array in the data to a string representing the array.
+        # This will be a comma separated list that can be parsed later on if necessary.
+        compatible_dataset = [ str(element) if isinstance(element, list) else element for element in dataset ]       
+        return compatible_dataset
+
+    def _get_sql_create_table_string(self, table_name, fields):
+        
+        sql_create_table = "CREATE TABLE " + table_name + """ (\n\tid integer PRIMARY KEY,\n\t"""
+        sql_create_table += ',\n\t'.join(
+            '\"' + key + '\" ' + fields[key]['attribute'] 
+             if ' ' in key else 
+             key + ' ' + fields[key]['attribute'] 
+             for key in fields
+            ) 
+        sql_create_table += "\n);"        
+
+        return sql_create_table
+
+    def _get_sql_select_string(self, table, field_names):
+
+        sql_string = "SELECT "
+        sql_string += ', '.join('\"' + field + '\"' if ' ' in field else field for field in field_names)
+        sql_string += " FROM " + table 
+        
+        return sql_string
+
+    def _get_sql_insert_string(self, table_name, fields):
+                
+        sql_string = "INSERT INTO " + table_name + " (\n\t"
+        sql_string +=  ',\n\t'.join('\"' + key + '\"' if ' ' in key else key for key in fields) 
+        sql_string += '\n)VALUES({})'.format(','.join('?' * len(fields)))
+        
+        return sql_string
+
+    def insert_data_set(self, table, dataset, fields):
         """
         Insert a new cobot into the cobots table
         :param conn:
         :param cobot:
         :return: cobot id
         """
-        sql_string = ''' INSERT INTO '''+ table + '''(
-                    name,
-                    manufacturer,
-                    payload_mass,
-                    max_reach,
-                    robot_mass,
-                    videos,
-                    website)
-                VALUES(?,?,?,?,?,?,?) '''
+        sql_string = self._get_sql_insert_string(table,fields)
+        compatible_dataset = self.make_data_compatible(dataset)
 
         self._create_connection()
 
         cur = self._conn.cursor()
-        cur.execute(sql_string, dataset)
+        cur.execute(sql_string, compatible_dataset)
         self._conn.commit()
 
         self._close_connection()
 
         return cur.lastrowid  
 
-    def retrieve_data(self, sql_string):
+    def get_data(self,  table, field_names):
 
+        sql_string = self._get_sql_select_string(table, field_names)
         self._create_connection()
 
         cur = self._conn.cursor()
