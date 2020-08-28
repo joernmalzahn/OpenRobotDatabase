@@ -37,8 +37,8 @@ class OcdCore:
     """
     _cobot_table_name = 'cobots'
     _manufacturer_table_name = 'manufacturers'
-    _cobot_dir = _cobot_table_name  + os.sep
-    _manufacturer_dir = _manufacturer_table_name  + os.sep
+#    _cobot_dir = _cobot_table_name  + os.sep
+#    _manufacturer_dir = _manufacturer_table_name  + os.sep
     
     _cobot_fields = {
         'name' : {
@@ -70,16 +70,23 @@ class OcdCore:
             'attribute': 'text NOT NULL'}
     }
 
-    def __init__(self,db_filename='ocd_database.db'):
+    def __init__(self,**kwargs):
         print("SQL Core Created!")
-        self._db_filename = db_filename
-        self.ocd_path = '.' + os.sep
-        self._manufacturer_path = self.ocd_path + self._manufacturer_dir
-        self._cobot_path = self.ocd_path + self._cobot_dir
-        self._sql_interface = OcdSqlInterface(db_filename)
+        self._db_filename = kwargs.get('db_filename', 'ocd_database.db')
+        
+        # Path to open cobot database directory, make sure it ends with a separator
+        self.ocd_path = kwargs.get('ocd_path','.' + os.sep ) 
+        if self.ocd_path[-1] is not os.sep: 
+            self.ocd_path += os.sep
 
-        if not os.path.isfile(db_filename):
-            print('Database %s not found. Creating new file' % db_filename)
+        # Derive additional paths
+        self._manufacturer_path = self.ocd_path + self._manufacturer_table_name + os.sep
+        self._cobot_path = self.ocd_path + self._cobot_table_name + os.sep
+        self._sql_interface = OcdSqlInterface(self._db_filename)
+
+        # Check whether database file exists, if not, create one
+        if not os.path.isfile(self._db_filename):
+            print('Database %s not found. Creating new file' % self._db_filename)
             self.create_db()
             
 
@@ -99,7 +106,7 @@ class OcdCore:
 
     def _enter_cobot_data(self):
 
-        allCobotYamls = os.listdir( self._cobot_dir )
+        allCobotYamls = os.listdir( self._cobot_path )
         print(allCobotYamls)
         
         key_list = list(self._cobot_fields.keys())
@@ -108,7 +115,7 @@ class OcdCore:
 
         for file in allCobotYamls:
             if file != "cobot_schema.yaml" and file != "cobot_template.yaml":
-                with open( self._cobot_dir + file) as f:
+                with open( self._cobot_path + file) as f:
                     print(file)
                     data = yaml.load(f, Loader=yaml.FullLoader)
                     print(data)
@@ -173,7 +180,7 @@ def main():
     database = "ocd_database.db"
     
     # Initialize the OCD core:
-    core = OcdCore(database)
+    core = OcdCore(db_filename=database)
 
     # Convert .yamls into a SQLite database
     core.create_db()        
