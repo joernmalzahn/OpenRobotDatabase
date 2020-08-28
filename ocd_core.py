@@ -82,7 +82,6 @@ class OcdCore:
     def _enter_cobot_data(self):
 
         allCobotYamls = os.listdir( self._cobot_path )
-        print(allCobotYamls)
         
         key_list = list(self._cobot_fields.keys())
         value_list = list(self._cobot_fields.values())
@@ -91,9 +90,7 @@ class OcdCore:
         for file in allCobotYamls:
             if file != "cobot_schema.yaml" and file != "cobot_template.yaml":
                 with open( self._cobot_path + file) as f:
-                    print(file)
                     data = yaml.load(f, Loader=yaml.FullLoader)
-                    print(data)
 
                     # gather data
                     cobot_entry = list()
@@ -109,8 +106,6 @@ class OcdCore:
         """
         Main routine to invoke the sqlite database file creation.
         """        
-        #print("Creating database connection.")
-        #self._sql_interface._create_connection(self._db_filename)
 
         print("Creating database tables.")
         self._create_tables()

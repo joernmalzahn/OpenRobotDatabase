@@ -14,7 +14,6 @@ class OcdSqlInterface:
         """
         try:
             self._conn = sqlite3.connect(self._db_file_name)
-            print(sqlite3.version)
         except Error as e:
             print("Error")
             print(e)
@@ -114,9 +113,6 @@ class OcdSqlInterface:
         cur.execute(sql_string)
 
         rows = cur.fetchall()
-
-        for row in rows:
-            print(row)
 
         self._close_connection()
 
