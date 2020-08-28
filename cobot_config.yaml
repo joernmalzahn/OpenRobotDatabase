@@ -1,0 +1,29 @@
+    {
+        'name' : {
+            'address': [], 
+            'attribute': 'text NOT NULL'
+            },
+        'manufacturer' : {
+            'address': [], 
+            'attribute': 'text NOT NULL'
+            },
+        'payload mass' : {
+            'address': ['mechanical properties'],
+            'attribute': 'integer NOT NULL'
+            },
+        'max reach' : {
+            'address': ['mechanical properties'],
+            'attribute': 'integer NOT NULL'
+            },
+        'robot mass' : {
+            'address': ['mechanical properties'],
+            'attribute':  'integer'
+            },
+        'videos' : {
+            'address': [],
+            'attribute': 'text'
+            },
+        'website' : {
+            'address': [], 
+            'attribute': 'text NOT NULL'}
+    }

@@ -38,35 +38,7 @@ class OcdCore:
     _cobot_table_name = 'cobots'
     _manufacturer_table_name = 'manufacturers'
    
-    _cobot_fields = {
-        'name' : {
-            'address': [], 
-            'attribute': 'text NOT NULL'
-            },
-        'manufacturer' : {
-            'address': [], 
-            'attribute': 'text NOT NULL'
-            },
-        'payload mass' : {
-            'address': ['mechanical properties'],
-            'attribute': 'integer NOT NULL'
-            },
-        'max reach' : {
-            'address': ['mechanical properties'],
-            'attribute': 'integer NOT NULL'
-            },
-        'robot mass' : {
-            'address': ['mechanical properties'],
-            'attribute':  'integer'
-            },
-        'videos' : {
-            'address': [],
-            'attribute': 'text'
-            },
-        'website' : {
-            'address': [], 
-            'attribute': 'text NOT NULL'}
-    }
+
 
     def __init__(self,**kwargs):
         print("SQL Core Created!")
@@ -76,6 +48,11 @@ class OcdCore:
         self.ocd_path = kwargs.get('ocd_path','.' + os.sep ) 
         if self.ocd_path[-1] is not os.sep: 
             self.ocd_path += os.sep
+
+        # Load database configs
+        f = open(self.ocd_path + "cobot_config.yaml",'r')
+        self._cobot_fields = yaml.load(f, Loader=yaml.FullLoader)
+        f.close()
 
         # Derive additional paths
         self._manufacturer_path = self.ocd_path + self._manufacturer_table_name + os.sep
