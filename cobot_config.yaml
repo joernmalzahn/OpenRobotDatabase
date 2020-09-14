@@ -15,6 +15,14 @@
             'address': ['mechanical properties'],
             'attribute': 'integer NOT NULL'
             },
+        'max cartesian velocity' : {
+            'address': ['mechanical properties'],
+            'attribute': 'integer'
+            },
+        'repeatability' : {
+            'address': ['mechanical properties'],
+            'attribute': 'float'
+            },
         'robot mass' : {
             'address': ['mechanical properties'],
             'attribute':  'integer'
