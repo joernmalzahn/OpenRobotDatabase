@@ -37,12 +37,11 @@ class OcdCore:
     """
     _cobot_table_name = 'cobots'
     _manufacturer_table_name = 'manufacturers'
-   
-
 
     def __init__(self,**kwargs):
         print("SQL Core Created!")
         self._db_filename = kwargs.get('db_filename', 'ocd_database.db')
+        self._overwrite_existing_db = kwargs.get('overwrite', True)
         
         # Path to open cobot database directory, make sure it ends with a separator
         self.ocd_path = kwargs.get('ocd_path','.' + os.sep ) 
@@ -51,19 +50,23 @@ class OcdCore:
 
         # Load database configs
         f = open(self.ocd_path + "cobot_config.yaml",'r')
-        self._cobot_fields = yaml.load(f, Loader=yaml.FullLoader)
+        yaml_content = yaml.load(f, Loader=yaml.FullLoader)
+        self._cobot_fields = yaml_content["columns"]
+        self._cobot_table_links = yaml_content["links"]
+        f.close()
+
+        f = open(self.ocd_path + "manufacturer_config.yaml",'r')
+        yaml_content = yaml.load(f, Loader=yaml.FullLoader)
+        self._manufacturer_fields  = yaml_content["columns"]
+        self._manufacturer_table_links = yaml_content["links"]
         f.close()
 
         # Derive additional paths
         self._manufacturer_path = self.ocd_path + self._manufacturer_table_name + os.sep
         self._cobot_path = self.ocd_path + self._cobot_table_name + os.sep
+        
         self._sql_interface = OcdSqlInterface(self._db_filename)
-
-        # Check whether database file exists, if not, create one
-        if not os.path.isfile(self._db_filename):
-            print('Database %s not found. Creating new file' % self._db_filename)
-            self.create_db()
-            
+           
 
         print('Manufacturer collection located in: %s' % self._manufacturer_path)
         print('Cobot collection located in %s' % self._cobot_path)
@@ -74,15 +77,19 @@ class OcdCore:
         """
         Creates tables for cobots and manufacturers.
         """        
+        # Manufacturer table
+        self._sql_interface.create_table(self._manufacturer_table_name, self._manufacturer_fields, self._manufacturer_table_links)
+
         # Cobot table        
-        self._sql_interface.create_table(self._cobot_table_name, self._cobot_fields)
+        self._sql_interface.create_table(self._cobot_table_name, self._cobot_fields, self._cobot_table_links)
         
-        # Manufacturer table - to be implemented
+
+
 
     def _enter_cobot_data(self):
 
         allCobotYamls = os.listdir( self._cobot_path )
-        
+
         key_list = list(self._cobot_fields.keys())
         value_list = list(self._cobot_fields.values())
         address_list = [value['address'] for value in value_list]
@@ -93,13 +100,40 @@ class OcdCore:
                     data = yaml.load(f, Loader=yaml.FullLoader)
 
                     # gather data
-                    cobot_entry = list()
+                    entry = list()
 
                     for key, address in zip(key_list, address_list) :
-                        cobot_entry.append(dict_recursive_get(data, address + [key]) )
+                        entry.append(dict_recursive_get(data, address + [key]) )
+
+                    self._insert_cobot(tuple(entry))
+
+    def _enter_manufacturer_data(self):
+
+        allManufacturerYamls = os.listdir( self._manufacturer_path )
+        
+        key_list = list(self._manufacturer_fields.keys())
+        value_list = list(self._manufacturer_fields.values())
+        address_list = [value['address'] for value in value_list]
+
+        for file in allManufacturerYamls:
+            if file != "manufacturer_schema.yaml" and file != "manufacturer_template.yaml":
+                with open( self._manufacturer_path + file) as f:
+                    data = yaml.load(f, Loader=yaml.FullLoader)
+
+                    # gather data
+                    entry = list()
+
+                    for key, address in zip(key_list, address_list) :
+                        entry.append(dict_recursive_get(data, address + [key]) )
 
 
-                    self._insert_cobot(tuple(cobot_entry))
+                    self._insert_manufacturer(tuple(entry))
+
+    def get_manufacturer_id(self, manufacturer_name):
+
+        #manufacturer_name_blank_safe = '\"' + manufacturer_name + '\"' if ' ' in manufacturer_name and not '\"' in manufacturer_name else manufacturer_name
+        return self._sql_interface.get_data(self._manufacturer_table_name,['id'], ['''name = \" ''' + manufacturer_name + '''\"'''])
+
 
 
     def create_db(self):
@@ -107,11 +141,25 @@ class OcdCore:
         Main routine to invoke the sqlite database file creation.
         """        
 
+        # Check whether database file exists, if not, create one
+        if os.path.isfile(self._db_filename):
+
+            if not self._overwrite_existing_db:
+                print('Database %s exists. Doing nothing.' % self._db_filename)
+                pass
+            else:
+                print('Database %s exists. Overwriting.' % self._db_filename)
+                os.remove(self._db_filename)
+
         print("Creating database tables.")
         self._create_tables()
 
+        print("Inserting manufacturer data")
+        self._enter_manufacturer_data()
+
         print("Inserting cobot data")
         self._enter_cobot_data()
+
 
 
     def get_all_cobots(self):
@@ -137,11 +185,15 @@ class OcdCore:
 
     def _insert_manufacturer(self, manufacturer):
         """
-        Insert a new manufacturer into the manufacturer table
-        :param manufacturer data:
-        :return: manufacturer id
+        Insert a new cobot into the cobots table
+        :param cobot data:
+        :return: cobot id
         """
-        return self._sql_interface.insert_data_set(self._manufacturer_table_name, manufacturer)
+        return self._sql_interface.insert_data_set(self._manufacturer_table_name, 
+            manufacturer, 
+            self._manufacturer_fields)
+
+    
 
 
 def main():
@@ -172,6 +224,8 @@ def main():
     plt.title("Number of Cobots: %d" % len(reaches))
     plt.show()
 
+    data = core.get_data('manufacturers')
+    print(data)
 
 if __name__ == '__main__':
     main()

@@ -29,13 +29,13 @@ class OcdSqlInterface:
             self._conn = []
     
 
-    def create_table(self, table_name, fields):
+    def create_table(self, table_name, fields, links):
         """ Create a table from the create_table_sql statement
         :param conn: Connection object
         :param create_table_sql: a CREATE TABLE statement
         :return:
         """
-        create_table_sql = self._get_sql_create_table_string(table_name, fields)
+        create_table_sql = self._get_sql_create_table_string(table_name, fields, links)
 
         self._create_connection()
         try:
@@ -55,7 +55,7 @@ class OcdSqlInterface:
         compatible_dataset = [ str(element) if isinstance(element, list) else element for element in dataset ]       
         return compatible_dataset
 
-    def _get_sql_create_table_string(self, table_name, fields):
+    def _get_sql_create_table_string(self, table_name, fields, links = {}):
         
         sql_create_table = "CREATE TABLE " + table_name + """ (\n\tid integer PRIMARY KEY,\n\t"""
         sql_create_table += ',\n\t'.join(
@@ -63,16 +63,30 @@ class OcdSqlInterface:
              if ' ' in key else 
              key + ' ' + fields[key]['attribute'] 
              for key in fields
-            ) 
+            )
+
+        # Add links to other tables    
+        if bool(links): # if links is not empty
+            for table_name in links:
+                local_column_name = links[table_name]['local_column'];
+                remote_column_name = links[table_name]['remote_column'];
+                sql_create_table += ",\n"
+                sql_create_table +=  "FOREIGN KEY (" + local_column_name + ") REFERENCES " + table_name + " ( " + remote_column_name + " )" 
+        
         sql_create_table += "\n);"        
 
         return sql_create_table
 
-    def _get_sql_select_string(self, table, field_names):
+    def _get_sql_select_string(self, table, field_names, where = None):
 
         sql_string = "SELECT "
         sql_string += ', '.join('\"' + field + '\"' if ' ' in field else field for field in field_names)
         sql_string += " FROM " + table 
+
+        if where is not None:
+
+            sql_string += " WHERE "
+            sql_string += ', '.join( where_field for where_field in where)
         
         return sql_string
 
@@ -104,9 +118,9 @@ class OcdSqlInterface:
 
         return cur.lastrowid  
 
-    def get_data(self,  table, field_names):
+    def get_data(self,  table, field_names, where = None):
 
-        sql_string = self._get_sql_select_string(table, field_names)
+        sql_string = self._get_sql_select_string(table, field_names, where)
         self._create_connection()
 
         cur = self._conn.cursor()
