@@ -1,0 +1,13 @@
+---
+columns: {
+        name : {
+            address: [], 
+            attribute: 'text NOT NULL UNIQUE'
+            },
+        website : {
+            address: [], 
+            attribute: 'text NOT NULL'}
+    }
+links: {
+
+}
