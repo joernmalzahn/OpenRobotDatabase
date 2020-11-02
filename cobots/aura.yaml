@@ -16,8 +16,6 @@ comments: [AURA is a standard Comau Hollow Wrist Robot dressed into a contact se
 mechanical properties:
     # How can the robot be mounted (floor, ceiling, wall, any)
     mounting: [floor, ceiling]
-    # Has quick connect base (True, False)
-    has quick connect base: False
     # Axes Properties
     axes: 
         # minimum joint angle in deg [A1, A2, A3, A4, A5, A6,...]
@@ -38,5 +36,6 @@ mechanical properties:
     robot mass: 32
     
 flange interface:
-    flange type: ISO 9409 - 1 - A 125 ISO 9409 - 1 - A 160
-
+    tool flange:
+        # identifier for the mechanical interface pattern or "custom"
+        mechanical pattern: ISO 9409 - 1 - A 125 ISO 9409 - 1 - A 160

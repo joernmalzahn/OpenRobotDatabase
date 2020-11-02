@@ -21,8 +21,6 @@ mechanical properties:
     mounting: []
     # Ingress protection class
     IP:
-    # Has quick connect base (True, False)
-    has quick connect base: False
     # Axes Properties
     axes: 
         # minimum joint angle in deg [A1, A2, A3, A4, A5, A6,...]
@@ -72,17 +70,52 @@ sensors:
     
     # Integrated skin sensor
     skin: 
-    
+
 flange interface:
-    flange type: 
-    number of digital inputs: 
-    number of digital outputs:  
-    number of analog inputs: 
-    number of analog outputs: 
-    power: 
-    pneumatic: 
-    ethernet: 
-    
+    tool flange:
+        # number of digital inputs:
+        digital inputs:
+        # number of digital outputs: 
+        digital outputs:
+        # number of analog inputs: 
+        analog inputs:
+        # number of analog outputs: 
+        analog outputs:
+        # electrical power supply at the tool flange
+        power: 
+            # number of 12 V pins
+            V12:
+            # number of 24 V pins
+            V24:
+            # number of 48 V pins
+            V48:
+            # maximum current per pin
+            current:
+        # pneumatic power at the tool flange
+        pneumatic: 
+            # number of outlets
+            number:
+            # size of the outlet mm or metric standard
+            size:
+            # pressure at the outlet
+            pressure:
+        # number of ethernet ports at the flange
+        ethernet:
+        # number of user I/O
+        user I/O:
+        # number of RS485 ports
+        RS485:
+        # identifier for the mechanical interface pattern or "custom"
+        mechanical pattern:
+        
+    base flange:
+        # identifier for the mechanical interface pattern to mount the robot to ground
+        mechanical pattern:
+        # power supply that goes to the robot
+        power:
+        # communication that goes to the robot
+        communication:
+
     
 control properties: 
     # Communication bus frequency in [kHz]

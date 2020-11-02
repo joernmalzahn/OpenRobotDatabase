@@ -17,8 +17,6 @@ mechanical properties:
     mounting: [floor]
     # Ingress protection class
     IP: 22
-    # Has quick connect base (True, False)
-    has quick connect base: False
     # Axes Properties
     axes: 
         # minimum joint angle in deg [A1, A2, A3, A4, A5, A6,...]

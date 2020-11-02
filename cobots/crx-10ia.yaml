@@ -16,8 +16,6 @@ comments: Released on December 18, 2019, only scarce information available
 mechanical properties:
     # How can the robot be mounted (floor, ceiling, wall, any angle)
     mounting: [floor, ceiling, wall, any]
-    # Has quick connect base (True, False)
-    has quick connect base: False
     # maximum reach [mm]
     max reach: 2480
     # payload mass capacity in [kg]

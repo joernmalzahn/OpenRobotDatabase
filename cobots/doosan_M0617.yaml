@@ -44,11 +44,25 @@ mechanical properties:
     nominal lifetime: 35
 
 flange interface:
-    flange type: to be filled
-    number of digital inputs: 6
-    number of digital outputs: 6  
-    power: 24 V 2 (peak 3) A
-
+    tool flange:
+        # number of digital inputs:
+        digital inputs: 6
+        # number of digital outputs: 
+        digital outputs: 6
+        # electrical power supply at the tool flange
+        power: 
+            # number of 24 V pins
+            V24: 1
+            # maximum current per pin
+            current: 2
+        # number of RS485 ports
+        RS485: 1
+        # identifier for the mechanical interface pattern or "custom"
+        mechanical pattern: ISO 9409-1-50-4-M6
+        
+    base flange:
+        # identifier for the mechanical interface pattern to mount the robot to ground
+        mechanical pattern: 4x D9 + 2x D5H7 at D185
     
         
 ambient conditions:

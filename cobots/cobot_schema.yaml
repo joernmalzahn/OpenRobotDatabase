@@ -60,8 +60,6 @@
                         max: 4
                 # Ingress protection class
                 IP: //int
-                # Has quick connect base (True, False)
-                has quick connect base: //bool
                 # Axes Properties
                 axes:
                     type: //rec
@@ -137,26 +135,61 @@
                 vision: //str
                 # Integrated skin sensor (name, type etc.)
                 skin: //str
-
+                
         flange interface:
             type: //rec
             optional:
-                flange type: //str
-                number of digital inputs: //int
-                number of digital outputs: //int
-                number of analog inputs: //int
-                number of analog outputs: //int
-                power: //any
-                pneumatic: //any
-                ethernet: //any
-                RS485: //any
-                comments:
-                    type: //any
-                    of: [
-                        //str,
-                        {type: //arr, contents: //str}
-                    ]
-                    
+                tool flange:
+                    type: //rec
+                    optional:
+                        # number of digital inputs:
+                        digital inputs: //int
+                        # number of digital outputs: //int
+                        digital outputs: //int
+                        # number of analog inputs: //int
+                        analog inputs: //int
+                        # number of analog outputs: //int
+                        analog outputs: //int
+                        # power supply at the tool flange
+                        power: 
+                            type: //rec
+                            optional:
+                                # number of 12 V pins
+                                V12: //int
+                                # number of 24 V pins
+                                V24: //int
+                                # number of 48 V pins
+                                V48: //int
+                                # maximum current per pin
+                                current: //num
+                        # pneumatic power at the tool flange
+                        pneumatic: 
+                            type: //rec
+                            optional:
+                                # number of outlets
+                                number: //int
+                                # size of the outlet mm or metric standard
+                                size: //str
+                                # pressure at the outlet
+                                pressure: //int
+                        # number of ethernet ports at the flange
+                        ethernet: //int
+                        # number of user I/O
+                        user I/O: //int
+                        # number of RS485 ports
+                        RS485: //int
+                        # identifier for the mechanical interface pattern or "custom"
+                        mechanical pattern: //str
+                base flange:
+                    type: //rec
+                    optional:
+                        # identifier for the mechanical interface pattern to mount the robot to ground
+                        mechanical pattern: //str
+                        # power supply that goes to the robot
+                        power: //str
+                        # communication that goes to the robot
+                        communication: //str
+
         control properties:
             type: //rec
             optional:

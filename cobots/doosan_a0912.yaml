@@ -17,8 +17,6 @@ mechanical properties:
     mounting: [any]
     # Ingress protection class
     IP: 54
-    # Has quick connect base (True, False)
-    has quick connect base: False
     # Axes Properties
     axes: 
         # minimum joint angle in deg [A1, A2, A3, A4, A5, A6,...]
@@ -42,11 +40,25 @@ mechanical properties:
     nominal lifetime: 35
 
 flange interface:
-    flange type: "to be filled"
-    number of digital inputs: 2
-    number of digital outputs: 2  
-    power: 24 V 2 (peak 3) A
-    RS485: True
+    tool flange:
+        # number of digital inputs:
+        digital inputs: 2
+        # number of digital outputs: 
+        digital outputs: 2
+        # electrical power supply at the tool flange
+        power: 
+            # number of 24 V pins
+            V24: 1
+            # maximum current per pin
+            current: 2
+        # number of RS485 ports
+        RS485: 1
+        # identifier for the mechanical interface pattern or "custom"
+        mechanical pattern: ISO 9409-1-50-4-M6
+        
+    base flange:
+        # identifier for the mechanical interface pattern to mount the robot to ground
+        mechanical pattern: 4x M8 (150 x 150)
 
     
         

@@ -17,8 +17,6 @@ mechanical properties:
     mounting: [any]
     # Ingress protection class
     IP: 54
-    # Has quick connect base (True, False)
-    has quick connect base: False
     # Axes Properties
     axes: 
         # minimum joint angle in deg [A1, A2, A3, A4, A5, A6,...]
@@ -44,14 +42,37 @@ electrical properties:
     # Average power consumption in [W]
     avg power: 400
 
-
 flange interface:
-    flange type: DIN-ISO-9409-1-50-4
-    number of digital inputs: 4
-    number of digital outputs:  4
-    number of analog inputs: 2
-    number of analog outputs: 0
-    power: 0/12/24 V 0.8 A
+    tool flange:
+        # number of digital inputs:
+        digital inputs: 4
+        # number of digital outputs:
+        digital outputs: 4
+        # number of analog inputs:
+        analog inputs: 2
+        # number of analog outputs:
+        analog outputs: 0
+        # electrical power supply at the tool flange
+        power: 
+            # number of 12 V pins
+            V12: 1
+            # number of 24 V pins
+            V24: 1
+            # number of 48 V pins
+            V48: 1
+            # maximum current per pin
+            current: 0.8
+        # identifier for the mechanical interface pattern or "custom"
+        mechanical pattern: DIN-ISO-9409-1-50-4
+        
+    base flange:
+        # identifier for the mechanical interface pattern to mount the robot to ground
+        mechanical pattern: 4x D11 + 2x D8+0.02 on D185
+        # power supply that goes to the robot
+        power: 48 V
+        # communication that goes to the robot
+        communication: CAN
+
 
 ambient conditions:
     # Temperature range [min, max] in [°C]
