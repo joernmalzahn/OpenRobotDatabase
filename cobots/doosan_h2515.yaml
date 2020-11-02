@@ -1,0 +1,59 @@
+--- # Cobot file template
+# Vendor name (see manufacturer list)
+manufacturer: Doosan
+# Full name of the cobot
+name: H2515
+# Website describing the cobot
+website: ["https://www.doosanrobotics.com/en/products/series/h2515"]
+# Videos
+videos: ["https://youtu.be/Kn3tbxjDGDc"]
+# Is the robot still being sold?
+in market: True
+# additional information
+comments: []
+
+mechanical properties:
+    # How can the robot be mounted (floor, ceiling, wall, any angle)
+    mounting: [floor]
+    # Ingress protection class
+    IP: 54
+    # Axes Properties
+    axes: 
+        # minimum joint angle in deg [A1, A2, A3, A4, A5, A6,...]
+        min pos: [-360, -130, -160, -360, -360, -360]
+        # maximum joint angle in deg [A1, A2, A3, A4, A5, A6,...]
+        max pos: [360, 130, 160, 360, 360, 360] 
+        # maximum joint velocity in deg/s [A1, A2, A3, A4, A5, A6,...]
+        max vel: [100, 80, 100, 180, 180, 180]
+        # maximum joint torque in Nm [A1, A2, A3, A4, A5, A6,...]
+    # pose repeatability in [mm]
+    repeatability: 0.1
+    # maximum cartesian velocity in [m/s]
+    max cartesian velocity: 1
+    # maximum reach [mm]
+    max reach: 1500
+    # payload mass capacity in [kg]
+    payload mass: 25
+    # robot mass in [kg]
+    robot mass: 72
+    # nominal lifetime in [kh]
+    nominal lifetime: 35
+
+flange interface:
+    tool flange:
+        # number of digital inputs:
+        digital inputs: 6
+        # number of digital outputs: 
+        digital outputs: 6
+        # electrical power supply at the tool flange
+        power: 
+            # number of 24 V pins
+            V24: 1
+            # maximum current per pin
+            current: 3
+    
+        
+ambient conditions:
+    # Temperature range [min, max] in [°C]
+    temperature: [0, 45]
+
