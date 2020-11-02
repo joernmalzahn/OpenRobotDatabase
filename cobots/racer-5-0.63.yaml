@@ -1,6 +1,6 @@
 --- # Cobot file template
 # Vendor name (see manufacturer list)
-manufacturer: Comau
+manufacturer: Comau SpA
 # Full name of the cobot
 name: Racer-6-0.63
 # Website describing the cobot
