@@ -62,7 +62,7 @@ flange interface:
         # number of user I/O
         user I/O: 6
         # identifier for the mechanical interface pattern or "custom"
-        mechanical pattern: DIN ISO 9409-1-50-7-M6. 
+        mechanical pattern: DIN ISO 9409-1-50-7-M6
     # any additional comment
     comment: KUKA offers about 10 different flange options with different connectivity. So it is difficult to give precise information here.
 

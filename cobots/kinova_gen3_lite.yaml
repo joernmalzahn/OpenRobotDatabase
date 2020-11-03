@@ -39,10 +39,7 @@ electrical properties:
     max power: 200
     # Average power consumption in [W]
     avg power: 20
-    
-flange interface:
-    flange type: gripper
-      
+          
 control properties: 
     # Communication bus frequency in [kHz]
     communication frequency: 1
