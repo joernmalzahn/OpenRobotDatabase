@@ -160,6 +160,8 @@
                                 V24: //int
                                 # number of 48 V pins
                                 V48: //int
+                                # number of 60 V pins
+                                V60: //int
                                 # maximum current per pin
                                 current: //num
                         # pneumatic power at the tool flange
@@ -178,6 +180,8 @@
                         user I/O: //int
                         # number of RS485 ports
                         RS485: //int
+                        # number of EtherCAT ports
+                        EtherCAT: //int
                         # identifier for the mechanical interface pattern or "custom"
                         mechanical pattern: //str
                 base flange:
@@ -189,6 +193,8 @@
                         power: //str
                         # communication that goes to the robot
                         communication: //str
+                # any additional comment
+                comment:
 
         control properties:
             type: //rec

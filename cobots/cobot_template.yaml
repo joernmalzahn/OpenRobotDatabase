@@ -105,6 +105,8 @@ flange interface:
         user I/O:
         # number of RS485 ports
         RS485:
+        # number of EtherCAT ports
+        EtherCAT:
         # identifier for the mechanical interface pattern or "custom"
         mechanical pattern:
         
@@ -115,6 +117,8 @@ flange interface:
         power:
         # communication that goes to the robot
         communication:
+    # any additional comment
+    comment:
 
     
 control properties: 
