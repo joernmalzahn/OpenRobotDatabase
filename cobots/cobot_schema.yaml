@@ -171,7 +171,7 @@
                                 # number of outlets
                                 number: //int
                                 # size of the outlet mm or metric standard
-                                size: //str
+                                size: //int
                                 # pressure at the outlet
                                 pressure: //int
                         # number of ethernet ports at the flange
@@ -194,7 +194,7 @@
                         # communication that goes to the robot
                         communication: //str
                 # any additional comment
-                comment:
+                comment: //str
 
         control properties:
             type: //rec
