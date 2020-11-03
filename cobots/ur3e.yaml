@@ -19,8 +19,6 @@ mechanical properties:
     mounting: [any]
     # Ingress protection class
     IP: 54
-    # Has quick connect base (True, False)
-    has quick connect base: False
     # Axes Properties
     axes:
         # minimum joint angle in deg [A1, A2, A3, A4, A5, A6,...]
@@ -48,13 +46,32 @@ electrical properties:
     # Average power consumption in [W]
     avg power: 100
 
+
 flange interface:
-    flange type: M8 | M8 8-pin
-    number of digital inputs: 2
-    number of digital outputs: 2
-    number of analog inputs: 2
-    number of analog outputs: 0
-    power: 12/24 V 600 mA
+    tool flange:
+        # number of digital inputs:
+        digital inputs: 2
+        # number of digital outputs: 
+        digital outputs: 2
+        # number of analog inputs: 
+        analog inputs: 2
+        # number of analog outputs: 
+        analog outputs: 0
+        # electrical power supply at the tool flange
+        power: 
+            # number of 12 V pins
+            V12: 1
+            # number of 24 V pins
+            V24: 1
+            # maximum current per pin [A]
+            current: 0.6
+        mechanical pattern: ISO 9409-1-50-4-M6
+        
+    base flange:
+        # identifier for the mechanical interface pattern to mount the robot to ground
+        mechanical pattern: 4x D6.6 + 1x 5 FG8 x 8 + D5 FG8 at D110
+
+
 
 control properties:
     # Communication bus frequency in [kHz]

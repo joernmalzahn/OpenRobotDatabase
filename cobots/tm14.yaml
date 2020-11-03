@@ -22,8 +22,6 @@ mechanical properties:
     mounting: [floor]
     # Ingress protection class
     IP: 54
-    # Has quick connect base (True, False)
-    has quick connect base: False
     # Axes Properties
     axes: 
         # minimum joint angle in deg [A1, A2, A3, A4, A5, A6,...]
@@ -50,10 +48,13 @@ electrical properties:
     avg power: 300
 
 flange interface:
-    number of digital inputs: 4
-    number of digital outputs: 4
-    number of analog inputs: 1
-    number of analog outputs:  0
+    tool flange:
+        # number of digital inputs:
+        digital inputs: 4
+        # number of digital outputs: 
+        digital outputs: 4
+        # number of analog inputs: 
+        analog inputs: 1
     
 
 sensors: 

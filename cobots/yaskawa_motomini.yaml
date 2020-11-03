@@ -15,8 +15,6 @@ comments: []
 mechanical properties:
     # How can the robot be mounted (floor, ceiling, wall, any)
     mounting: [any]
-    # Has quick connect base (True, False)
-    has quick connect base: False
     # Axes Properties
     axes: 
         # minimum joint angle in deg [A1, A2, A3, A4, A5, A6,...]
@@ -45,8 +43,17 @@ electrical properties:
     # Maximum power consumption in [W]
     max power: 500
     
+
 flange interface:
-    pneumatic: 2xM5
-    comments: 9 conductors w/ ground for internal user I/O s
-
-
+    tool flange:
+        # pneumatic power at the tool flange
+        pneumatic: 
+            # number of outlets
+            number: 2
+            # size of the outlet mm or metric standard
+            size: 5
+        # number of user I/O
+        user I/O: 9
+        
+    # any additional comment
+    comment: 9 conductors w/ ground for internal user I/O s

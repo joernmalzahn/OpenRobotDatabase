@@ -17,8 +17,6 @@ mechanical properties:
     mounting: [floor, ceiling, wall, any]
     # Ingress protection class
     IP: 20
-    # Has quick connect base (True, False)
-    has quick connect base: False
     # Axes Properties
     axes: 
         # minimum joint angle in deg [A1, A2, A3, A4, A5, A6,...]
@@ -49,8 +47,16 @@ electrical properties:
     max power: 1000
    
 flange interface:
-    pneumatic: 2
-    comments: internal user I/O cable 8x 0.2 mm^2, 8x 0.3 mm^2
+    tool flange:
+        # pneumatic power at the tool flange
+        pneumatic: 
+            # number of outlets
+            number: 2
+        # number of user I/O
+        user I/O: 16
+        
+    # any additional comment
+    comment: internal user I/O cable 8x 0.2 mm^2, 8x 0.3 mm^2
 
 standards: [ Functional Safety, Cat. 3 PLd", "EN ISO 13849:2008 PLd"]
     

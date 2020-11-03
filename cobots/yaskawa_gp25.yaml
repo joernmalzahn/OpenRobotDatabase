@@ -17,8 +17,6 @@ mechanical properties:
     mounting: [floor, wall, ceiling, any]
     # Ingress protection class
     IP: 65
-    # Has quick connect base (True, False)
-    has quick connect base: False
     # Axes Properties
     axes: 
         # minimum joint angle in deg [A1, A2, A3, A4, A5, A6,...]
@@ -46,8 +44,11 @@ electrical properties:
     # Maximum power consumption in [W]
     max power: 2000
 
-
 flange interface:
-    pneumatic: 1
+    tool flange:
+        # pneumatic power at the tool flange
+        pneumatic: 
+            # number of outlets
+            number: 1
 
 standards: [ "IEC61131-3", "Food-grade"]

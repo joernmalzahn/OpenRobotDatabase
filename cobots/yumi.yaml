@@ -18,8 +18,6 @@ mechanical properties:
     mounting: [any, floor, wall, ceiling]
     # Ingress protection class
     IP: 30
-    # Has quick connect base (True, False)
-    has quick connect base: False
     # Axes Properties
     axes: 
         # minimum joint angle in deg [A1, A2, A3, A4, A5, A6,...]
@@ -58,16 +56,30 @@ sensors:
     vision: integrated
 
 flange interface:
-    flange type: custom
-    number of digital inputs: 0
-    number of digital outputs: 0 
-    number of analog inputs: 0
-    number of analog outputs: 0
-    power: 24
-    pneumatic: 4 bar
-    ethernet: integrated
-    
-    
+    tool flange:
+        # number of digital inputs:
+        digital inputs: 0
+        # number of digital outputs: 
+        digital outputs: 0
+        # number of analog inputs: 
+        analog inputs: 0
+        # number of analog outputs: 
+        analog outputs: 0
+        # electrical power supply at the tool flange
+        power: 
+            # number of 24 V pins
+            V24: 1
+        # pneumatic power at the tool flange
+        pneumatic: 
+            # number of outlets
+            number: 1
+            # pressure at the outlet [bar]
+            pressure: 4
+        # number of ethernet ports at the flange
+        ethernet: 1
+        # identifier for the mechanical interface pattern or "custom"
+        mechanical pattern: custom
+
 control properties: 
     # Cartesian Force and Moment Control
     cartesian force control:

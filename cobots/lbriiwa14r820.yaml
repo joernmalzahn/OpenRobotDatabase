@@ -18,8 +18,6 @@ mechanical properties:
     mounting: [floor, ceiling, wall]
     # Ingress protection class
     IP: 54
-    # Has quick connect base (True, False)
-    has quick connect base: False
     # Axes Properties
     axes:
         # minimum joint angle in deg [A1, A2, A3, A4, A5, A6,...]
@@ -28,6 +26,8 @@ mechanical properties:
         max pos: [170, 120, 170, 120, 170, 120, 175]
         # maximum joint velocity in deg/s [A1, A2, A3, A4, A5, A6,...]
         max vel: [85, 85, 100, 75, 130, 135, 135]
+        # maximum joint torque in Nm [A1, A2, A3, A4, A5, A6,...]
+        max torque: [320, 320, 176, 176, 110, 40, 40]
     # pose repeatability in [mm]
     repeatability: 0.15
     # maximum reach [mm]
@@ -44,11 +44,27 @@ mechanical properties:
     comments: []
 
 flange interface:
-    flange type:  ISO 9409-1-A50
-    power: 4x 1 mm^2
-    pneumatic: 2x 4.0 mm
-    ethernet: 1
-    comments: two flange versions available, spare wires 3x TP AWG28
+    tool flange:
+        # electrical power supply at the tool flange
+        power: 
+            # number of 60 V pins
+            V60: 4
+            # maximum current per pin [A]
+            current: 8
+        # pneumatic power at the tool flange
+        pneumatic: 
+            # number of outlets
+            number: 2
+            # size of the outlet mm or metric standard
+            size: 4
+        # number of ethernet ports at the flange
+        ethernet: 1
+        # number of user I/O
+        user I/O: 6
+        # identifier for the mechanical interface pattern or "custom"
+        mechanical pattern: DIN ISO 9409-1-50-7-M6. 
+    # any additional comment
+    comment: KUKA offers about 10 different flange options with different connectivity. So it is difficult to give precise information here.
 
 ambient conditions:
     # Temperature range [min, max] in [°C]

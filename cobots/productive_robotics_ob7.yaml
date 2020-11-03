@@ -35,8 +35,9 @@ mechanical properties:
     robot mass: 22
 
 flange interface:
-    flange type: ISO 9409-1-50-4-M6
-   
+    tool flange:
+        # identifier for the mechanical interface pattern or "custom"
+        mechanical pattern: ISO 9409-1-50-4-M6 
         
 ambient conditions:
     # Temperature range [min, max] in [°C]

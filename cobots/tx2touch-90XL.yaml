@@ -20,8 +20,6 @@ mechanical properties:
     mounting: [any]
     # Ingress protection class
     IP: 67
-    # Has quick connect base (True, False)
-    has quick connect base: False
     # pose repeatability in [mm]
     repeatability: 0.035
     # maximum reach [mm]
@@ -38,9 +36,15 @@ sensors:
     skin: Air-Skin
 
 flange interface:
-    power: True
-    pneumatic: True
-    ethernet: Cat5e
+    tool flange:
+        # pneumatic power at the tool flange
+        pneumatic: 
+            # number of outlets
+            number: 1
+        # number of ethernet ports at the flange
+        ethernet: 1
+        # number of EtherCAT ports
+        EtherCAT: 1
 
 # Certified w.r.t. the following standards:
 standards: ["ISO 10218-1:2011"]
