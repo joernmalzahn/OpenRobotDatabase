@@ -131,8 +131,7 @@ class OcdCore:
 
     def get_manufacturer_id(self, manufacturer_name):
 
-        #manufacturer_name_blank_safe = '\"' + manufacturer_name + '\"' if ' ' in manufacturer_name and not '\"' in manufacturer_name else manufacturer_name
-        return self._sql_interface.get_data(self._manufacturer_table_name,['id'], ['''name = \" ''' + manufacturer_name + '''\"'''])
+        return self._sql_interface.get_data(self._manufacturer_table_name,['id'], ['''name = \"''' + manufacturer_name + '''\"'''])[0][0]
 
 
 
@@ -170,7 +169,7 @@ class OcdCore:
         return self.get_data(self._cobot_table_name)
 
 
-    def get_data(self, table, field_names = '*' ):
+    def get_data(self, table, field_names = '*', where = None ):
 
         return self._sql_interface.get_data(table, field_names)
 
