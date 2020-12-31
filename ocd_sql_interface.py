@@ -132,3 +132,11 @@ class OcdSqlInterface:
 
         return rows
 
+    def get_column_names(self, table):
+
+        self._create_connection()
+        cursor = self._conn.execute('select * from ' + table)
+        
+        names = [description[0] for description in cursor.description]
+
+        return names
