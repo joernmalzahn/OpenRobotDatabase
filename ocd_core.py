@@ -4,6 +4,8 @@ import os
 from functools import reduce
 import matplotlib.pyplot as plt
 
+import pandas as pd 
+
 
 def dict_recursive_get(input_dict, address,default=None):
     """Recursive version of dict.get(key)
@@ -43,12 +45,15 @@ class OcdCore:
         self._db_filename = kwargs.get('db_filename', 'ocd_database.db')
         self._overwrite_existing_db = kwargs.get('overwrite', True)
         
+        
         # Path to open cobot database directory, make sure it ends with a separator
-        self.ocd_path = kwargs.get('ocd_path','.' + os.sep ) 
+        self.ocd_path = kwargs.get('ocd_path', os.path.dirname(__file__)) 
         if self.ocd_path[-1] is not os.sep: 
             self.ocd_path += os.sep
 
         # Load database configs
+        print("The ocd_core is located in {}.".format(self.ocd_path))
+
         f = open(self.ocd_path + "cobot_config.yaml",'r')
         yaml_content = yaml.load(f, Loader=yaml.FullLoader)
         self._cobot_fields = yaml_content["columns"]
@@ -173,6 +178,19 @@ class OcdCore:
 
         return self._sql_interface.get_data(table, field_names)
 
+    def get_data_df(self, table, field_names = '*', where = None ):
+        
+        data = self.get_data(table, field_names, where)
+        
+        if field_names is not '*':
+            columns = field_names
+        else:
+            columns = self.get_column_names(table)
+
+        return pd.DataFrame(data, columns=field_names)
+
+    def get_column_names(self, table):
+        return self._sql_interface.get_column_names(table)
 
     def _insert_cobot(self, cobot):
         """
