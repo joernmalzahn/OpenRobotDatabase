@@ -36,6 +36,10 @@ class OcdCore:
         output DB file name
     ocd_path : str
         path to open cobot library root
+    output_type: {'row list', 'pandas'}
+        determines the output type of the `get_data()`. The option 'row list' (default) corrsponds to 
+        the standard output type used by `sqlite3.fetchall()`. The option 'pandas' converts this row 
+        list into a pandas dataframe before returning the data.
     """
     _cobot_table_name = 'cobots'
     _manufacturer_table_name = 'manufacturers'
@@ -44,6 +48,7 @@ class OcdCore:
         print("SQL Core Created!")
         self._db_filename = kwargs.get('db_filename', 'ocd_database.db')
         self._overwrite_existing_db = kwargs.get('overwrite', True)
+        self.output_type = kwargs.get('output_type', 'row list')
         
         
         # Path to open cobot database directory, make sure it ends with a separator
@@ -173,21 +178,21 @@ class OcdCore:
         """
         return self.get_data(self._cobot_table_name)
 
-
     def get_data(self, table, field_names = '*', where = None ):
 
-        return self._sql_interface.get_data(table, field_names)
+        data = self._sql_interface.get_data(table, field_names, where)
 
-    def get_data_df(self, table, field_names = '*', where = None ):
-        
-        data = self.get_data(table, field_names, where)
-        
-        if field_names is not '*':
-            columns = field_names
-        else:
-            columns = self.get_column_names(table)
+        if self.output_type is 'pandas':
 
-        return pd.DataFrame(data, columns=field_names)
+            if field_names is '*':
+                columns = self.get_column_names(table)
+            else:
+                columns = field_names
+            
+            data = pd.DataFrame(data, columns = columns)
+
+        return data
+
 
     def get_column_names(self, table):
         return self._sql_interface.get_column_names(table)
