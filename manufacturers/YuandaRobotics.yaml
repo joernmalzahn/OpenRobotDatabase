@@ -1,0 +1,20 @@
+--- # Manufacturer file template
+# Full name of the Company
+name: Yuanda Robotics
+# Website of the company
+website: https://www.yuanda-robotics.de
+# Is the manufacturer still in business (True, False)?
+active: True
+# Can the robot be programmed without writing code (block oriented programming)? (True, False)
+codeless programming: True
+# When was the company founded?
+foundation year: 2017
+# URL of the press kit
+press kit: https://www.yuanda-robotics.de/wp-content/uploads/2019/04/yuanda-robotics-presskit-en.zip
+
+            
+ # Standards           
+ # This is a list of standards the manufacturer refers to.
+ # Note, this does not automatically imply a certification being in place. Many manufactuere follow 
+ # a "design according to certain standards" without going through the certification procedure for each of them.
+standards: ["ISO 10218", "ISO 13849"]
