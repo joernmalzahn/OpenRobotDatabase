@@ -9,6 +9,9 @@ active: True
 codeless programming: True
 # Direct sales?
 sales: False
+# URL of the press kit
+press kit: https://www.doosanrobotics.com/en/News/Presskit
+
 
 # The control box
 controller:

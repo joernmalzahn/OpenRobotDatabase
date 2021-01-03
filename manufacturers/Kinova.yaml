@@ -5,3 +5,5 @@ name: Kinova
 website: https://www.kinovarobotics.com/
 # Is the vendor still in business (True, False)?
 active: True
+# URL of the press kit
+press kit: https://www.kinovarobotics.com/sites/default/files/Kinova_Media_Kit_EN_edit_Oct_2020.pdf

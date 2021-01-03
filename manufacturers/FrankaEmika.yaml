@@ -15,6 +15,8 @@ has research api: True
 foundation year: 2016
 # Direct sales?
 sales: True
+# URL of the press kit
+press kit: https://s3-eu-central-1.amazonaws.com/franka-de-uploads/uploads/2019/04/Franka-Emika-PressKit-2019.zip
 
 # The control box
 controller:

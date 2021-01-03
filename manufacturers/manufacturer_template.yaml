@@ -19,6 +19,8 @@ has raas:
 has predictive maintenance: 
 # Direct sales?
 sales: 
+# URL of the press kit
+press kit:
 
 # The control box
 controller:

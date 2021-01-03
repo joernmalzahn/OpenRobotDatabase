@@ -18,6 +18,7 @@ has raas: False
 # Direct sales?
 sales: False
 
+
 # The control box
 controller:
     # Data about the latest control box

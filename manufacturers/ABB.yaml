@@ -9,6 +9,9 @@ active: True
 foundation year: 1988
 # Direct sales?
 sales: False
+# URL of the press kit
+press kit: https://global.abb/group/en/media/assets
+
 
 # The control box
 controller:

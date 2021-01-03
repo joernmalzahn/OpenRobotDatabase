@@ -13,6 +13,8 @@ has research api: True
 foundation year: 1898
 # Direct sales or through integrators?
 sales: False
+# URL of the press kit
+press kit: https://www.kuka.com/de-de/presse/mediathek
 
 # The control box
 controller:

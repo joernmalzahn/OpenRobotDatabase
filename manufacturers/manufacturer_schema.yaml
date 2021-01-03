@@ -37,6 +37,13 @@
       has predictive maintenance: //bool
       # Direct sales or through integrators?
       sales: //bool
+      # URL of the press kit
+      press kit:
+          type: //any
+          of: [
+            //str,
+            {type: //arr, contents: //str}
+          ]
 
       # The control box
       controller:

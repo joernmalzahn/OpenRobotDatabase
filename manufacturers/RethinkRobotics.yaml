@@ -9,6 +9,8 @@ active: True
 codeless programming: True
 # Direct sales?
 sales: False
+# URL of the press kit
+press kit: https://www.rethinkrobotics.com/de/media
 
 # The control box
 controller:
