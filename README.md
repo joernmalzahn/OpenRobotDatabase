@@ -6,7 +6,7 @@
 
 Keeping the database up-to-date is hard and time consuming work. Any support, contribution and help is grately appreciated and of course credited.
 
-Even if you don't feel to have enough knowldege about GitHub, pushes, commits, pull requests, YAML and databases, programming or open source in general, **you can still contribute** and help others and be part of creating  something great! While this holds for any open source project, **the Open Robot Database in particular will benefit from**:
+Even if you don't feel to have enough knowldege about GitHub, pushes, commits, pull requests, YAML and databases, programming or open source in general, **you can still contribute** and be part of creating something great! While this holds for any open source project, **the Open Robot Database in particular will benefit from**:
 
 - sharing the knowledge about the existence of the Open Robot Database mouth-to-mouth or on social networks
 - notifications about new robots to add
