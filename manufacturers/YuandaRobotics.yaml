@@ -1,3 +1,17 @@
+# This file is part of the Open Robot Database by Jörn Malzahn available at https://github.com/joernmalzahn/OpenRobotDatabase. 
+# This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
+# To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/4.0/.
+#
+# The information in this file is provided "as is" without warranty of any kind. The maintainer of this file exercises reasonable efforts to 
+# include accurate and up-to-date information; he, however, does not make any warranties or representations as to its accuracy or completeness. 
+# Information in this file may periodically be added, changed, or updated without notice. 
+# 
+# If you make decisions based on the data provided in the Open Robot Database including any of its files, you do so at your own risk and it is strongly
+# recommended to verify the information contained in this file through other channels.
+#
+# The information in this file is made available in the hope that it will be helpful to others. Contributions in the form of feedback, corrections, data, code, etc. is highly welcome and will 
+# be credited. Please visit https://github.com/joernmalzahn/OpenRobotDatabase/blob/master/README.md on how to get in touch and provide feedback.
+
 --- # Manufacturer file template
 # Full name of the Company
 name: Yuanda Robotics
