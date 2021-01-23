@@ -64,8 +64,12 @@ class OrdCore:
         self._overwrite_existing_db = kwargs.get('overwrite', True)
         self.output_type = kwargs.get('output_type', 'row list')
         
+        # Path to Open Robot Database directory, make sure it ends with a separator
+        self._db_file_path = kwargs.get('db_path', '.' + os.sep) 
+        if self._db_file_path[-1] is not os.sep: 
+            self._db_file_path += os.sep
         
-        # Path to open cobot database directory, make sure it ends with a separator
+        # Path to Open Robot Database directory, make sure it ends with a separator
         self.ord_path = kwargs.get('ord_path', os.path.dirname(__file__)) 
         if self.ord_path[-1] is not os.sep: 
             self.ord_path += os.sep
@@ -89,8 +93,8 @@ class OrdCore:
         self._manufacturer_path = self.ord_path + self._manufacturer_table_name + os.sep
         self._cobot_path = self.ord_path + self._cobot_table_name + os.sep
         
-        self._sql_interface = OrdSqlInterface(self._db_filename)
-           
+        self._sql_interface = OrdSqlInterface(self._db_file_path + self._db_filename)
+
 
         print('Manufacturer collection located in: %s' % self._manufacturer_path)
         print('Cobot collection located in %s' % self._cobot_path)
@@ -157,6 +161,8 @@ class OrdCore:
 
         return self._sql_interface.get_data(self._manufacturer_table_name,['id'], ['''name = \"''' + manufacturer_name + '''\"'''])[0][0]
 
+    def _does_db_file_exist(self):
+        return os.path.isfile(self._db_file_path + self._db_filename)
 
 
     def create_db(self):
@@ -165,14 +171,14 @@ class OrdCore:
         """        
 
         # Check whether database file exists, if not, create one
-        if os.path.isfile(self._db_filename):
+        if self._does_db_file_exist():
 
             if not self._overwrite_existing_db:
-                print('Database %s exists. Doing nothing.' % self._db_filename)
+                print('Database %s exists. Doing nothing.' % (self._db_file_path + self._db_filename))
                 pass
             else:
-                print('Database %s exists. Overwriting.' % self._db_filename)
-                os.remove(self._db_filename)
+                print('Database %s exists. Overwriting.' % (self._db_file_path + self._db_filename))
+                os.remove(self._db_file_path + self._db_filename)
 
         print("Creating database tables.")
         self._create_tables()
