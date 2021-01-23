@@ -4,7 +4,5 @@ __pycache__
 test_space
 *.db
 misc/
-misc/
-misc/
 .ipynb_*
 todo.txt
