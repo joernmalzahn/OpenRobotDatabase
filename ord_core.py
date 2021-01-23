@@ -12,7 +12,7 @@
 # The information in this file is made available in the hope that it will be helpful to others. Contributions in the form of feedback, corrections, data, code, etc. is highly welcome and will 
 # be credited. Please visit https://github.com/joernmalzahn/OpenRobotDatabase/blob/master/README.md on how to get in touch and provide feedback.
 
-from ocd_sql_interface import OcdSqlInterface
+from ord_sql_interface import OrdSqlInterface
 import yaml
 import os
 from functools import reduce
@@ -39,7 +39,7 @@ def dict_recursive_get(input_dict, address,default=None):
     return result
 
 
-class OcdCore:
+class OrdCore:
     """
     Core class of the Open Cobot Database
     ... 
@@ -48,7 +48,7 @@ class OcdCore:
     ----------
     db_filename : str
         output DB file name
-    ocd_path : str
+    ord_path : str
         path to open cobot library root
     output_type: {'row list', 'pandas'}
         determines the output type of the `get_data()`. The option 'row list' (default) corrsponds to 
@@ -60,36 +60,36 @@ class OcdCore:
 
     def __init__(self,**kwargs):
         print("SQL Core Created!")
-        self._db_filename = kwargs.get('db_filename', 'ocd_database.db')
+        self._db_filename = kwargs.get('db_filename', 'ord_database.db')
         self._overwrite_existing_db = kwargs.get('overwrite', True)
         self.output_type = kwargs.get('output_type', 'row list')
         
         
         # Path to open cobot database directory, make sure it ends with a separator
-        self.ocd_path = kwargs.get('ocd_path', os.path.dirname(__file__)) 
-        if self.ocd_path[-1] is not os.sep: 
-            self.ocd_path += os.sep
+        self.ord_path = kwargs.get('ord_path', os.path.dirname(__file__)) 
+        if self.ord_path[-1] is not os.sep: 
+            self.ord_path += os.sep
 
         # Load database configs
-        print("The ocd_core is located in {}.".format(self.ocd_path))
+        print("The ord_core is located in {}.".format(self.ord_path))
 
-        f = open(self.ocd_path + "cobot_config.yaml",'r')
+        f = open(self.ord_path + "cobot_config.yaml",'r')
         yaml_content = yaml.load(f, Loader=yaml.FullLoader)
         self._cobot_fields = yaml_content["columns"]
         self._cobot_table_links = yaml_content["links"]
         f.close()
 
-        f = open(self.ocd_path + "manufacturer_config.yaml",'r')
+        f = open(self.ord_path + "manufacturer_config.yaml",'r')
         yaml_content = yaml.load(f, Loader=yaml.FullLoader)
         self._manufacturer_fields  = yaml_content["columns"]
         self._manufacturer_table_links = yaml_content["links"]
         f.close()
 
         # Derive additional paths
-        self._manufacturer_path = self.ocd_path + self._manufacturer_table_name + os.sep
-        self._cobot_path = self.ocd_path + self._cobot_table_name + os.sep
+        self._manufacturer_path = self.ord_path + self._manufacturer_table_name + os.sep
+        self._cobot_path = self.ord_path + self._cobot_table_name + os.sep
         
-        self._sql_interface = OcdSqlInterface(self._db_filename)
+        self._sql_interface = OrdSqlInterface(self._db_filename)
            
 
         print('Manufacturer collection located in: %s' % self._manufacturer_path)
@@ -235,10 +235,10 @@ class OcdCore:
 def main():
     
     # The name of our database will be:
-    database = "ocd_database.db"
+    database = "ord_database.db"
     
-    # Initialize the OCD core:
-    core = OcdCore(db_filename=database)
+    # Initialize the ORD core:
+    core = OrdCore(db_filename=database)
 
     # Convert .yamls into a SQLite database
     core.create_db()        

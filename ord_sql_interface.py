@@ -15,10 +15,10 @@
 import sqlite3
 from sqlite3 import Error
 
-class OcdSqlInterface:
+class OrdSqlInterface:
     """ Classe handling all the db file interactions """
 
-    def __init__(self, db_filename='ocd_database.db'):
+    def __init__(self, db_filename='ord_database.db'):
         self._conn = None
         self._db_file_name = db_filename
 
