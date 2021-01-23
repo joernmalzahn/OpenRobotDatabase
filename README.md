@@ -1,6 +1,7 @@
-# Open Robot Database
+# Open Robot Database (ORD)
 
-The Open Robot Database is... 
+The Open Robot Database - short "ORD" essentially is a collection of yaml files listing properties of robots that you typially find in robot datasheets. The original motivation behind this project was to compare different robots to each other and get a picture on what the robots that I can buy would allow me to do in terms of payload capacity, maximum reachability, Cartesian velocity or repeatability. 
+
 
 ## Some Examples
 
