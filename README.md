@@ -1,7 +1,24 @@
 # Open Robot Database (ORD)
 
-The Open Robot Database - short "ORD" essentially is a collection of yaml files listing properties of robots that you typially find in robot datasheets. The original motivation behind this project was to compare different robots to each other and get a picture on what the robots that I can buy would allow me to do in terms of payload capacity, maximum reachability, Cartesian velocity or repeatability. 
+The Open Robot Database - short "ORD" - essentially is a collection of yaml files listing properties of robots that you typially find in robot datasheets. There are plenty of [great resources](https://planet-robotics.net/articles/link-dump-compare-the-cobots-on-the-market/) listing different robots along with their payload capacity, maximum reachability, Cartesian velocity or repeatability. However, I wanted to add also other information and wanted to query, filter and [visualize](https://planet-robotics.net/articles/payload-vs-maximum-reach-for-57-cobots/) such information. So I sat down and created these yaml files, which I wish to share  with the community through this repository in the hope this data will be helpful to someone. 
 
+## Repository Organization
+The yaml files are organized in two directories. The script `test_yaml.py` if the data in all files is formatted correctly using [Rx](http://rx.codesimply.com/).
+
+### Manufacturers
+The `manufacturers` directory lists all the yaml files containing data about robot manufacturers. It has two special files. The yaml files follow a data schema defined in `./manufacturers/manufacturer_schema.yaml`. A template for manufacturer yaml files is given in `./manufacturers/manufacturer_template.yaml`.
+
+### Cobots
+The `cobots` directory lists all the yaml files containing data about collaborative robots (so-called cobots). It has two special files. The yaml files follow a data schema defined in `./cobots/cobot_schema.yaml`. A template for robot yaml files is given in `./cobots/cobot_template.yaml`.
+
+### OcdCore
+Python class, which allows to collect the information in the yaml files and to convert it into a SQLite3 database. The `cobot_config.yaml` and `manufacturer_config.yaml` define which fields of the yaml files in the corresponding directories shall be ported into the database file. 
+
+### SQL Interface
+Helper functions for SQLite3.
+
+## Disclaimer
+If you make decisions based on the data provided in the Open Robot Database including any of its files, you do so at your own risk and it is strongly recommended to verify the information contained in this file through other channels such as the robot manufacturer's original site.
 
 ## Some Examples
 
