@@ -14,7 +14,7 @@ The `cobots` directory lists all the yaml files containing data about collaborat
 ### OcdCore Class
 OcdCore is the Python class, which allows to collect the information in the yaml files and to convert it into a SQLite3 database. The `cobot_config.yaml` and `manufacturer_config.yaml` define which fields of the yaml files in the corresponding directories shall be ported into the database file. 
 
-### OrdSqlInterface:
+### OrdSqlInterface
 OrdSqlInterface is a Python class providing convenience functions for SQLite3 to OcdCore.
 
 ## Disclaimer
