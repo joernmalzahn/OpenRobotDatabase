@@ -5,11 +5,14 @@ The Open Robot Database - short "ORD" - essentially is a collection of yaml file
 ## Repository Organization
 The yaml files are organized in two directories. The script `test_yaml.py` checks whether the data in all files is formatted correctly. It uses  [Rx](http://rx.codesimply.com/) and points to possible schema violations, so that they can be corrected easily.
 
-### The Manufacturers Directory
+### The `manufacturers` Directory
 The `manufacturers` directory lists all the yaml files containing data about robot manufacturers. It has two special files. The yaml files follow a data schema defined in `./manufacturers/manufacturer_schema.yaml`. A template for manufacturer yaml files is given in `./manufacturers/manufacturer_template.yaml`.
 
-### The Cobots Directory
+### The `cobots` Directory
 The `cobots` directory lists all the yaml files containing data about collaborative robots (so-called cobots). It is where everything originally started, as I was looking into Cobots. Hopefully, there will be other types of robots in the future as well. The directory has two special yaml files. The yaml files follow a data schema defined in `./cobots/cobot_schema.yaml`. A template for robot yaml files is given in `./cobots/cobot_template.yaml`.
+
+### The `figures` Directory
+This directory is for figures that have been created using the data in the repository.
 
 ### OcdCore Class
 OcdCore is the Python class, which allows to collect the information in the yaml files and to convert it into a SQLite3 database. The `cobot_config.yaml` and `manufacturer_config.yaml` define which fields of the yaml files in the corresponding directories shall be ported into the database file. 
@@ -20,7 +23,7 @@ OrdSqlInterface is a Python class providing convenience functions for SQLite3 to
 ## Disclaimer
 If you make decisions based on the data provided in the Open Robot Database including any of its files, you do so at your own risk and it is strongly recommended to verify the information contained in this file through other channels such as the robot manufacturer's original site.
 
-## Some Example
+## A Quick Example
 In the example below, we instantiate an OrdCore class and visualize the payload capacity versus the maximum reach for all robots in the database using [Matplotlib](https://matplotlib.org/).
 
 ```
@@ -57,6 +60,8 @@ data = core.get_data('manufacturers')
 print(data)
 
 ```
+The result should look somehow like this:
+![a_quick_example.svg](https://github.com/joernmalzahn/OpenRobotDatabase/blob/master/figures/a_quick_example.svg)
 
 ## Call for Contributions
 
