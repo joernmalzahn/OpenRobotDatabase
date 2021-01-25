@@ -9,7 +9,7 @@ The yaml files are organized in two directories. The script `test_yaml.py` check
 The `manufacturers` directory lists all the yaml files containing data about robot manufacturers. It has two special files. The yaml files follow a data schema defined in `./manufacturers/manufacturer_schema.yaml`. A template for manufacturer yaml files is given in `./manufacturers/manufacturer_template.yaml`.
 
 ### The Cobots Directory
-The `cobots` directory lists all the yaml files containing data about collaborative robots (so-called cobots). It has two special files. The yaml files follow a data schema defined in `./cobots/cobot_schema.yaml`. A template for robot yaml files is given in `./cobots/cobot_template.yaml`.
+The `cobots` directory lists all the yaml files containing data about collaborative robots (so-called cobots). It is where everything originally started, as I was looking into Cobots. Hopefully, there will be other types of robots in the future as well. The directory has two special yaml files. The yaml files follow a data schema defined in `./cobots/cobot_schema.yaml`. A template for robot yaml files is given in `./cobots/cobot_template.yaml`.
 
 ### OcdCore Class
 OcdCore is the Python class, which allows to collect the information in the yaml files and to convert it into a SQLite3 database. The `cobot_config.yaml` and `manufacturer_config.yaml` define which fields of the yaml files in the corresponding directories shall be ported into the database file. 
