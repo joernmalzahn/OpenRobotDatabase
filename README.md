@@ -1,10 +1,62 @@
-# Open Robot Database
+# Open Robot Database (ORD)
 
-The Open Robot Database is... 
+The Open Robot Database - short "ORD" - essentially is a collection of yaml files listing properties of robots that you typially find in robot datasheets. There are plenty of [great resources](https://planet-robotics.net/articles/link-dump-compare-the-cobots-on-the-market/) listing different robots along with their payload capacity, maximum reachability, Cartesian velocity or repeatability. However, I wanted to add also other information and wanted to query, filter and [visualize](https://planet-robotics.net/articles/payload-vs-maximum-reach-for-57-cobots/) such information. So I sat down and created these yaml files, which I wish to share  with the community through this repository for journalistic purpose in the hope this data will be helpful to someone. 
 
-## Some Examples
+## Repository Organization
+The yaml files are organized in two directories. The script `test_yaml.py` checks whether the data in all files is formatted correctly. It uses  [Rx](http://rx.codesimply.com/) and points to possible schema violations, so that they can be corrected easily.
 
-Todo...
+### The Manufacturers Directory
+The `manufacturers` directory lists all the yaml files containing data about robot manufacturers. It has two special files. The yaml files follow a data schema defined in `./manufacturers/manufacturer_schema.yaml`. A template for manufacturer yaml files is given in `./manufacturers/manufacturer_template.yaml`.
+
+### The Cobots Directory
+The `cobots` directory lists all the yaml files containing data about collaborative robots (so-called cobots). It is where everything originally started, as I was looking into Cobots. Hopefully, there will be other types of robots in the future as well. The directory has two special yaml files. The yaml files follow a data schema defined in `./cobots/cobot_schema.yaml`. A template for robot yaml files is given in `./cobots/cobot_template.yaml`.
+
+### OcdCore Class
+OcdCore is the Python class, which allows to collect the information in the yaml files and to convert it into a SQLite3 database. The `cobot_config.yaml` and `manufacturer_config.yaml` define which fields of the yaml files in the corresponding directories shall be ported into the database file. 
+
+### OrdSqlInterface
+OrdSqlInterface is a Python class providing convenience functions for SQLite3 to OcdCore.
+
+## Disclaimer
+If you make decisions based on the data provided in the Open Robot Database including any of its files, you do so at your own risk and it is strongly recommended to verify the information contained in this file through other channels such as the robot manufacturer's original site.
+
+## Some Example
+In the example below, we instantiate an OrdCore class and visualize the payload capacity versus the maximum reach for all robots in the database using [Matplotlib](https://matplotlib.org/).
+
+```
+from ord_core import OrdCore
+import matplotlib.pyplot as plt
+
+# The name of our database will be:
+database = "ord_database.db"
+    
+# Initialize the ORD core:
+core = OrdCore(db_filename=database)
+
+# Convert .yamls into a SQLite database
+core.create_db()        
+
+# Next we are going to plot the payload mass capacity for each robot 
+# versus the robot's maximum reach.
+
+# Extract and organize desired columns from the database
+data = core.get_data('cobots', ['payload mass', 'max reach'])
+payloads, reaches = zip(*data)
+
+# Plotting
+plt.plot(reaches, payloads,'o')
+ax = plt.gca()
+ax.set_xlim([0,1800])
+ax.set_ylim([0,26])
+ax.set_xlabel("Max. Reach [mm]")
+ax.set_ylabel("Payload Mass [kg]")
+plt.title("Number of Cobots: %d" % len(reaches))
+plt.show()
+
+data = core.get_data('manufacturers')
+print(data)
+
+```
 
 ## Call for Contributions
 
@@ -27,4 +79,4 @@ Looking forward and thanks a lot in advance!
 
 ## License Information
 
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Dataset" property="dct:title" rel="dct:type">Open Robot Database</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="https://github.com/joernmalzahn/OpenRobotDatabase" property="cc:attributionName" rel="cc:attributionURL">Jörn Malzahn</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.<br />Based on a work at <a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/joernmalzahn/OpenRobotDatabase" rel="dct:source">https://github.com/joernmalzahn/OpenRobotDatabase</a>.
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Dataset" property="dct:title" rel="dct:type">Open Robot Database</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="https://github.com/joernmalzahn/OpenRobotDatabase" property="cc:attributionName" rel="cc:attributionURL">Jörn Malzahn</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.<br />Based on the work at <a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/joernmalzahn/OpenRobotDatabase" rel="dct:source">https://github.com/joernmalzahn/OpenRobotDatabase</a>.
