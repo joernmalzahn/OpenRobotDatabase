@@ -1,1 +1,1 @@
-## Welcome to the Open Robot Database
+## The Open Robot Database
