@@ -61,7 +61,7 @@ print(data)
 
 ```
 The result should look somehow like this:
-<img src="img/svg/a_quick_example.svg"/>
+<img src="https://joernmalzahn.github.io/OpenRobotDatabase/img/svg/a_quick_example.svg"/>
 
 
 ## Call for Contributions
