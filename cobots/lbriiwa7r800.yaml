@@ -20,7 +20,7 @@ name: LBR iiwa 7 R800
 # Website describing the cobot
 website: [https://www.kuka.com/en-de/products/robot-systems/industrial-robots/lbr-iiwa]
 # Product Brochure / Datasheet
-brochure: [https://www.kuka.com/event/media?itemId=75ACED17FBEB4178BCE1A489FA363234]
+brochure: ["https://www.kuka.com/event/media?itemId=75ACED17FBEB4178BCE1A489FA363234"]
 # Videos
 videos: [https://youtu.be/7GdiN6KmGCc]
 # Is the robot still being sold?
