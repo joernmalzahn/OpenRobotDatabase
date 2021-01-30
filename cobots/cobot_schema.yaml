@@ -29,6 +29,13 @@
         # Is the robot still being sold?
         in market: //bool
     optional:
+        # Product Brochure / Datasheet
+        brochure: 
+            type: //any
+            of: [
+                //str,
+                {type: //arr, contents: //str}
+            ]
         # URLs of Videos
         videos:
             type: //any

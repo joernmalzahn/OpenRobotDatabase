@@ -19,6 +19,8 @@ manufacturer:
 name: 
 # Website describing the cobot
 website: []
+# Product Brochure / Datasheet
+brochure: []
 # Videos
 videos: []
 # How long does it take to set up the robot [min]?
