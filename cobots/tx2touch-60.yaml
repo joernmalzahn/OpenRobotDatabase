@@ -19,6 +19,8 @@ manufacturer: Stäubli
 name: TX2 Touch 60
 # Website describing the cobot
 website: [https://www.staubli.com/de-de/robotics/produktprogramm/cobots/power-cobot/]
+# Product Brochure / Datasheet
+brochure: [https://www.staubli.com/de-de/file/23040.show]
 # Videos
 videos: [https://youtu.be/MD96ZnbwSh0]
 # Is the robot still being sold?
