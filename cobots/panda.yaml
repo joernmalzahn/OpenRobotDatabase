@@ -19,6 +19,8 @@ manufacturer: Franka Emika
 name: Panda
 # Website describing the cobot
 website: [https://www.franka.de/technology]
+# Product Brochure / Datasheet
+brochure: [https://s3-eu-central-1.amazonaws.com/franka-de-uploads/uploads/Datasheet-EN.pdf]
 # Videos
 videos: [https://youtu.be/_FbhNsRjqdQ]
 # How long does it take to set up the robot [min]?
@@ -44,6 +46,8 @@ mechanical properties:
         max vel: [150, 150, 150, 150, 180, 180, 180]
     # pose repeatability in [mm]
     repeatability: 0.1
+    # maximum cartesian velocity in [m/s]
+    max cartesian velocity: 2
     # path deviation in [mm]
     path deviation: 1.25
     # maximum reach [mm]

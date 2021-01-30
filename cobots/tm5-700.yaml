@@ -19,6 +19,8 @@ manufacturer: Techman Robot
 name: TM5(M)-700
 # Website describing the cobot
 website: [https://techmanrobotusa.com/regular-payload-series/]
+# Product Brochure / Datasheet
+brochure: [https://techmanrobotusa.com/wp-content/uploads/2019/07/lr-_tm5-dm-19b23en-cs5ol.pdf]
 # Videos
 videos: [https://youtu.be/CQpvEz8Ag-c,
 https://youtu.be/SG9iDEmY1hc,
@@ -47,6 +49,8 @@ mechanical properties:
         max torque: []
     # pose repeatability in [mm]
     repeatability: 0.05
+    # maximum cartesian velocity in [m/s]
+    max cartesian velocity: 1.1
     # maximum reach [mm]
     max reach: 700
     # payload mass capacity in [kg]

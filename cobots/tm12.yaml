@@ -18,7 +18,9 @@ manufacturer: Techman Robot
 # Full name of the cobot
 name: TM12
 # Website describing the cobot
-website: [https://techmanrobotusa.com/regular-payload-series/]
+website: [https://techmanrobotusa.com/high-payload-series/]
+# Product Brochure / Datasheet
+brochure: [https://techmanrobotusa.com/wp-content/uploads/2019/07/lrtm1214-dm-19b23en-cs5ol.pdf]
 # Videos
 videos: [https://youtu.be/CQpvEz8Ag-c,
 https://youtu.be/SG9iDEmY1hc,

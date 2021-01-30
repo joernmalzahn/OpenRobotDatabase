@@ -19,6 +19,8 @@ manufacturer: Fanuc
 name: CRX-10iA
 # Website describing the cobot
 website: [https://www.fanuc.co.jp/en/product/robot/f_r_collabo.html]
+# Product Brochure / Datasheet
+brochure: [https://www.fanuc.co.jp/en/product/catalog/pdf/robot/RCRX(E)-02.pdf]
 # Videos
 videos: [https://youtu.be/xE8BZPLnZGI,
          https://youtu.be/N65nNjzfNy0]
@@ -30,6 +32,8 @@ comments: Released on December 18, 2019, only scarce information available
 mechanical properties:
     # How can the robot be mounted (floor, ceiling, wall, any angle)
     mounting: [floor, ceiling, wall, any]
+    # maximum cartesian velocity in [m/s]
+    max cartesian velocity: 2
     # maximum reach [mm]
     max reach: 2480
     # payload mass capacity in [kg]
