@@ -1,5 +1,7 @@
 # Open Robot Database (ORD)
 
+<img align="right" width="150" height="150" src="docs/img/logo-transparent.png">
+
 The Open Robot Database - short "ORD" - essentially is a collection of yaml files listing properties of robots that you typially find in robot datasheets. There are plenty of [great resources](https://planet-robotics.net/articles/link-dump-compare-the-cobots-on-the-market/) listing different robots along with their payload capacity, maximum reachability, Cartesian velocity or repeatability. However, I wanted to add also other information and wanted to query, filter and [visualize](https://planet-robotics.net/articles/payload-vs-maximum-reach-for-57-cobots/) such information. So I sat down and created these yaml files, which I wish to share  with the community through this repository for journalistic purpose in the hope this data will be helpful to someone. 
 
 ## Repository Organization
