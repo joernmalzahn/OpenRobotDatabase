@@ -14,7 +14,7 @@
 
 --- # Manufacturer file template
 # Full name of the Company
-name: Stäubli
+name: Staubli
 # Website of the company
 website: https://www.staubli.com/en-us/robotics/
 # Is the vendor still in business (True, False)?
