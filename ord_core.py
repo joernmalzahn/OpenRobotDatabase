@@ -99,7 +99,7 @@ class OrdCore:
         print('Manufacturer collection located in: %s' % self._manufacturer_path)
         print('Cobot collection located in %s' % self._cobot_path)
 
-
+        self.create_db()
 
     def _create_tables(self):
         """
