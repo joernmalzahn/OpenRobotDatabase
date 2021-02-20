@@ -36,5 +36,7 @@ mechanical properties:
     max reach: 2820
     # payload mass capacity in [kg]
     payload mass: 10
+    # pose repeatability in [mm]
+    repeatability: 0.04
     # robot mass in [kg]
     robot mass: 39

@@ -19,6 +19,8 @@ manufacturer: Rethink Hahn
 name: Sawyer Black Edition
 # Website describing the cobot
 website: ["https://www.rethinkrobotics.com/sawyer"]
+# Product Brochure / Datasheet
+brochure: ["https://www.rethinkrobotics.com/fileadmin/user_upload/sawyer/rr-blackedition-brochure_low.pdf"]
 # Videos
 videos: ["https://youtu.be/D4eirAQBBN0", "https://youtu.be/672hRpmOsPo"]
 # Is the robot still being sold?
@@ -40,6 +42,8 @@ mechanical properties:
         max pos: [350, 350, 350, 340, 340, 540]
     # maximum reach [mm]
     max reach: 1260
+    # maximum cartesian velocity in [m/s]
+    max cartesian velocity: 1.5
     # payload mass capacity in [kg]
     payload mass: 4
     # additional comments
