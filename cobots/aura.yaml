@@ -47,7 +47,7 @@ mechanical properties:
     # payload mass capacity in [kg]
     payload mass: 170
     # robot mass in [kg]
-    robot mass: 32
+    robot mass: 1615
     
 flange interface:
     tool flange:
