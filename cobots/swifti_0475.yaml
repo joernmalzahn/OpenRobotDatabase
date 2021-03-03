@@ -16,71 +16,58 @@
 # Vendor name (see manufacturer list)
 manufacturer: ABB Robotics
 # Full name of the cobot
-name: IRB 14050 Single-arm YuMi
+name: Swifti CRB 1100-4/0.475
 # Website describing the cobot
-website: ["https://cobots.robotics.abb.com/en/robots/yumi/"]
+website: ["https://cobots.robotics.abb.com/en/robots/swifti/"]
 # Product Brochure / Datasheet
-brochure: ["https://assets.ctfassets.net/gt89rl895hgs/3B06WRXybqrKnbJ0FmdrfE/d23c57b13647491d913e33d84a86866b/YuMi_SingleArm.pdf"]
+brochure: ["https://assets.ctfassets.net/gt89rl895hgs/7lxW2lwo38EpADo8WYr0ja/0f36e51c736ccd9800b2efa59bcb17a3/SWIFTI_CRB1100-datasheet.pdf"]
 # Videos
-videos: ["https://youtu.be/wsa6_uqB4y8"]
+videos: ["https://youtu.be/IqsMNVu8tMY"]
 # Is the robot still being sold?
 in market: True
 # Estimated price of the robot in [k€]
-price: 20
+price: 25
 
 
 mechanical properties:
     # How can the robot be mounted (floor, ceiling, wall, any angle)
     mounting: [any, floor, wall, ceiling]
     # Ingress protection class
-    IP: 30
+    IP: 40
     # Axes Properties
     axes: 
         # minimum joint angle in deg [A1, A2, A3, A4, A5, A6,...]
-        min pos: [-168.5, -143.5, -123.5, -290, -88, -229, -168.5]
+        min pos: [-230, -115, -205, -230, -125, -400]
         # maximum joint angle in deg [A1, A2, A3, A4, A5, A6,...]
-        max pos: [168.5, 43.5, 80, 290, 138, 229, 168.5] 
+        max pos: [230, 113, 55, 230, 120, 400] 
         # maximum joint velocity in deg/s [A1, A2, A3, A4, A5, A6,...]
-        max vel: [180, 180, 180, 400, 400, 400, 180]
-        # maximum joint torque in Nm [A1, A2, A3, A4, A5, A6,...]
-        max torque: [0.64, 0.64, 0.23]
+        max vel: [460, 380, 280, 560, 420, 750]
     # pose repeatability in [mm]
-    repeatability: 0.02
+    repeatability: 0.01
     # path deviation in [mm]
-    path deviation: 0.1
+    path deviation: 0.05
     # maximum cartesian velocity in [m/s]
-    max cartesian velocity:  1.5
+    max cartesian velocity:  4.32
     # maximum cartesian acceleration in [m/s^2]
-    max cartesian acceleration:  11
+    max cartesian acceleration:  82.13
     # maximum reach [mm]
-    max reach: 559
+    max reach: 475
     # payload mass capacity in [kg]
-    payload mass: 0.5
-    # payload inertia in [kgm^2]
-    payload inertia: 0.009
+    payload mass: 4
     # robot mass in [kg]
-    robot mass: 9.48
-    # additional comments
-    comments: [payload mass without gripper, payload inertia w.r.t. axis 6]
-    
-electrical properties:
-    # Average power consumption in [W]
-    avg power: 170
-
-sensors: 
-    # Integrated Camera Sensors (not optional accessories)
-    vision: integrated
+    robot mass: 21
+        
 
 flange interface:
     tool flange:
         # number of digital inputs:
-        digital inputs: 0
+        digital inputs: 12
         # number of digital outputs: 
-        digital outputs: 0
+        digital outputs: 12
         # number of analog inputs: 
-        analog inputs: 0
+        analog inputs: 12
         # number of analog outputs: 
-        analog outputs: 0
+        analog outputs: 12
         # electrical power supply at the tool flange
         power: 
             # number of 24 V pins
@@ -88,41 +75,13 @@ flange interface:
         # pneumatic power at the tool flange
         pneumatic: 
             # number of outlets
-            number: 1
+            number: 4
             # pressure at the outlet [bar]
-            pressure: 4
+            pressure: 6
         # number of ethernet ports at the flange
         ethernet: 1
         # identifier for the mechanical interface pattern or "custom"
-        mechanical pattern: custom
-
-control properties: 
-    # Cartesian Force and Moment Control
-    cartesian force control:
-        comment: w.r.t. base frame
-        # Cartesian Endeffector Torque
-        torque:
-            # Torque range [min, max] for each axis in [Nm]
-            range:
-                x: [-30.52, 30.52]
-                y: [-30.00, 30.00]
-                z: [-12.32, 12.32]
-        # Cartesian Endeffector Torque
-        force:
-            # Force range [min, max] for each axis in [N]
-            range:
-                x: [-42.7, 42.7]
-                y: [-42.03, 42.03]
-                z: [39.65, 111.65]
-    # Impedance controller properties:
-
-ambient conditions:
-    # Temperature range [min, max] in [°C]
-    temperature: [5, 40]
-    # Humidity range [min, max] in [%]
-    humidity: [0, 85]
-    # Cleanroom class
-    cleanroom class: 5
+        mechanical pattern: ISO 9409-1-31.5-4 M5
 
 # Certified w.r.t. the following standards:
 standards: ["ISO 10218-1:2011"]
