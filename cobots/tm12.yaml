@@ -29,6 +29,8 @@ https://youtu.be/NhamtYlFMiY]
 
 # Is the robot still being sold?
 in market: True
+# Estimated price of the robot in [k€]
+price: 33
 # additional information
 comments: ["TM Mobile Series TM5m, TM12M, TM14M, use an integrated VDC supply for compatibility with AGV/MR systems."]
 

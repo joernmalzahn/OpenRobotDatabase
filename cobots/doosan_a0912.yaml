@@ -23,6 +23,8 @@ website: ["https://www.doosanrobotics.com/en/products/series/a0912"]
 videos: ["https://youtu.be/Kn3tbxjDGDc"]
 # Is the robot still being sold?
 in market: True
+# Estimated price of the robot in [k€]
+price: 27
 # additional information
 comments: []
 

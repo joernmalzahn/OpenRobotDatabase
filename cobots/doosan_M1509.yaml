@@ -24,7 +24,7 @@ videos: ["https://youtu.be/Kn3tbxjDGDc"]
 # Is the robot still being sold?
 in market: True
 # Approx. price of the robot in [k€]
-price: 46
+price: 36
 # additional information
 comments: []
 

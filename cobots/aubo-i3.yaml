@@ -23,6 +23,8 @@ website: ["https://aubo-robotics.com/products/aubo-i3/"]
 videos: ["https://youtu.be/U63HmWtgrBg", "https://youtu.be/xbjJjGJA0ho", "https://youtu.be/9gRX09rCogU"]
 # Is the robot still being sold?
 in market: True
+# Estimated price of the robot in [k€]
+price: 18
 # additional information
 comments: []
 

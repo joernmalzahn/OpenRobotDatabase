@@ -24,7 +24,7 @@ videos: [https://youtu.be/y62T-Q57JbY]
 # Is the robot still being sold?
 in market: True
 # Estimated price of the robot in [k€]
-price: 22
+price: 27
 
 mechanical properties:
     # How can the robot be mounted (floor, ceiling, wall, any angle)
