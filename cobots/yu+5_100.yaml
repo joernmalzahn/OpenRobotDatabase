@@ -1,0 +1,91 @@
+# This file is part of the Open Robot Database by Jörn Malzahn available at https://github.com/joernmalzahn/OpenRobotDatabase. 
+# This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
+# To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/4.0/.
+#
+# The information in this file is provided "as is" without warranty of any kind. The maintainer of this file exercises reasonable efforts to 
+# include accurate and up-to-date information; he, however, does not make any warranties or representations as to its accuracy or completeness. 
+# Information in this file may periodically be added, changed, or updated without notice. 
+# 
+# If you make decisions based on the data provided in the Open Robot Database including any of its files, you do so at your own risk and it is strongly
+# recommended to verify the information contained in this file through other channels.
+#
+# The information in this file is made available in the hope that it will be helpful to others. Contributions in the form of feedback, corrections, data, code, etc. is highly welcome and will 
+# be credited. Please visit https://github.com/joernmalzahn/OpenRobotDatabase/blob/master/README.md on how to get in touch and provide feedback.
+
+--- # Cobot file template
+# Vendor name (see manufacturer list)
+manufacturer: Yuanda Robotics
+# Full name of the cobot
+name: Yu+ 5/100
+# Website describing the cobot
+website: ["https://www.yuanda-robotics.de/en/robot/"]
+# Product Brochure / Datasheet
+brochure: ["https://www.yuanda-robotics.de/wp-content/uploads/2019/03/yuanda-robot-datasheet-en.pdf"]
+# Videos
+videos: ["https://youtu.be/aMmybLyIZQw"]
+# Is the robot still being sold?
+in market: True
+# Estimated price of the robot in [k€]
+price: 32
+
+
+mechanical properties:
+    # How can the robot be mounted (floor, ceiling, wall, any angle)
+    mounting: [any, floor, wall, ceiling]
+    # Ingress protection class
+    IP: 54
+    # Axes Properties
+    axes: 
+        # minimum joint angle in deg [A1, A2, A3, A4, A5, A6,...]
+        min pos: [-220, -220, -220, -220, -220, -220]
+        # maximum joint angle in deg [A1, A2, A3, A4, A5, A6,...]
+        max pos: [220, 220, 220, 220, 220, 220]
+        # maximum joint velocity in deg/s [A1, A2, A3, A4, A5, A6,...]
+        max vel: [141, 141, 169, 180, 180, 180]
+    # pose repeatability in [mm]
+    repeatability: 0.05
+    # maximum cartesian velocity in [m/s]
+    max cartesian velocity:  2.0
+    # maximum reach [mm]
+    max reach: 1000
+    # payload mass capacity in [kg]
+    payload mass: 7
+    # robot mass in [kg]
+    robot mass: 29
+    
+electrical properties:
+    # Average power consumption in [W]
+    avg power: 250
+
+sensors: 
+    # Integrated Camera Sensors (not optional accessories)
+    vision: integrated
+
+flange interface:
+    tool flange:
+        # number of digital inputs:
+        digital inputs: 3
+        # number of digital outputs: 
+        digital outputs: 1
+        # number of analog inputs: 
+        analog inputs: 2
+        # number of analog outputs: 
+        analog outputs: 0
+        # electrical power supply at the tool flange
+        power: 
+            # number of 24 V pins
+            V24: 1
+        # number of ethernet ports at the flange
+        ethernet: 1
+
+ambient conditions:
+    # Temperature range [min, max] in [°C]
+    temperature: [5, 40]
+    # Humidity range [min, max] in [%]
+    humidity: [0, 80]
+
+# Certified w.r.t. the following standards:
+standards: ["ISO 10218-1:2011"]
+
+    
+
