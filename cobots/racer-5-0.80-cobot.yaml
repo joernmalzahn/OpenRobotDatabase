@@ -1,0 +1,65 @@
+# This file is part of the Open Robot Database by Jörn Malzahn available at https://github.com/joernmalzahn/OpenRobotDatabase. 
+# This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
+# To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/4.0/.
+#
+# The information in this file is provided "as is" without warranty of any kind. The maintainer of this file exercises reasonable efforts to 
+# include accurate and up-to-date information; he, however, does not make any warranties or representations as to its accuracy or completeness. 
+# Information in this file may periodically be added, changed, or updated without notice. 
+# 
+# If you make decisions based on the data provided in the Open Robot Database including any of its files, you do so at your own risk and it is strongly
+# recommended to verify the information contained in this file through other channels.
+#
+# The information in this file is made available in the hope that it will be helpful to others. Contributions in the form of feedback, corrections, data, code, etc. is highly welcome and will 
+# be credited. Please visit https://github.com/joernmalzahn/OpenRobotDatabase/blob/master/README.md on how to get in touch and provide feedback.
+
+--- # Cobot file template
+# Vendor name (see manufacturer list)
+manufacturer: Comau SpA
+# Full name of the cobot
+name: Racer-5-0.80-COBOT
+# Website describing the cobot
+website: ["https://www.comau.com/EN/our-competences/robotics/automation-products/racer-5-0-80-cobot"]
+# Videos
+videos: ["https://www.youtube.com/watch?v=wJiX_PbQ3wQ"]
+
+# Is the robot still being sold?
+in market: True
+# additional information
+comments: []
+
+mechanical properties:
+    # How can the robot be mounted (floor, ceiling, wall, any angle)
+    mounting: [floor, ceiling, wall]
+    # Ingress protection class
+    IP: 54
+    # Axes Properties
+    axes: 
+        # minimum joint angle in deg [A1, A2, A3, A4, A5, A6,...]
+        min pos: [-170, -95, -155, -210, -125, -2700]
+        # maximum joint angle in deg [A1, A2, A3, A4, A5, A6,...]
+        max pos: [170, 135, 90, 210, 125, 2700] 
+        # maximum joint velocity in deg/s [A1, A2, A3, A4, A5, A6,...]
+        max vel: [360, 300, 330, 500, 500, 800]
+        # maximum joint torque in Nm [A1, A2, A3, A4, A5, A6,...]
+        max torque: [0, 0, 0, 8.83, 8.83, 4.91]
+    # pose repeatability in [mm]
+    repeatability: 0.03
+    # maximum reach [mm]
+    max reach: 809
+    # maximum cartesian velocity in [m/s]
+    max cartesian velocity:  6.0
+    # payload mass capacity in [kg]
+    payload mass: 5
+    # robot mass in [kg]
+    robot mass: 32
+    
+flange interface:
+    tool flange:
+        # identifier for the mechanical interface pattern or "custom"
+        mechanical pattern: ISO 9409-1- A25
+
+ambient conditions:
+    # Temperature range [min, max] in [°C]
+    temperature: [5, 40]
+    # Humidity range [min, max] in [%]
+    humidity: [5, 95]
